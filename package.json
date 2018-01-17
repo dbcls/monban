@@ -2,5 +2,8 @@
   "name": "monban",
   "version": "0.0.0",
   "main": "index.js",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "n3": "^0.11.2"
+  }
 }
