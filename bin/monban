@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+const CheckReferenceValidator = require('../validators/check-reference-validator');
+const Validator = require('../lib/validator');
+
+const validators = [
+  new CheckReferenceValidator(),
+];
+
+const validator = new Validator(validators);
+
+process.argv.slice(2).forEach((path) => {
+  validator.validate(path);
+});
