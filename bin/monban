@@ -11,5 +11,5 @@ const validator = new Validator(validators);
 
 process.argv.slice(2).forEach(async (path) => {
   const result = await validator.validate(path);
-  console.log(result);
+  console.log(JSON.stringify(result, null, 2));
 });
