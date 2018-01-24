@@ -8,5 +8,10 @@
   },
   "bin": [
     "bin/monban"
-  ]
+  ],
+  "devDependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "@types/node": "^9.3.0",
+    "typescript": "^2.6.2"
+  }
 }

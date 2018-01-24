@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const CheckReferenceValidator = require('../validators/check-reference-validator');
-const Validator = require('../lib/validator');
+const Validator = require('../dists/validator');
 
 const validators = [
   new CheckReferenceValidator(),

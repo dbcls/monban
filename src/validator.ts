@@ -1,13 +1,15 @@
-const fs = require('fs');
-const N3 = require('n3');
-const zlib = require('zlib');
-const Writable = require('stream').Writable;
+import * as fs from "fs";
+import * as N3 from "n3";
+import * as zlib from "zlib";
+import { Readable, Writable } from "stream";
 
 class Consumer extends Writable {
+  errors: any[];
+  nthTriple = 0;
+  validators: any[];
+
   constructor(validators) {
     super({objectMode: true});
-    this.errors = [];
-    this.nthTriple = 0;
     this.validators = validators;
   }
 
@@ -28,6 +30,8 @@ class Consumer extends Writable {
 }
 
 class Validator {
+  validators: any[];
+
   constructor(validators) {
     this.validators = validators;
   }
@@ -36,7 +40,9 @@ class Validator {
     const streamParser = N3.StreamParser();
     const inputStream = fs.createReadStream(path);
     const t0 = new Date();
-    let rdfStream = inputStream;
+
+    let rdfStream: Readable;
+    rdfStream = inputStream;
     if (path.endsWith('.gz')) {
       rdfStream = rdfStream.pipe(zlib.createGunzip());
     }
@@ -47,7 +53,7 @@ class Validator {
 
     return new Promise((resolve, reject) => {
       streamParser.on('end', () => {
-        const elapsed = new Date() - t0;
+        const elapsed = (new Date()).getMilliseconds() - t0.getMilliseconds();
         const numTriples = consumer.nthTriple;
         const triplesPerSecond = numTriples / elapsed * 1000;
         const statistics = {
