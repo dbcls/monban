@@ -3,26 +3,53 @@ import * as N3 from "n3";
 import * as zlib from "zlib";
 import { Readable, Writable } from "stream";
 
-class Consumer extends Writable {
-  errors: any[];
-  nthTriple = 0;
-  validators: any[];
+import { CheckReferenceValidator } from "./validators/check-reference-validator";
 
-  constructor(validators) {
+const SUB_VALIDATORS = [
+  new CheckReferenceValidator(),
+];
+
+export class ValidationError {
+  message: string;
+}
+
+export interface Triple {
+  subject: string;
+  predicate: string;
+  object: string;
+  graph: string;
+}
+
+class ValidationErrorsGroupedByTriple {
+  nthTriple: number;
+  triple: Triple;
+  errors: ValidationError[];
+}
+
+export interface SubValidator {
+  validate(triple: Triple): ValidationError[];
+}
+
+class Consumer extends Writable {
+  errors: ValidationErrorsGroupedByTriple[];
+  nthTriple = 0;
+  subValidators: SubValidator[];
+
+  constructor() {
     super({objectMode: true});
-    this.validators = validators;
+    this.subValidators = SUB_VALIDATORS;
   }
 
   _write(triple, encoding, done) {
-    const errors = [];
-    this.validators.forEach((validator) => {
+    const errorsOnTriple: ValidationError[] = [];
+    this.subValidators.forEach((validator) => {
       const e = validator.validate(triple);
       if (e) {
-        Array.prototype.push.apply(errors, e);
+        Array.prototype.push.apply(errorsOnTriple, e);
       }
     });
-    if (errors.length > 0) {
-      this.errors.push({nthTriple: this.nthTriple, triple, errors});
+    if (errorsOnTriple.length > 0) {
+      this.errors.push({nthTriple: this.nthTriple, triple, errors: errorsOnTriple});
     }
     this.nthTriple++;
     done();
@@ -30,12 +57,6 @@ class Consumer extends Writable {
 }
 
 class Validator {
-  validators: any[];
-
-  constructor(validators) {
-    this.validators = validators;
-  }
-
   validate(path) {
     const streamParser = N3.StreamParser();
     const inputStream = fs.createReadStream(path);
@@ -48,7 +69,7 @@ class Validator {
     }
 
     rdfStream.pipe(streamParser);
-    const consumer = new Consumer(this.validators);
+    const consumer = new Consumer();
     streamParser.pipe(consumer);
 
     return new Promise((resolve, reject) => {

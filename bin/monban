@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 
-const CheckReferenceValidator = require('../validators/check-reference-validator');
 const Validator = require('../dists/validator');
 
-const validators = [
-  new CheckReferenceValidator(),
-];
-
-const validator = new Validator(validators);
+const validator = new Validator();
 
 process.argv.slice(2).forEach(async (path) => {
   const result = await validator.validate(path);
