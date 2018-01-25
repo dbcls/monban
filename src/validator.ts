@@ -26,14 +26,14 @@ class ValidationErrorsGroupedByTriple {
   errors: ValidationError[];
 }
 
-export interface SubValidator {
+export interface TriplewiseValidator {
   validate(triple: Triple): ValidationError[];
 }
 
 class Consumer extends Writable {
   errors: ValidationErrorsGroupedByTriple[];
   nthTriple = 0;
-  subValidators: SubValidator[];
+  subValidators: TriplewiseValidator[];
 
   constructor() {
     super({objectMode: true});

@@ -1,4 +1,4 @@
-import {SubValidator, Triple, ValidationError}  from "../validator";
+import {TriplewiseValidator, Triple, ValidationError}  from "../validator";
 
 const dcReferences = 'http://purl.org/dc/terms/references';
 
@@ -8,7 +8,7 @@ const acceptableStems = [
   'http://doi.org/',
 ];
 
-export class CheckReferenceValidator implements SubValidator {
+export class CheckReferenceValidator implements TriplewiseValidator {
   validate(triple: Triple): ValidationError[] {
     if (triple.predicate !== dcReferences) {
       return;
