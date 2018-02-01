@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as N3 from "n3";
 import * as zlib from "zlib";
-import { Readable, Writable } from "stream";
+import { Readable, Writable, Transform } from "stream";
 
 import { CheckReferenceValidator } from "./validators/check-reference-validator";
 
@@ -77,7 +77,8 @@ function tripleStream(path): Readable {
 class Validator {
   validate(path) {
     const consumer = new Consumer();
-    const stream = tripleStream(path).pipe(consumer);
+    const stream = tripleStream(path);
+    stream.pipe(consumer);
 
     const t0 = new Date();
     return new Promise((resolve, reject) => {
