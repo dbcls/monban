@@ -31,7 +31,7 @@ export interface TriplewiseValidator {
 }
 
 class Consumer extends Writable {
-  errors: ValidationErrorsGroupedByTriple[];
+  errors: ValidationErrorsGroupedByTriple[] = [];
   nthTriple = 0;
   subValidators: TriplewiseValidator[];
 
