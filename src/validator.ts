@@ -69,9 +69,7 @@ function tripleStream(path): Readable {
   if (path.endsWith('.gz')) {
     rdfStream = rdfStream.pipe(zlib.createGunzip());
   }
-  rdfStream.pipe(streamParser);
-
-  return rdfStream;
+  return rdfStream.pipe(streamParser);
 }
 
 class Validator {
