@@ -59,24 +59,29 @@ class Consumer extends Writable {
   }
 }
 
+
+function tripleStream(path): Readable {
+  const streamParser = N3.StreamParser();
+  const inputStream = fs.createReadStream(path);
+  let rdfStream: Readable;
+  rdfStream = inputStream;
+
+  if (path.endsWith('.gz')) {
+    rdfStream = rdfStream.pipe(zlib.createGunzip());
+  }
+  rdfStream.pipe(streamParser);
+
+  return rdfStream;
+}
+
 class Validator {
   validate(path) {
-    const streamParser = N3.StreamParser();
-    const inputStream = fs.createReadStream(path);
-    const t0 = new Date();
-
-    let rdfStream: Readable;
-    rdfStream = inputStream;
-    if (path.endsWith('.gz')) {
-      rdfStream = rdfStream.pipe(zlib.createGunzip());
-    }
-
-    rdfStream.pipe(streamParser);
     const consumer = new Consumer();
-    streamParser.pipe(consumer);
+    const stream = tripleStream(path).pipe(consumer);
 
+    const t0 = new Date();
     return new Promise((resolve, reject) => {
-      streamParser.on('end', () => {
+      stream.on('end', () => {
         const elapsed = (new Date()).getMilliseconds() - t0.getMilliseconds();
         const numTriples = consumer.nthTriple;
         const triplesPerSecond = numTriples / elapsed * 1000;
