@@ -36,7 +36,7 @@ class Consumer extends Writable {
   subValidators: TriplewiseValidator[];
 
   constructor() {
-    super({objectMode: true});
+    super({ objectMode: true });
     this.subValidators = SUB_VALIDATORS;
   }
 
@@ -49,7 +49,7 @@ class Consumer extends Writable {
       }
     });
     if (errorsOnTriple.length > 0) {
-      this.errors.push({nthTriple: this.nthTriple, triple, errors: errorsOnTriple});
+      this.errors.push({ nthTriple: this.nthTriple, triple, errors: errorsOnTriple });
     }
     this.nthTriple++;
     done();
@@ -62,7 +62,7 @@ class TripleFilter extends Transform {
   o?: string;
 
   constructor(s?: string, p?: string, o?: string) {
-    super({objectMode: true});
+    super({ objectMode: true });
     this.s = s;
     this.p = p;
     this.o = o;
@@ -109,7 +109,7 @@ class Validator {
           numTriples,
           triplesPerSecond,
         };
-        resolve({path, statistics, errors: consumer.errors});
+        resolve({ path, statistics, errors: consumer.errors });
       });
     });
   }
