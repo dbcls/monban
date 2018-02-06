@@ -27,7 +27,6 @@ class ValidationErrorsGroupedByTriple {
 }
 
 export interface TriplewiseValidator {
-  filter(triple: Triple): Boolean;
   validate(triple: Triple): ValidationError[];
 }
 
@@ -44,11 +43,9 @@ class Consumer extends Writable {
   _write(triple, encoding, done) {
     const errorsOnTriple: ValidationError[] = [];
     this.subValidators.forEach((validator) => {
-      if (validator.filter(triple)) {
-        const e = validator.validate(triple);
-        if (e) {
-          Array.prototype.push.apply(errorsOnTriple, e);
-        }
+      const e = validator.validate(triple);
+      if (e) {
+        Array.prototype.push.apply(errorsOnTriple, e);
       }
     });
     if (errorsOnTriple.length > 0) {

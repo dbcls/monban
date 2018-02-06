@@ -9,10 +9,13 @@ const acceptableStems = [
 ];
 
 export class CheckReferenceValidator implements TriplewiseValidator {
-  filter(triple: Triple): Boolean {
+  private filter(triple: Triple): Boolean {
     return triple.predicate === dcReferences;
   }
   validate(triple: Triple): ValidationError[] {
+    if (!this.filter(triple)) {
+      return;
+    }
     if (acceptableStems.some((stem) => triple.object.startsWith(stem))) {
       return;
     }
