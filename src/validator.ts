@@ -30,7 +30,7 @@ class ValidationErrorsGroupedByTriple {
 
 export interface TriplewiseValidator {
   validate(triple: Triple): ValidationError[];
-  done();
+  done(): ValidationError[];
 }
 
 class Consumer extends Writable {
@@ -43,7 +43,7 @@ class Consumer extends Writable {
     this.subValidators = subValidators;
   }
 
-  _write(triple, encoding, done) {
+  _write(triple: Triple, encoding: string, done) {
     const errorsOnTriple: ValidationError[] = [];
     this.subValidators.forEach((validator) => {
       const e = validator.validate(triple);
@@ -59,7 +59,7 @@ class Consumer extends Writable {
   }
 }
 
-function tripleStream(path): Readable {
+function tripleStream(path: string): Readable {
   const streamParser = N3.StreamParser();
   const inputStream = fs.createReadStream(path);
   let rdfStream: Readable;
@@ -72,7 +72,7 @@ function tripleStream(path): Readable {
 }
 
 class Validator {
-  validate(path) {
+  validate(path: string) {
     const subValidators = SUB_VALIDATORS.map((cl) => new cl());
     const consumer = new Consumer(subValidators);
     const stream = tripleStream(path);

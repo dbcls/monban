@@ -14,10 +14,10 @@ export class CheckReferenceValidator implements TriplewiseValidator {
   }
   validate(triple: Triple): ValidationError[] {
     if (!this.filter(triple)) {
-      return;
+      return [];
     }
     if (acceptableStems.some((stem) => triple.object.startsWith(stem))) {
-      return;
+      return [];
     }
     return [
       {
@@ -25,5 +25,5 @@ export class CheckReferenceValidator implements TriplewiseValidator {
       }
     ];
   }
-  done() {};
+  done(): ValidationError[] {return []};
 }
