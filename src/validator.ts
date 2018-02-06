@@ -110,7 +110,7 @@ class Validator {
           const e = v.done();
           Array.prototype.push.apply(errors, e);
         });
-        const elapsed = (new Date()).getMilliseconds() - t0.getMilliseconds();
+        const elapsed = new Date().getTime() - t0.getTime();
         const numTriples = consumer.nthTriple;
         const triplesPerSecond = numTriples / elapsed * 1000;
         const statistics = {
