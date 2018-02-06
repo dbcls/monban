@@ -59,30 +59,6 @@ class Consumer extends Writable {
   }
 }
 
-class TripleFilter extends Transform {
-  s?: string;
-  p?: string;
-  o?: string;
-
-  constructor(s?: string, p?: string, o?: string) {
-    super({ objectMode: true });
-    this.s = s;
-    this.p = p;
-    this.o = o;
-  }
-
-  _transform(triple, enc, done) {
-    if (
-      (!this.s || triple.subject === this.s) &&
-      (!this.p || triple.predicate === this.p) &&
-      (!this.o || triple.object === this.o)
-    ) {
-      this.push(triple);
-    }
-    done();
-  }
-}
-
 function tripleStream(path): Readable {
   const streamParser = N3.StreamParser();
   const inputStream = fs.createReadStream(path);
