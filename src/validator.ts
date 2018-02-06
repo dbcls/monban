@@ -4,9 +4,11 @@ import * as zlib from "zlib";
 import { Readable, Writable, Transform } from "stream";
 
 import { CheckReferenceValidator } from "./validators/check-reference-validator";
+import { FoafImageValidator } from "./validators/foaf-image-validator";
 
 const SUB_VALIDATORS = [
-  new CheckReferenceValidator(),
+  CheckReferenceValidator,
+  FoafImageValidator
 ];
 
 export class ValidationError {
@@ -28,6 +30,7 @@ class ValidationErrorsGroupedByTriple {
 
 export interface TriplewiseValidator {
   validate(triple: Triple): ValidationError[];
+  done();
 }
 
 class Consumer extends Writable {
@@ -35,9 +38,9 @@ class Consumer extends Writable {
   nthTriple = 0;
   subValidators: TriplewiseValidator[];
 
-  constructor() {
+  constructor(subValidators: TriplewiseValidator[]) {
     super({ objectMode: true });
-    this.subValidators = SUB_VALIDATORS;
+    this.subValidators = subValidators;
   }
 
   _write(triple, encoding, done) {
@@ -94,13 +97,19 @@ function tripleStream(path): Readable {
 
 class Validator {
   validate(path) {
-    const consumer = new Consumer();
+    const subValidators = SUB_VALIDATORS.map((cl) => new cl());
+    const consumer = new Consumer(subValidators);
     const stream = tripleStream(path);
     stream.pipe(consumer);
 
     const t0 = new Date();
     return new Promise((resolve, reject) => {
       stream.on('end', () => {
+        const errors = [];
+        subValidators.forEach((v) => {
+          const e = v.done();
+          Array.prototype.push.apply(errors, e);
+        });
         const elapsed = (new Date()).getMilliseconds() - t0.getMilliseconds();
         const numTriples = consumer.nthTriple;
         const triplesPerSecond = numTriples / elapsed * 1000;
@@ -109,7 +118,8 @@ class Validator {
           numTriples,
           triplesPerSecond,
         };
-        resolve({ path, statistics, errors: consumer.errors });
+        Array.prototype.push.apply(errors, consumer.errors);
+        resolve({ path, statistics, errors });
       });
     });
   }

@@ -25,4 +25,5 @@ export class CheckReferenceValidator implements TriplewiseValidator {
       }
     ];
   }
+  done() {};
 }
