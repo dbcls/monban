@@ -3,6 +3,18 @@ import { TriplewiseValidator } from "../TriplewiseValidator";
 import { ValidationError } from "../ValidationError";
 import { Triple } from "../Triple";
 
+/*
+xsd:anyURI
+xsd:string
+xsd:dateTime
+xsd:integer
+xsd:float
+xsd:decimal
+xsd:double
+xsd:time
+xsd:date
+xsd:int
+*/
 
 export class Literal extends TriplewiseValidator {
   validate(triple: Triple): ValidationError[] {
@@ -16,7 +28,6 @@ export class Literal extends TriplewiseValidator {
         if (!value.match(/^[+-]?[0-9]+$/)) {
           return [{message: `illegal integer value '${value}'`}];
         }
-
     }
     return [];
   }
