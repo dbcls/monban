@@ -1,4 +1,6 @@
-import { TriplewiseValidator, Triple, ValidationError } from "../Validator";
+import { TriplewiseValidator } from "../TriplewiseValidator";
+import { ValidationError } from "../ValidationError";
+import { Triple } from "../Triple";
 
 const dcReferences = 'http://purl.org/dc/terms/references';
 
@@ -8,7 +10,7 @@ const acceptableStems = [
   'http://doi.org/',
 ];
 
-export class CheckReferenceValidator implements TriplewiseValidator {
+export class CheckReferenceValidator extends TriplewiseValidator {
   private filter(triple: Triple): Boolean {
     return triple.predicate === dcReferences;
   }
@@ -25,5 +27,4 @@ export class CheckReferenceValidator implements TriplewiseValidator {
       }
     ];
   }
-  done(): ValidationError[] {return []};
 }

@@ -6,32 +6,19 @@ import { Readable, Writable, Transform } from "stream";
 import { CheckReferenceValidator } from "./validators/CheckReferenceValidator";
 import { FoafImageValidator } from "./validators/FoafImageValidator";
 import { N3StreamParser } from "n3";
+import { TriplewiseValidator } from "./TriplewiseValidator";
+import { Triple } from "./Triple";
+import { ValidationError } from "./ValidationError";
 
 const SUB_VALIDATORS = [
   CheckReferenceValidator,
   FoafImageValidator
 ];
 
-export class ValidationError {
-  message: string;
-}
-
-export interface Triple {
-  subject: string;
-  predicate: string;
-  object: string;
-  graph: string;
-}
-
 class ValidationErrorsGroupedByTriple {
   nthTriple: number;
   triple: Triple;
   errors: ValidationError[];
-}
-
-export interface TriplewiseValidator {
-  validate(triple: Triple): ValidationError[];
-  done(): ValidationError[];
 }
 
 class Consumer extends Writable {

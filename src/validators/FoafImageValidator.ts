@@ -1,9 +1,11 @@
-import { TriplewiseValidator, Triple, ValidationError } from "../Validator";
+import { TriplewiseValidator } from "../TriplewiseValidator";
+import { ValidationError } from "../ValidationError";
+import { Triple } from "../Triple";
 
 const depiction = 'http://xmlns.com/foaf/0.1/depiction';
 const depicts = 'http://xmlns.com/foaf/0.1/depicts';
 
-export class FoafImageValidator implements TriplewiseValidator {
+export class FoafImageValidator extends TriplewiseValidator {
     imageishSubjects: {[key: string]: Boolean;} = {};
     depictsSpecifiedSubjects: {[key: string]: Boolean;} = {};
 
