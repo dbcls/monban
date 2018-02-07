@@ -3,7 +3,7 @@
 ## Prerequisite
 
 * [Node.js](https://nodejs.org/) >= 8.9.4
-* [Yarm](https://yarnpkg.com)
+* [Yarn](https://yarnpkg.com)
 
 ## Setup
 
