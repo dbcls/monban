@@ -4,6 +4,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "@types/n3": "^0.0.3",
     "n3": "^0.11.2"
   },
   "bin": [

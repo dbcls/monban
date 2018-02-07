@@ -5,6 +5,7 @@ import { Readable, Writable, Transform } from "stream";
 
 import { CheckReferenceValidator } from "./validators/check-reference-validator";
 import { FoafImageValidator } from "./validators/foaf-image-validator";
+import { N3StreamParser } from "n3";
 
 const SUB_VALIDATORS = [
   CheckReferenceValidator,
@@ -59,7 +60,7 @@ class Consumer extends Writable {
   }
 }
 
-function tripleStream(path: string): Readable {
+function tripleStream(path: string): N3StreamParser {
   const streamParser = N3.StreamParser();
   const inputStream = fs.createReadStream(path);
   let rdfStream: Readable;
@@ -81,7 +82,7 @@ class Validator {
     const t0 = new Date();
     return new Promise((resolve, reject) => {
       stream.on('end', () => {
-        const errors = [];
+        const errors: ValidationErrorsGroupedByTriple[] = [];
         subValidators.forEach((v) => {
           const e = v.done();
           Array.prototype.push.apply(errors, e);
