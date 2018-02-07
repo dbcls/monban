@@ -1,4 +1,4 @@
-import { TriplewiseValidator, Triple, ValidationError } from "../validator";
+import { TriplewiseValidator, Triple, ValidationError } from "../Validator";
 
 const dcReferences = 'http://purl.org/dc/terms/references';
 

@@ -3,8 +3,8 @@ import * as N3 from "n3";
 import * as zlib from "zlib";
 import { Readable, Writable, Transform } from "stream";
 
-import { CheckReferenceValidator } from "./validators/check-reference-validator";
-import { FoafImageValidator } from "./validators/foaf-image-validator";
+import { CheckReferenceValidator } from "./validators/CheckReferenceValidator";
+import { FoafImageValidator } from "./validators/FoafImageValidator";
 import { N3StreamParser } from "n3";
 
 const SUB_VALIDATORS = [

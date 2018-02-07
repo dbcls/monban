@@ -1,4 +1,4 @@
-import { TriplewiseValidator, Triple, ValidationError } from "../validator";
+import { TriplewiseValidator, Triple, ValidationError } from "../Validator";
 
 const depiction = 'http://xmlns.com/foaf/0.1/depiction';
 const depicts = 'http://xmlns.com/foaf/0.1/depicts';
