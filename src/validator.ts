@@ -43,7 +43,7 @@ class Consumer extends Writable {
     this.subValidators = subValidators;
   }
 
-  _write(triple: Triple, encoding: string, done) {
+  _write(triple: Triple, encoding: string, done: () => void) {
     const errorsOnTriple: ValidationError[] = [];
     this.subValidators.forEach((validator) => {
       const e = validator.validate(triple);
