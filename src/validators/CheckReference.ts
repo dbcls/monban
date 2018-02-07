@@ -10,7 +10,7 @@ const acceptableStems = [
   'http://doi.org/',
 ];
 
-export class CheckReferenceValidator extends TriplewiseValidator {
+export class CheckReference extends TriplewiseValidator {
   private filter(triple: Triple): Boolean {
     return triple.predicate === dcReferences;
   }

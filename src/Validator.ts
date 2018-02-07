@@ -3,16 +3,16 @@ import * as N3 from "n3";
 import * as zlib from "zlib";
 import { Readable, Writable, Transform } from "stream";
 
-import { CheckReferenceValidator } from "./validators/CheckReferenceValidator";
-import { FoafImageValidator } from "./validators/FoafImageValidator";
+import { CheckReference } from "./validators/CheckReference";
+import { FoafImage } from "./validators/FoafImage";
 import { N3StreamParser } from "n3";
 import { TriplewiseValidator } from "./TriplewiseValidator";
 import { Triple } from "./Triple";
 import { ValidationError } from "./ValidationError";
 
 const SUB_VALIDATORS = [
-  CheckReferenceValidator,
-  FoafImageValidator
+  CheckReference,
+  FoafImage
 ];
 
 class ValidationErrorsGroupedByTriple {
