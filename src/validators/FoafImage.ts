@@ -6,8 +6,8 @@ const depiction = 'http://xmlns.com/foaf/0.1/depiction';
 const depicts = 'http://xmlns.com/foaf/0.1/depicts';
 
 export class FoafImage extends TriplewiseValidator {
-    imageishSubjects: { [key: string]: Boolean; } = {};
-    depictsSpecifiedSubjects: { [key: string]: Boolean; } = {};
+    imageishNodes: { [key: string]: Boolean; } = {};
+    depictsOrDepictionSpecified: { [key: string]: Boolean; } = {};
 
     validate(triple: Triple): ValidationError[] {
         const errors: ValidationError[] = [];
@@ -23,19 +23,25 @@ export class FoafImage extends TriplewiseValidator {
         }
 
         if (this.isImageish(triple.subject)) {
-            this.imageishSubjects[triple.subject] = true;
+            this.imageishNodes[triple.subject] = true;
+        }
+        if (this.isImageish(triple.object)) {
+            this.imageishNodes[triple.object] = true;
         }
         if (triple.predicate === depicts) {
-            this.depictsSpecifiedSubjects[triple.subject] = true;
+            this.depictsOrDepictionSpecified[triple.subject] = true;
+        }
+        if (triple.predicate === depiction) {
+            this.depictsOrDepictionSpecified[triple.object] = true;
         }
         return errors;
     }
 
     done(): ValidationError[] {
         const errors: ValidationError[] = [];
-        Object.keys(this.imageishSubjects).forEach(s => {
-            if (!this.depictsSpecifiedSubjects[s]) {
-                errors.push({ message: `subject '${s}' is image-ish but 'foaf:depicts' is not found for the subject` });
+        Object.keys(this.imageishNodes).forEach(s => {
+            if (!this.depictsOrDepictionSpecified[s]) {
+                errors.push({ message: `'${s}' is image-ish but neither 'foaf:depicts' nor 'foaf:depiction' is found for this` });
             }
         });
         return errors;
