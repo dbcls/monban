@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const Aramashi = require('../dists/aramashi');
+
+const aramashi = new Aramashi();
+
+process.argv.slice(2).forEach(async (path) => {
+    const result = await aramashi.statistics(path);
+    console.log(JSON.stringify(result, null, 2));
+});
