@@ -65,7 +65,7 @@ class Consumer extends Writable {
         }
 
         st.predicateOccurencies[p] = (st.predicateOccurencies[p] === undefined ? 0 : st.predicateOccurencies[p]) + 1;
-        
+
         if (N3.Util.isLiteral(o)) {
             const t = N3.Util.getLiteralType(o);
             st.datatypeOccurrencies[t] = (st.datatypeOccurrencies[t] === undefined ? 0 : st.datatypeOccurrencies[t]) + 1
