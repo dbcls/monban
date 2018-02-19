@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@types/csv-parse@^1.1.11":
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@types/csv-parse/-/csv-parse-1.1.11.tgz#47d68b5579e66aa0d55af9dbae76f1d2ff836f1d"
+  dependencies:
+    "@types/node" "*"
+
 "@types/n3@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@types/n3/-/n3-0.0.3.tgz#4ebf90763bfe4aefa1a0c2051606b756c659416e"
@@ -16,9 +22,44 @@
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.3.0.tgz#3a129cda7c4e5df2409702626892cb4b96546dd5"
 
+commander@^2.14.1:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
+
+csv-generate@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/csv-generate/-/csv-generate-2.0.2.tgz#1c26c52be318f1f0b6435f8df3d1249fb1503f4b"
+
+csv-parse@^2.0.0:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-2.0.4.tgz#5b469596766ee07f2cbd71aced7ae76b3c73c901"
+
+csv-stringify@^2.0.0:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-2.0.4.tgz#9ace220df98ffa7ca91314ac77ff8cba0a08c863"
+  dependencies:
+    lodash.get "~4.4.2"
+
+csv@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/csv/-/csv-2.0.0.tgz#0d51d8fa3ece278b5409f795717fcfcd5ace9b3e"
+  dependencies:
+    csv-generate "^2.0.0"
+    csv-parse "^2.0.0"
+    csv-stringify "^2.0.0"
+    stream-transform "^1.0.0"
+
+lodash.get@~4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+
 n3@^0.11.2:
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/n3/-/n3-0.11.2.tgz#25cb2ef1b75b38cbfcc1979cf92e2bdba7f183e0"
+
+stream-transform@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/stream-transform/-/stream-transform-1.0.2.tgz#47de4d15fbc29b7e2a7e54d25e99538876f114c1"
 
 typescript@^2.6.2:
   version "2.6.2"

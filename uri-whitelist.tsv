@@ -1,0 +1,24 @@
+DDBJ	^http://identifiers.org/insdc/
+KERO	^http://kero.hgc.jp/rdf/
+wwPDB	^https://rdf.wwpdb.org/pdb
+BMRB	^http://bmrbpub.protein.osaka-u.ac.jp/rdf/
+Open TG GATEs	^http://purl.jp/bio/101/opentggates/
+MBGD	^http://mbgd.genome.ad.jp/rdf/resource/
+RefEx	^http://refex.dbcls.jp/entry/
+RefEx	^http://refex.dbcls.jp/sample/
+Quanto	^http://purl.jp/bio/10/quanto/
+FAMSBASE	^http://purl.jp/bio/10/famsbase/
+Linked ICGC	^http://icgc.link/
+Nikkaji	^http://stirdf.jst.go.jp/cde/nikkaji/
+Glytoucan	^http://rdf.glycoinfo.org/glycan/
+glycoEpitope	^http://www.glycoepitope.jp/epitopes/
+PGDBj	^http://pgdbj.jp/ortholog-db/resource/
+WURCS	^http://rdf.glycoinfo.org/glycan/wurcs
+WURCS	^http://rdf.glycoinfo.org/glycan/w+/wurcs/
+SSBD	^http://metadb.riken.jp/db/SSBD/
+GGDonto	^http://jcggdb.jp/rdf/diseases/ggdonto#
+PAConto	^http://jcggdb.jp/rdf/diseases/paconto#
+integbioDBCatalog	^http://purl.jp/bio/03/dbcatalog/
+integbioDBCatalog	^http://integbio.jp/dbcatalog/record/
+integbioDBCatalog	^http://integbio.jp/dbcatalog/en/record/
+JCM	^http://metadb.riken.jp/db/rikenbrc_jcm_microbe/

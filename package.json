@@ -4,7 +4,10 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "@types/csv-parse": "^1.1.11",
     "@types/n3": "^0.0.3",
+    "commander": "^2.14.1",
+    "csv": "^2.0.0",
     "n3": "^0.11.2"
   },
   "bin": [
