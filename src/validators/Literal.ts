@@ -1,7 +1,7 @@
 import * as N3 from "n3";
-import { TriplewiseValidator } from "../TriplewiseValidator";
-import { ValidationError } from "../ValidationError";
-import { Triple } from "../Triple";
+import { TriplewiseValidator } from "../triplewise-validator";
+import { ValidationError } from "../validation-error";
+import { Triple } from "../triple";
 
 N3.Util; // Workaround to load N3.Util
 

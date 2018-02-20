@@ -1,6 +1,6 @@
-import { TriplewiseValidator } from "../TriplewiseValidator";
-import { ValidationError } from "../ValidationError";
-import { Triple } from "../Triple";
+import { TriplewiseValidator } from "../triplewise-validator";
+import { ValidationError } from "../validation-error";
+import { Triple } from "../triple";
 
 const depiction = 'http://xmlns.com/foaf/0.1/depiction';
 const depicts = 'http://xmlns.com/foaf/0.1/depicts';

@@ -4,9 +4,9 @@ import * as zlib from "zlib";
 import { Readable, Writable, Transform } from "stream";
 
 import { N3StreamParser } from "n3";
-import { TriplewiseValidator } from "./TriplewiseValidator";
-import { Triple } from "./Triple";
-import { ValidationError } from "./ValidationError";
+import { TriplewiseValidator } from "./triplewise-validator";
+import { Triple } from "./triple";
+import { ValidationError } from "./validation-error";
 
 import { CheckReference } from "./validators/CheckReference";
 import { FoafImage } from "./validators/FoafImage";

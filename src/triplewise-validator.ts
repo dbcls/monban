@@ -1,5 +1,5 @@
-import { ValidationError } from "./ValidationError";
-import { Triple } from "./Triple";
+import { ValidationError } from "./validation-error";
+import { Triple } from "./triple";
 
 export class TriplewiseValidator {
     validate(triple: Triple): ValidationError[] {

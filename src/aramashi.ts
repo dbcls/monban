@@ -2,7 +2,7 @@ import * as fs from "fs";
 import * as zlib from "zlib";
 import { Readable, Writable } from "stream";
 
-import { Triple } from "./Triple";
+import { Triple } from "./triple";
 
 import * as N3 from "n3";
 import { N3StreamParser } from "n3";
