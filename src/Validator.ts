@@ -62,7 +62,7 @@ function tripleStream(path: string): N3StreamParser {
   return rdfStream.pipe(streamParser);
 }
 
-class Validator {
+export class Validator {
   validate(path: string) {
     const subValidators = SUB_VALIDATORS.map((cl) => new cl());
     const consumer = new Consumer(subValidators);
@@ -91,5 +91,3 @@ class Validator {
     });
   }
 }
-
-module.exports = Validator;

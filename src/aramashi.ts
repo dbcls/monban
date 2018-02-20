@@ -119,7 +119,7 @@ class UriWhitelist {
     }
 }
 
-class Aramashi {
+export class Aramashi {
     uriWhitelist: UriWhitelist = new UriWhitelist([]);
     commander: commander.Command = commander;
     constructor(argv: string[]) {
@@ -183,5 +183,3 @@ class Aramashi {
         });
     }
 }
-
-module.exports = Aramashi;

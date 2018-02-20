@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const Aramashi = require('../dists/aramashi');
+const Aramashi = require('../dists/aramashi').Aramashi;
 
 const aramashi = new Aramashi(process.argv);
 aramashi.run();
