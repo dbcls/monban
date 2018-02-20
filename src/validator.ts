@@ -68,15 +68,21 @@ class Statistics {
   triplesPerSecond: number = 0;
 }
 
+class ValidationResults {
+  path = "";
+  statistics: Statistics = new Statistics();
+  errors: ValidationErrorsGroupedByTriple[] = [];
+}
+
 export class Validator {
-  validate(path: string) {
+  validate(path: string): Promise<ValidationResults> {
     const subValidators = SUB_VALIDATORS.map((cl) => new cl());
     const consumer = new Consumer(subValidators);
     const stream = tripleStream(path);
     stream.pipe(consumer);
 
     const t0 = new Date();
-    return new Promise((resolve, reject) => {
+    return new Promise<ValidationResults>((resolve: (value: ValidationResults) => void, reject) => {
       stream.on('end', () => {
         const errors: ValidationErrorsGroupedByTriple[] = [];
         subValidators.forEach((v) => {
@@ -89,6 +95,7 @@ export class Validator {
         statistics.numTriples = consumer.nthTriple;
         statistics.triplesPerSecond = statistics.numTriples / statistics.elapsed * 1000;
 
+        // TODO fix consumer.error to be compatible with ValidationErrorsGroupedByTriple
         Array.prototype.push.apply(errors, consumer.errors);
         resolve({ path, statistics, errors });
       });
