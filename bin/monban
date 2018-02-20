@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const Validator = require('../dists/Validator').Validator;
+const Validator = require('../dists/validator').Validator;
 
 const validator = new Validator();
 

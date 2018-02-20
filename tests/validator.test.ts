@@ -1,4 +1,4 @@
-import { Validator } from '../src/Validator';
+import { Validator } from '../src/validator';
 
 test('validate', async () => {
   const v = new Validator();
