@@ -62,6 +62,12 @@ function tripleStream(path: string): N3StreamParser {
   return rdfStream.pipe(streamParser);
 }
 
+class Statistics {
+  elapsed: number = 0;
+  numTriples: number = 0;
+  triplesPerSecond: number = 0;
+}
+
 export class Validator {
   validate(path: string) {
     const subValidators = SUB_VALIDATORS.map((cl) => new cl());
@@ -77,14 +83,12 @@ export class Validator {
           const e = v.done();
           Array.prototype.push.apply(errors, e);
         });
-        const elapsed = new Date().getTime() - t0.getTime();
-        const numTriples = consumer.nthTriple;
-        const triplesPerSecond = numTriples / elapsed * 1000;
-        const statistics = {
-          elapsed,
-          numTriples,
-          triplesPerSecond,
-        };
+
+        const statistics = new Statistics();
+        statistics.elapsed = new Date().getTime() - t0.getTime();
+        statistics.numTriples = consumer.nthTriple;
+        statistics.triplesPerSecond = statistics.numTriples / statistics.elapsed * 1000;
+
         Array.prototype.push.apply(errors, consumer.errors);
         resolve({ path, statistics, errors });
       });
