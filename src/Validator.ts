@@ -19,9 +19,9 @@ const SUB_VALIDATORS = [
 ];
 
 class ValidationErrorsGroupedByTriple {
-  nthTriple: number;
-  triple: Triple;
-  errors: ValidationError[];
+  nthTriple: number = 0;
+  triple: Triple | undefined;
+  errors: ValidationError[] = [];
 }
 
 class Consumer extends Writable {

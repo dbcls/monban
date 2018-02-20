@@ -1,3 +1,3 @@
 export class ValidationError {
-    message: string;
+    message: string = "";
 }
