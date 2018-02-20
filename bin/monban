@@ -1,10 +1,6 @@
 #!/usr/bin/env node
 
-const Validator = require('../dists/validator').Validator;
+const Monban = require('../dists/monban').Monban;
 
-const validator = new Validator();
-
-process.argv.slice(2).forEach(async (path) => {
-  const result = await validator.validate(path);
-  console.log(JSON.stringify(result, null, 2));
-});
+const monban = new Monban(process.argv);
+monban.run();
