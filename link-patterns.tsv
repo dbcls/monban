@@ -1,0 +1,605 @@
+DDBJ	^http://identifiers\.org/insdc/
+KERO	^http://kero\.hgc\.jp/rdf/
+wwPDB	^https://rdf\.wwpdb\.org/pdb
+BMRB	^http://bmrbpub\.protein\.osaka-u\.ac\.jp/rdf/
+Open TG GATEs	^http://purl\.jp/bio/101/opentggates/
+MBGD	^http://mbgd\.genome\.ad\.jp/rdf/resource/
+RefEx	^http://refex\.dbcls\.jp/entry/
+RefEx	^http://refex\.dbcls\.jp/sample/
+Quanto	^http://purl\.jp/bio/10/quanto/
+FAMSBASE	^http://purl\.jp/bio/10/famsbase/
+Linked ICGC	^http://icgc\.link/
+Nikkaji	^http://stirdf\.jst\.go\.jp/cde/nikkaji/
+Glytoucan	^http://rdf\.glycoinfo\.org/glycan/
+glycoEpitope	^http://www\.glycoepitope\.jp/epitopes/
+PGDBj	^http://pgdbj\.jp/ortholog-db/resource/
+WURCS	^http://rdf\.glycoinfo\.org/glycan/wurcs
+WURCS	^http://rdf\.glycoinfo\.org/glycan/w+/wurcs/
+SSBD	^http://metadb\.riken\.jp/db/SSBD/
+GGDonto	^http://jcggdb\.jp/rdf/diseases/ggdonto#
+PAConto	^http://jcggdb\.jp/rdf/diseases/paconto#
+integbioDBCatalog	^http://purl\.jp/bio/03/dbcatalog/
+integbioDBCatalog	^http://integbio\.jp/dbcatalog/record/
+integbioDBCatalog	^http://integbio\.jp/dbcatalog/en/record/
+JCM	^http://metadb\.riken\.jp/db/rikenbrc_jcm_microbe/
+APD	^http://identifiers\.org/apd/
+ArachnoServer	^http://identifiers\.org/arachnoserver/
+Animal Diversity Web	^http://identifiers\.org/adw/
+Aclame	^http://identifiers\.org/aclame/
+3DMET	^http://identifiers\.org/3dmet/
+AspGD Protein	^http://identifiers\.org/aspgd\.protein/
+Aceview Worm	^http://identifiers\.org/aceview\.worm/
+Allergome	^http://identifiers\.org/allergome/
+AmoebaDB	^http://identifiers\.org/amoebadb/
+ABS	^http://identifiers\.org/abs/
+AGRICOLA	^http://identifiers\.org/argicola/
+Affymetrix Probeset	^http://identifiers\.org/affy\.probeset/
+AFTOL	^http://identifiers\.org/aftol\.taxonomy/
+Animal TFDB Family	^http://identifiers\.org/atfdb\.family/
+CGSC Strain	^http://identifiers\.org/cgsc/
+Anatomical Therapeutic Chemical	^http://identifiers\.org/atc/
+IMEx	^http://identifiers\.org/imex/
+OPM	^http://identifiers\.org/opm/
+DragonDB DNA	^http://identifiers\.org/dragondb\.dna/
+Cell Cycle Ontology	^http://identifiers\.org/cco/
+BugBase Protocol	^http://identifiers\.org/bugbase\.protocol/
+KEGG Reaction	^http://identifiers\.org/kegg\.reaction/
+COMBINE specifications	^http://identifiers\.org/combine\.specifications/
+RFAM	^http://identifiers\.org/rfam/
+Homeodomain Research	^http://identifiers\.org/hdr/
+ArrayExpress	^http://identifiers\.org/arrayexpress/
+Unit Ontology	^http://identifiers\.org/uo/
+RNA Modification Database	^http://identifiers\.org/rnamods/
+OrthoDB	^http://identifiers\.org/orthodb/
+MatrixDB	^http://identifiers\.org/matrixdb\.association/
+VFDB Gene	^http://identifiers\.org/vfdb\.gene/
+ZFIN Expression	^http://identifiers\.org/zfin\.expression/
+ClinVar Variant	^http://identifiers\.org/clinvar/
+BindingDB	^http://identifiers\.org/bindingDB/
+Ligand Expo	^http://identifiers\.org/ligandexpo/
+EcoliWiki	^http://identifiers\.org/ecoliwiki/
+InChI	^http://identifiers\.org/inchi/
+Sequence Ontology	^http://identifiers\.org/so/
+FungiDB	^http://identifiers\.org/fungidb/
+ClinVar Record	^http://identifiers\.org/clinvar\.record/
+BitterDB Receptor	^http://identifiers\.org/bitterdb\.rec/
+VariO	^http://identifiers\.org/vario/
+BacMap Map	^http://identifiers\.org/bacmap\.map/
+Protein Data Bank Ligand	^http://identifiers\.org/pdb\.ligand/
+GeneFarm	^http://identifiers\.org/genefarm/
+Mouse Genome Database	^http://identifiers\.org/mgi/
+SPLASH	^http://identifiers\.org/splash/
+MycoBank	^http://identifiers\.org/mycobank/
+MycoBrowser marinum	^http://identifiers\.org/myco\.marinum/
+ProteomicsDB Protein	^http://identifiers\.org/proteomicsdb\.protein/
+Ligand-Gated Ion Channel database	^http://identifiers\.org/lgic/
+MedDRA	^http://identifiers\.org/meddra/
+CABRI	^http://identifiers\.org/cabri/
+TAIR Gene	^http://identifiers\.org/tair\.gene/
+ExAC Variant	^http://identifiers\.org/exac\.variant/
+Signaling Gateway	^http://identifiers\.org/signaling-gateway/
+Phytozome Locus	^http://identifiers\.org/phytozome\.locus/
+BioGRID	^http://identifiers\.org/biogrid/
+BioCyc	^http://identifiers\.org/biocyc/
+NIAEST	^http://identifiers\.org/niaest/
+SEED Subsystem	^http://identifiers\.org/seed/
+P3DB Protein	^http://identifiers\.org/p3db\.protein/
+PSCDB	^http://identifiers\.org/pscdb/
+KEGG Orthology	^http://identifiers\.org/kegg\.orthology/
+REBASE	^http://identifiers\.org/rebase/
+ISBN	^http://identifiers\.org/isbn/
+KEGG Genes	^http://identifiers\.org/kegg\.genes/
+Oryzabase Gene	^http://identifiers\.org/oryzabase\.gene/
+Small Molecule Pathway Database	^http://identifiers\.org/smpdb/
+PhylomeDB	^http://identifiers\.org/phylomedb/
+Golm Metabolome Database GC-MS spectra	^http://identifiers\.org/gmd\.gcms/
+Oryzabase Mutant	^http://identifiers\.org/oryzabase\.mutant/
+LINCS Protein	^http://identifiers\.org/lincs\.protein/
+Mouse Adult Gross Anatomy	^http://identifiers\.org/ma/
+Mathematical Modelling Ontology	^http://identifiers\.org/mamo/
+TTD Drug	^http://identifiers\.org/ttd\.drug/
+KEGG Drug	^http://identifiers\.org/kegg\.drug/
+PaleoDB	^http://identifiers\.org/paleodb/
+UM-BBD Enzyme	^http://identifiers\.org/umbbd\.enzyme/
+ZINC	^http://identifiers\.org/zinc/
+LINCS Data	^http://identifiers\.org/lincs\.data/
+Mammalian Phenotype Ontology	^http://identifiers\.org/mp/
+WikiPathways	^http://identifiers\.org/wikipathways/
+GenPept	^http://identifiers\.org/genpept/
+BYKdb	^http://identifiers\.org/bykdb/
+CTD Chemical	^http://identifiers\.org/ctd\.chemical/
+Integrated Microbial Genomes Taxon	^http://identifiers\.org/img\.taxon/
+ProGlycProt	^http://identifiers\.org/proglyc/
+E-cyanobacterium entity	^http://identifiers\.org/ecyano\.entity/
+DisProt	^http://identifiers\.org/disprot/
+NAPP	^http://identifiers\.org/napp/
+HGNC Symbol	^http://identifiers\.org/hgnc\.symbol/
+DOOR	^http://identifiers\.org/door/
+DPV	^http://identifiers\.org/dpv/
+PubMed	^http://identifiers\.org/pubmed/
+Plant Transcription Factor Database	^http://identifiers\.org/planttfdb/
+ZFIN Gene	^http://identifiers\.org/zfin/
+Genatlas	^http://identifiers\.org/genatlas/
+dbProbe	^http://identifiers\.org/dbprobe/
+JSTOR	^http://identifiers\.org/jstor/
+ISSN	^http://identifiers\.org/issn/
+BiGG Compartment	^http://identifiers\.org/bigg\.compartment/
+ENA	^http://identifiers\.org/ena\.embl/
+PubChem-compound	^http://identifiers\.org/pubchem\.compound/
+Tissue List	^http://identifiers\.org/tissuelist/
+BioPortal	^http://identifiers\.org/bioportal/
+SBML RDF Vocabulary	^http://identifiers\.org/biomodels\.vocabulary/
+GeneDB	^http://identifiers\.org/genedb/
+Rouge	^http://identifiers\.org/rouge/
+ProDom	^http://identifiers\.org/prodom/
+TEDDY	^http://identifiers\.org/biomodels\.teddy/
+PeptideAtlas	^http://identifiers\.org/peptideatlas/
+Golm Metabolome Database Reference Substance	^http://identifiers\.org/gmd\.ref/
+TrichDB	^http://identifiers\.org/trichdb/
+UniGene	^http://identifiers\.org/unigene/
+SCOP	^http://identifiers\.org/scop/
+OMIM	^http://identifiers\.org/omim/
+SitEx	^http://identifiers\.org/sitex/
+PATO	^http://identifiers\.org/pato/
+HGNC	^http://identifiers\.org/hgnc/
+Saccharomyces genome database pathways	^http://identifiers\.org/sgd\.pathways/
+NONCODE v4 Gene	^http://identifiers\.org/noncodev4\.gene/
+NCIt	^http://identifiers\.org/ncit/
+dbEST	^http://identifiers\.org/dbest/
+Conoserver	^http://identifiers\.org/conoserver/
+arXiv	^http://identifiers\.org/arxiv/
+GLIDA GPCR	^http://identifiers\.org/glida\.gpcr/
+MDM	^http://identifiers\.org/mdm/
+PaxDb Organism	^http://identifiers\.org/paxdb\.organism/
+ProtoNet Cluster	^http://identifiers\.org/protonet\.cluster/
+NeuroLex	^http://identifiers\.org/neurolex/
+H-InvDb Transcript	^http://identifiers\.org/hinv\.transcript/
+Xenbase	^http://identifiers\.org/xenbase/
+UM-BBD Compound	^http://identifiers\.org/umbbd\.compound/
+DARC	^http://identifiers\.org/darc/
+STRING	^http://identifiers\.org/string/
+MicrosporidiaDB	^http://identifiers\.org/microsporidia/
+UniSTS	^http://identifiers\.org/unists/
+SABIO-RK Reaction	^http://identifiers\.org/sabiork\.reaction/
+Dictybase EST	^http://identifiers\.org/dictybase\.est/
+InterPro	^http://identifiers\.org/interpro/
+NONCODE v3	^http://identifiers\.org/noncodev3/
+HGMD	^http://identifiers\.org/hgmd/
+Rat Genome Database qTL	^http://identifiers\.org/rgd\.qtl/
+DragonDB Protein	^http://identifiers\.org/dragondb\.protein/
+DBG2 Introns	^http://identifiers\.org/dbg2introns/
+Molecular Modeling Database	^http://identifiers\.org/mmdb/
+Cell Signaling Technology Pathways	^http://identifiers\.org/cst/
+GeneTree	^http://identifiers\.org/genetree/
+PRINTS	^http://identifiers\.org/sprint/
+Unimod	^http://identifiers\.org/unimod/
+PANTHER Pathway Component	^http://identifiers\.org/panther\.pthcmp/
+IMGT HLA	^http://identifiers\.org/imgt\.hla/
+ScerTF	^http://identifiers\.org/scretf/
+OriDB Schizosaccharomyces	^http://identifiers\.org/oridb\.schizo/
+HOMD Sequence Metainformation	^http://identifiers\.org/homd\.seq/
+FlyBase	^http://identifiers\.org/flybase/
+HOVERGEN	^http://identifiers\.org/hovergen/
+GLIDA Ligand	^http://identifiers\.org/glida\.ligand/
+Cell Image Library	^http://identifiers\.org/cellimage/
+Gramene QTL	^http://identifiers\.org/gramene\.qtl/
+Oryzabase Stage	^http://identifiers\.org/oryzabase\.stage/
+GlycoEpitope	^http://identifiers\.org/glycoepitope/
+DRSC	^http://identifiers\.org/drsc/
+EBI Metagenomics Project	^http://identifiers\.org/ebimetagenomics\.proj/
+E-cyanobacterium rule	^http://identifiers\.org/ecyano\.rule/
+Google Patents	^http://identifiers\.org/google\.patent/
+Human Proteome Map Protein	^http://identifiers\.org/hpm\.protein/
+SABIO-RK Kinetic Record	^http://identifiers\.org/sabiork\.kineticrecord/
+LINCS Cell	^http://identifiers\.org/lincs\.cell/
+Protein Model Database	^http://identifiers\.org/pmdb/
+nextProt	^http://identifiers\.org/nextprot/
+ZFIN Phenotype	^http://identifiers\.org/zfin\.phenotype/
+Antibiotic Resistance Genes Database	^http://identifiers\.org/ardb/
+BioProject	^http://identifiers\.org/bioproject/
+miRBase mature sequence	^http://identifiers\.org/mirbase\.mature/
+VectorBase	^http://identifiers\.org/vectorbase/
+Fungal Barcode	^http://identifiers\.org/fbol/
+UNII	^http://identifiers\.org/unii/
+FMA	^http://identifiers\.org/fma/
+EBI Metagenomics Sample	^http://identifiers\.org/ebimetagenomics\.samp/
+Cell Type Ontology	^http://identifiers\.org/cl/
+Mass Spectrometry Controlled Vocabulary	^http://identifiers\.org/ms/
+KEGG Compound	^http://identifiers\.org/kegg\.compound/
+SNOMED CT	^http://identifiers\.org/snomedct/
+Pocketome	^http://identifiers\.org/pocketome/
+SUPFAM	^http://identifiers\.org/supfam/
+SGD	^http://identifiers\.org/sgd/
+EDAM Ontology	^http://identifiers\.org/edam/
+MEROPS Inhibitor	^http://identifiers\.org/merops\.inhibitor/
+PubChem-substance	^http://identifiers\.org/pubchem\.substance/
+STAP	^http://identifiers\.org/stap/
+ChemBank	^http://identifiers\.org/chembank/
+IntAct Molecule	^http://identifiers\.org/intact\.molecule/
+BioSystems	^http://identifiers\.org/biosystems/
+Animal Genome Cattle QTL	^http://identifiers\.org/cattleqtldb/
+PhosphoSite Residue	^http://identifiers\.org/phosphosite\.residue/
+Phenol-Explorer	^http://identifiers\.org/phenolexplorer/
+Peroxibase	^http://identifiers\.org/peroxibase/
+METLIN	^http://identifiers\.org/metlin/
+TriTrypDB	^http://identifiers\.org/tritrypdb/
+UniProt Isoform	^http://identifiers\.org/uniprot\.isoform/
+UniParc	^http://identifiers\.org/uniparc/
+RESID	^http://identifiers\.org/resid/
+SASBDB	^http://identifiers\.org/sasbdb/
+Yeast Intron Database v4.3	^http://identifiers\.org/yeastintron/
+OMA Group	^http://identifiers\.org/oma\.grp/
+MedGen	^http://identifiers\.org/medgen/
+Nucleotide Sequence Database	^http://identifiers\.org/insdc/
+BitterDB Compound	^http://identifiers\.org/bitterdb\.cpd/
+CATH domain	^http://identifiers\.org/cath\.domain/
+HPRD	^http://identifiers\.org/hprd/
+DragonDB Allele	^http://identifiers\.org/dragondb\.allele/
+Flystock	^http://identifiers\.org/flystock/
+MetaboLights	^http://identifiers\.org/metabolights/
+TopFind	^http://identifiers\.org/topfind/
+BioNumbers	^http://identifiers\.org/bionumbers/
+PASS2	^http://identifiers\.org/pass2/
+HGNC Family	^http://identifiers\.org/hgnc\.family/
+GRID	^http://identifiers\.org/grid/
+EcoGene	^http://identifiers\.org/ecogene/
+TTD Target	^http://identifiers\.org/ttd\.target/
+Protein Data Bank	^http://identifiers\.org/pdb/
+VFDB Genus	^http://identifiers\.org/vfdb\.genus/
+Unipathway	^http://identifiers\.org/unipathway/
+P3DB Site	^http://identifiers\.org/p3db\.site/
+Enzyme Nomenclature	^http://identifiers\.org/ec-code/
+Coriell Cell Repositories	^http://identifiers\.org/coriell/
+NONCODE v4 Transcript	^http://identifiers\.org/noncodev4\.rna/
+GiardiaDB	^http://identifiers\.org/giardiadb/
+Gramene Taxonomy	^http://identifiers\.org/gramene\.taxonomy/
+ChEMBL compound	^http://identifiers\.org/chembl\.compound/
+H-InvDb Protein	^http://identifiers\.org/hinv\.protein/
+miRTarBase	^http://identifiers\.org/mirtarbase/
+FooDB Compound	^http://identifiers\.org/foodb\.compound/
+ICEberg element	^http://identifiers\.org/iceberg\.element/
+MIPModDB	^http://identifiers\.org/mipmod/
+ViPR Strain	^http://identifiers\.org/vipr/
+InChIKey	^http://identifiers\.org/inchikey/
+IRD Segment Sequence	^http://identifiers\.org/ird\.segment/
+Ensembl Fungi	^http://identifiers\.org/ensembl\.fungi/
+PhosphoPoint Phosphoprotein	^http://identifiers\.org/phosphopoint\.protein/
+dbSNP	^http://identifiers\.org/dbsnp/
+ProteomicsDB Peptide	^http://identifiers\.org/proteomicsdb\.peptide/
+PRIDE	^http://identifiers\.org/pride/
+TOPDB	^http://identifiers\.org/topdb/
+PlasmoDB	^http://identifiers\.org/plasmodb/
+MGED Ontology	^http://identifiers\.org/mo/
+Bgee stage	^http://identifiers\.org/bgee\.stage/
+OMIA	^http://identifiers\.org/omia/
+BDGP EST	^http://identifiers\.org/bdgp\.est/
+ModelDB	^http://identifiers\.org/modeldb/
+MultiCellDS Digital Cell Line	^http://identifiers\.org/multicellds\.cell_line/
+ToxoDB	^http://identifiers\.org/toxoplasma/
+BioSample	^http://identifiers\.org/biosample/
+BDGP insertion DB	^http://identifiers\.org/bdgp\.insertion/
+Bgee gene	^http://identifiers\.org/bgee\.gene/
+BioCatalogue	^http://identifiers\.org/biocatalogue\.service/
+NORINE	^http://identifiers\.org/norine/
+MetaNetX reaction	^http://identifiers\.org/metanetx\.reaction/
+Japan Collection of Microorganisms	^http://identifiers\.org/jcm/
+Ontology for Biomedical Investigations	^http://identifiers\.org/obi/
+Electron Microscopy Data Bank	^http://identifiers\.org/emdb/
+ASAP	^http://identifiers\.org/asap/
+DragonDB Locus	^http://identifiers\.org/dragondb\.locus/
+Experimental Factor Ontology	^http://identifiers\.org/efo/
+KEGG Pathway	^http://identifiers\.org/kegg\.pathway/
+MACiE	^http://identifiers\.org/macie/
+VIRsiRNA	^http://identifiers\.org/virsirna/
+Human Disease Ontology	^http://identifiers\.org/doid/
+Gene Ontology Reference	^http://identifiers\.org/go\.ref/
+NCIm	^http://identifiers\.org/ncim/
+Ontology of Physics for Biology	^http://identifiers\.org/opb/
+SubtiWiki	^http://identifiers\.org/subtiwiki/
+Wikipedia (En)	^http://identifiers\.org/wikipedia\.en/
+HAMAP	^http://identifiers\.org/hamap/
+H-InvDb Locus	^http://identifiers\.org/hinv\.locus/
+DrugBank Target v4	^http://identifiers\.org/drugbankv4\.target/
+KEGG Environ	^http://identifiers\.org/kegg\.environ/
+MMRRC	^http://identifiers\.org/mmrrc/
+ProbOnto	^http://identifiers\.org/probonto/
+Melanoma Molecular Map Project Biomaps	^http://identifiers\.org/biomaps/
+Oryzabase Strain	^http://identifiers\.org/oryzabase\.strain/
+CryptoDB	^http://identifiers\.org/cryptodb/
+ChemIDplus	^http://identifiers\.org/chemidplus/
+KEGG Disease	^http://identifiers\.org/kegg\.disease/
+MedlinePlus	^http://identifiers\.org/medlineplus/
+Ensembl Metazoa	^http://identifiers\.org/ensembl\.metazoa/
+CLDB	^http://identifiers\.org/cldb/
+BiGG Model	^http://identifiers\.org/bigg\.model/
+STOREDB	^http://identifiers\.org/storedb/
+Protein Modification Ontology	^http://identifiers\.org/mod/
+DEPOD	^http://identifiers\.org/depod/
+Rat Genome Database	^http://identifiers\.org/rgd/
+KEGG Metagenome	^http://identifiers\.org/kegg\.metagenome/
+RRID	^http://identifiers\.org/rrid/
+SoyBase	^http://identifiers\.org/soybase/
+ViralZone	^http://identifiers\.org/viralzone/
+APID Interactomes	^http://identifiers\.org/apid\.interactions/
+ArrayExpress Platform	^http://identifiers\.org/arrayexpress\.platform/
+Anatomical Therapeutic Chemical Vetinary	^http://identifiers\.org/atcvet/
+Gene Wiki	^http://identifiers\.org/genewiki/
+ARK	^http://identifiers\.org/ark/
+HMDB	^http://identifiers\.org/hmdb/
+Dictybase Gene	^http://identifiers\.org/dictybase\.gene/
+LigandBox	^http://identifiers\.org/ligandbox/
+ATCC	^http://identifiers\.org/atcc/
+BioCarta Pathway	^http://identifiers\.org/biocarta\.pathway/
+Ensembl Protists	^http://identifiers\.org/ensembl\.protist/
+GreenGenes	^http://identifiers\.org/greengenes/
+Integrated Microbial Genomes Gene	^http://identifiers\.org/img\.gene/
+Gene Ontology	^http://identifiers\.org/go/
+SABIO-RK EC Record	^http://identifiers\.org/sabiork\.ec/
+PharmGKB Disease	^http://identifiers\.org/pharmgkb\.disease/
+ExAC Transcript	^http://identifiers\.org/exac\.transcript/
+T3DB	^http://identifiers\.org/t3db/
+PharmGKB Pathways	^http://identifiers\.org/pharmgkb\.pathways/
+Pfam	^http://identifiers\.org/pfam/
+PaxDb Protein	^http://identifiers\.org/paxdb\.protein/
+FuncBase Mouse	^http://identifiers\.org/funcbase\.mouse/
+Animal Genome Pig QTL	^http://identifiers\.org/pigqtldb/
+National Bibliography Number	^http://identifiers\.org/nbn/
+HCVDB	^http://identifiers\.org/hcvdb/
+UniPathway Reaction	^http://identifiers\.org/unipathway\.reaction/
+ProteomeXchange	^http://identifiers\.org/proteomexchange/
+MultiCellDS collection	^http://identifiers\.org/multicellds\.collection/
+Database of Quantitative Cellular Signaling: Pathway	^http://identifiers\.org/doqcs\.pathway/
+MeSH	^http://identifiers\.org/mesh/
+PomBase	^http://identifiers\.org/pombase/
+Animal Genome Sheep QTL	^http://identifiers\.org/sheepqtldb/
+Transport Classification Database	^http://identifiers\.org/tcdb/
+Pathway Commons	^http://identifiers\.org/pathwaycommons/
+AphidBase Transcript	^http://identifiers\.org/aphidbase\.transcript/
+IDEAL	^http://identifiers\.org/ideal/
+DOI	^http://identifiers\.org/doi/
+NucleaRDB	^http://identifiers\.org/nuclearbd/
+Tetrahymena Genome Database	^http://identifiers\.org/tgd/
+GXA Gene	^http://identifiers\.org/gxa\.gene/
+CYGD	^http://identifiers\.org/cygd/
+ChemDB	^http://identifiers\.org/chemdb/
+PhosphoSite Protein	^http://identifiers\.org/phosphosite\.protein/
+Relation Ontology	^http://identifiers\.org/ro/
+CAPS-DB	^http://identifiers\.org/caps/
+FuncBase Human	^http://identifiers\.org/funcbase\.human/
+ProtClustDB	^http://identifiers\.org/protclustdb/
+Gramene genes	^http://identifiers\.org/gramene\.gene/
+Yeast Intron Database v3	^http://identifiers\.org/yid/
+ELM	^http://identifiers\.org/elm/
+Plant Environment Ontology	^http://identifiers\.org/eo/
+Pathway Ontology	^http://identifiers\.org/pw/
+GEO	^http://identifiers\.org/geo/
+SubtiList	^http://identifiers\.org/subtilist/
+Human Proteome Map Peptide	^http://identifiers\.org/hpm\.peptide/
+GRIN Plant Taxonomy	^http://identifiers\.org/grin\.taxonomy/
+iRefWeb	^http://identifiers\.org/irefweb/
+Gramene protein	^http://identifiers\.org/gramene\.protein/
+TIGRFAMS	^http://identifiers\.org/tigrfam/
+MEROPS	^http://identifiers\.org/merops/
+Candida Genome Database	^http://identifiers\.org/cgd/
+PharmGKB Drug	^http://identifiers\.org/pharmgkb\.drug/
+SIDER Side Effect	^http://identifiers\.org/sider\.effect/
+Olfactory Receptor Database	^http://identifiers\.org/ordb/
+Compulyeast	^http://identifiers\.org/compulyeast/
+SwissLipids	^http://identifiers\.org/swisslipid/
+Odor Molecules DataBase	^http://identifiers\.org/odor/
+MeSH 2013	^http://identifiers\.org/mesh\.2013/
+Tree of Life	^http://identifiers\.org/tol/
+UBERON	^http://identifiers\.org/uberon/
+HOMD Taxonomy	^http://identifiers\.org/homd\.taxon/
+PANTHER Pathway	^http://identifiers\.org/panther\.pathway/
+EU Clinical Trials	^http://identifiers\.org/euclinicaltrials/
+Taxonomy	^http://identifiers\.org/taxonomy/
+Orphanet Rare Disease Ontology	^http://identifiers\.org/orphanet\.ordo/
+Pazar Transcription Factor	^http://identifiers\.org/pazar/
+Cooperative Patent Classification	^http://identifiers\.org/cpc/
+BioModels Database	^http://identifiers\.org/biomodels\.db/
+European Genome-phenome Archive Study	^http://identifiers\.org/ega\.study/
+UM-BBD Biotransformation Rule	^http://identifiers\.org/umbbd\.rule/
+EPD	^http://identifiers\.org/epd/
+GWAS Central Marker	^http://identifiers\.org/gwascentral\.marker/
+CTD Disease	^http://identifiers\.org/ctd\.disease/
+WikiGenes	^http://identifiers\.org/wikigenes/
+CSA	^http://identifiers\.org/csa/
+YRC PDR	^http://identifiers\.org/yrcpdr/
+IUPHAR ligand	^http://identifiers\.org/iuphar\.ligand/
+Golm Metabolome Database	^http://identifiers\.org/gmd/
+ClinVar Submission	^http://identifiers\.org/clinvar\.submission/
+Molecular Interactions Ontology	^http://identifiers\.org/psimi/
+YDPM	^http://identifiers\.org/ydpm/
+HomoloGene	^http://identifiers\.org/homologene/
+PIRSF	^http://identifiers\.org/pirsf/
+Database of Quantitative Cellular Signaling: Model	^http://identifiers\.org/doqcs\.model/
+National Drug Code	^http://identifiers\.org/ndc/
+Rhea	^http://identifiers\.org/rhea/
+ChEBI	^http://identifiers\.org/chebi/
+BacMap Biography	^http://identifiers\.org/bacmap\.biog/
+BiGG Metabolite	^http://identifiers\.org/bigg\.metabolite/
+GlycomeDB	^http://identifiers\.org/glycomedb/
+Ensembl Bacteria	^http://identifiers\.org/ensembl\.bacteria/
+Golm Metabolome Database Profile	^http://identifiers\.org/gmd\.profile/
+Oryza Tag Line	^http://identifiers\.org/otl/
+Rat Genome Database strain	^http://identifiers\.org/rgd\.strain/
+LipidBank	^http://identifiers\.org/lipidbank/
+BeetleBase	^http://identifiers\.org/beetlebase/
+SPIKE Map	^http://identifiers\.org/spike\.map/
+WormBase	^http://identifiers\.org/wormbase/
+Canadian Drug Product Database	^http://identifiers\.org/cdpd/
+MycoBrowser tuberculosis	^http://identifiers\.org/myco\.tuber/
+KEGG Genome	^http://identifiers\.org/kegg\.genome/
+NCBI Gene	^http://identifiers\.org/ncbigene/
+KnapSack	^http://identifiers\.org/knapsack/
+NeuronDB	^http://identifiers\.org/neurondb/
+Spectral Database for Organic Compounds	^http://identifiers\.org/sdbs/
+HGNC gene family	^http://identifiers\.org/hgnc\.genefamily/
+MIRIAM Registry collection	^http://identifiers\.org/miriam\.collection/
+Wikidata	^http://identifiers\.org/wikidata/
+Bgee organ	^http://identifiers\.org/bgee\.organ/
+CTD Gene	^http://identifiers\.org/ctd\.gene/
+Evidence Code Ontology	^http://identifiers\.org/eco/
+HSSP	^http://identifiers\.org/hssp/
+DrugBank	^http://identifiers\.org/drugbank/
+PubChem-bioassay	^http://identifiers\.org/pubchem\.bioassay/
+WormBase RNAi	^http://identifiers\.org/wormbase\.rnai/
+OMA Protein	^http://identifiers\.org/oma\.protein/
+Brenda Tissue Ontology	^http://identifiers\.org/bto/
+Animal Genome Chicken QTL	^http://identifiers\.org/chickenqtldb/
+Identifiers.org Terms	^http://identifiers\.org/idot/
+GXA Expt	^http://identifiers\.org/gxa\.expt/
+Microbial Protein Interaction Database	^http://identifiers\.org/mpid/
+HPA	^http://identifiers\.org/hpa/
+AspGD Locus	^http://identifiers\.org/aspgd\.locus/
+CATH superfamily	^http://identifiers\.org/cath\.superfamily/
+Plant Ontology	^http://identifiers\.org/po/
+FuncBase Fly	^http://identifiers\.org/funcbase\.fly/
+MassBank	^http://identifiers\.org/massbank/
+DBD	^http://identifiers\.org/dbd/
+Wormpep	^http://identifiers\.org/wormpep/
+Locus Reference Genomic	^http://identifiers\.org/lrg/
+Environment Ontology	^http://identifiers\.org/envo/
+VBRC	^http://identifiers\.org/vbrc/
+MycoBrowser smegmatis	^http://identifiers\.org/myco\.smeg/
+UM-BBD Reaction	^http://identifiers\.org/umbbd\.reaction/
+GOLD metadata	^http://identifiers\.org/gold\.meta/
+Pseudomonas Genome Database	^http://identifiers\.org/pseudomonas/
+miRNEST	^http://identifiers\.org/mirnest/
+NITE Biological Research Center Catalogue	^http://identifiers\.org/nbrc/
+CutDB	^http://identifiers\.org/pmap\.cutdb/
+PMC International	^http://identifiers\.org/pmc/
+Database of Interacting Proteins	^http://identifiers\.org/dip/
+SubstrateDB	^http://identifiers\.org/pmap\.substratedb/
+TAIR Locus	^http://identifiers\.org/tair\.locus/
+Systems Biology Ontology	^http://identifiers\.org/sbo/
+GABI	^http://identifiers\.org/gabi/
+European Genome-phenome Archive Dataset	^http://identifiers\.org/ega\.dataset/
+PANTHER Node	^http://identifiers\.org/panther\.node/
+PANTHER Family	^http://identifiers\.org/panther\.family/
+KEGG Glycan	^http://identifiers\.org/kegg\.glycan/
+miRBase Sequence	^http://identifiers\.org/mirbase/
+Cube db	^http://identifiers\.org/cubedb/
+ICD	^http://identifiers\.org/icd/
+Gramene Growth Stage Ontology	^http://identifiers\.org/gramene\.growthstage/
+GWAS Central Phenotype	^http://identifiers\.org/gwascentral\.phenotype/
+KEGG Module	^http://identifiers\.org/kegg\.module/
+MimoDB	^http://identifiers\.org/mimodb/
+NeuroMorpho	^http://identifiers\.org/neuromorpho/
+BRENDA	^http://identifiers\.org/brenda/
+ORCID	^http://identifiers\.org/orcid/
+CharProt	^http://identifiers\.org/charprot/
+MIRIAM Registry resource	^http://identifiers\.org/miriam\.resource/
+LIPID MAPS	^http://identifiers\.org/lipidmaps/
+Antibody Registry	^http://identifiers\.org/antibodyregistry/
+KiSAO	^http://identifiers\.org/biomodels\.kisao/
+DailyMed	^http://identifiers\.org/dailymed/
+DASHR	^http://identifiers\.org/dashr/
+Chemical Component Dictionary	^http://identifiers\.org/pdb-ccd/
+IUPHAR family	^http://identifiers\.org/iuphar\.family/
+STITCH	^http://identifiers\.org/stitch/
+PharmGKB Gene	^http://identifiers\.org/pharmgkb\.gene/
+ProtoNet ProteinCard	^http://identifiers\.org/protonet\.proteincard/
+UMLS	^http://identifiers\.org/umls/
+MEROPS Family	^http://identifiers\.org/merops\.family/
+Orphanet	^http://identifiers\.org/orphanet/
+TarBase	^http://identifiers\.org/tarbase/
+DASHR expression	^http://identifiers\.org/dashr\.expression/
+AutDB	^http://identifiers\.org/autdb/
+BOLD Taxonomy	^http://identifiers\.org/bold\.taxonomy/
+FunCat	^http://identifiers\.org/funcat/
+PRIDE Project	^http://identifiers\.org/pride\.project/
+Sequence Read Archive	^http://identifiers\.org/insdc\.sra/
+FuncBase Yeast	^http://identifiers\.org/funcbase\.yeast/
+ChEMBL target	^http://identifiers\.org/chembl\.target/
+MaizeGDB Locus	^http://identifiers\.org/maizegdb\.locus/
+DOMMINO	^http://identifiers\.org/dommino/
+F-SNP	^http://identifiers\.org/fsnp/
+GPCRDB	^http://identifiers\.org/gpcrdb/
+SEED Compound	^http://identifiers\.org/seed\.compound/
+MINT	^http://identifiers\.org/mint/
+Kyoto Encyclopedia of Genes and Genomes	^http://identifiers\.org/kegg/
+Golm Metabolome Database Analyte	^http://identifiers\.org/gmd\.analyte/
+YeTFasCo	^http://identifiers\.org/yetfasco/
+TreeBASE	^http://identifiers\.org/treebase/
+RefSeq	^http://identifiers\.org/refseq/
+PhosphoPoint Kinase	^http://identifiers\.org/phosphopoint\.kinase/
+TreeFam	^http://identifiers\.org/treefam/
+Molbase	^http://identifiers\.org/molbase/
+Protein Affinity Reagents	^http://identifiers\.org/psipar/
+LINCS Molecule	^http://identifiers\.org/lincs\.molecule/
+HUGE	^http://identifiers\.org/huge/
+SWISS-MODEL	^http://identifiers\.org/swiss-model/
+BugBase Expt	^http://identifiers\.org/bugbase\.expt/
+Bgee family	^http://identifiers\.org/bgee\.family/
+AntWeb	^http://identifiers\.org/antweb/
+PROSITE	^http://identifiers\.org/prosite/
+UniPathway Compound	^http://identifiers\.org/unipathway\.compound/
+CORUM	^http://identifiers\.org/corum/
+SMART	^http://identifiers\.org/smart/
+PolBase	^http://identifiers\.org/polbase/
+Sol Genomics Network	^http://identifiers\.org/sgn/
+IUPHAR receptor	^http://identifiers\.org/iuphar\.receptor/
+GWAS Central Study	^http://identifiers\.org/gwascentral\.study/
+NCBI Protein	^http://identifiers\.org/ncbiprotein/
+JAX Mice	^http://identifiers\.org/jaxmice/
+Conserved Domain Database	^http://identifiers\.org/cdd/
+MeSH 2012	^http://identifiers\.org/mesh\.2012/
+GOA	^http://identifiers\.org/goa/
+IMGT LIGM	^http://identifiers\.org/imgt\.ligm/
+CAZy	^http://identifiers\.org/cazy/
+Unite	^http://identifiers\.org/unite/
+NARCIS	^http://identifiers\.org/narcis/
+MetaNetX compartment	^http://identifiers\.org/metanetx\.compartment/
+NASC code	^http://identifiers\.org/nasc/
+World Register of Marine Species	^http://identifiers\.org/worms/
+PINA	^http://identifiers\.org/pina/
+MycoBrowser leprae	^http://identifiers\.org/myco\.lepra/
+Human Phenotype Ontology	^http://identifiers\.org/hp/
+JCGGDB	^http://identifiers\.org/jcggdb/
+UniProt Knowledgebase	^http://identifiers\.org/uniprot/
+Protein Ontology	^http://identifiers\.org/pr/
+NCI Pathway Interaction Database: Pathway	^http://identifiers\.org/pid\.pathway/
+ISFinder	^http://identifiers\.org/isfinder/
+TAIR Protein	^http://identifiers\.org/tair\.protein/
+OriDB Saccharomyces	^http://identifiers\.org/oridb\.sacch/
+NEXTDB	^http://identifiers\.org/nextdb/
+BiGG Reaction	^http://identifiers\.org/bigg\.reaction/
+Cell Signaling Technology Antibody	^http://identifiers\.org/cst\.ab/
+ClinicalTrials.gov	^http://identifiers\.org/clinicaltrials/
+GRSDB	^http://identifiers\.org/grsdb/
+Degradome Database	^http://identifiers\.org/degradome/
+JWS Online	^http://identifiers\.org/jws/
+ChemSpider	^http://identifiers\.org/chemspider/
+E-cyanobacterium model	^http://identifiers\.org/ecyano\.model/
+Broad Fungal Genome Initiative	^http://identifiers\.org/broad/
+eggNOG	^http://identifiers\.org/eggnog/
+NCBI GI	^http://identifiers\.org/ncbigi/
+IntAct	^http://identifiers\.org/intact/
+Worfdb	^http://identifiers\.org/worfdb/
+BioSharing	^http://identifiers\.org/biosharing/
+UM-BBD Pathway	^http://identifiers\.org/umbbd\.pathway/
+MultiCellDS Digital snapshot	^http://identifiers\.org/multicellds\.snapshot/
+uBio NameBank	^http://identifiers\.org/ubio\.namebank/
+MetaNetX chemical	^http://identifiers\.org/metanetx\.chemical/
+Japan Chemical Substance Dictionary	^http://identifiers\.org/jcsd/
+HOGENOM	^http://identifiers\.org/hogenom/
+ExAC Gene	^http://identifiers\.org/exac\.gene/
+PMP	^http://identifiers\.org/pmp/
+Ensembl	^http://identifiers\.org/ensembl/
+CAS	^http://identifiers\.org/cas/
+EchoBASE	^http://identifiers\.org/echobase/
+Ensembl Plants	^http://identifiers\.org/ensembl\.plant/
+Consensus CDS	^http://identifiers\.org/ccds/
+Reactome	^http://identifiers\.org/reactome/
+GeneCards	^http://identifiers\.org/genecards/
+Vbase2	^http://identifiers\.org/vbase2/
+mirEX	^http://identifiers\.org/mirex/
+DATF	^http://identifiers\.org/datf/
+GOLD genome	^http://identifiers\.org/gold\.genome/
+ICEberg family	^http://identifiers\.org/iceberg\.family/
+PiroplasmaDB	^http://identifiers\.org/piroplasma/
+Rice Genome Annotation Project	^http://identifiers\.org/ricegap/
+SIDER Drug	^http://identifiers\.org/sider\.drug/
+USPTO	^http://identifiers\.org/uspto/
