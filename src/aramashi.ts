@@ -83,7 +83,7 @@ class Consumer extends Writable {
         st.objectOccurrencies[o] = (st.objectOccurrencies[o] === undefined ? 0 : st.objectOccurrencies[o]) + 1;
 
         if (p === rdfsSeeAlso) {
-            const e = this.uriWhitelistPattern.match(s)
+            const e = this.uriWhitelistPattern.match(o)
             if (e) {
                 const ln = e.name;
                 st.linkOccurrencies[ln] = (st.linkOccurrencies[ln] === undefined ? 0 : st.linkOccurrencies[ln]) + 1;
