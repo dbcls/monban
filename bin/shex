@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+const Shex = require('../dists/shex').Shex;
+
+const shex = new Shex(process.argv);
+shex.run();

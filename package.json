@@ -6,7 +6,8 @@
   "dependencies": {
     "commander": "^2.14.1",
     "csv": "^2.0.0",
-    "n3": "^0.11.2"
+    "n3": "^0.11.2",
+    "shex": "^0.9.1"
   },
   "bin": [
     "bin/monban"
