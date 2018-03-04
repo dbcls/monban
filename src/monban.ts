@@ -4,6 +4,7 @@ import * as readline from "readline";
 
 import { Validator } from "./validator";
 import { MonbanConfig } from "./monban-config";
+import { UriWhitelist } from "./uri-whitelist";
 
 export class Monban {
     validator = new Validator();
@@ -13,7 +14,27 @@ export class Monban {
         this.commander
             .usage('[options] <file ...>')
             .option('--primal-classes <path>', 'path to primal classes definition')
+            .option('--uri-whitelist <path>', 'path to white list definition')
             .parse(argv);
+    }
+
+    async run() {
+        if (this.commander.args.length == 0) {
+            this.commander.help();
+        }
+
+        const config = new MonbanConfig();
+        if (this.commander.primalClasses) {
+            config.PrimalClasses = await this.loadPrimalClasses();
+        }
+        if (this.commander.uriWhiteList) {
+            config.UriWhitelist = await UriWhitelist.loadTsv(this.commander.uriWhiteList);
+        }
+
+        this.commander.args.forEach(async (fn) => {
+            const r = await this.validator.validate(fn, config);
+            console.log(JSON.stringify(r, null, 2));
+        });
     }
 
     loadPrimalClasses(): Promise<Set<string>> {
@@ -28,22 +49,6 @@ export class Monban {
         });
         return new Promise((resolve, reject) => {
             rl.on('close', () => resolve(primalClasses));
-        });
-    }
-
-    async run() {
-        if (this.commander.args.length == 0) {
-            this.commander.help();
-        }
-
-        const config = new MonbanConfig();
-        if (this.commander.primalClasses) {
-            config.PrimalClasses = await this.loadPrimalClasses();
-        }
-
-        this.commander.args.forEach(async (fn) => {
-            const r = await this.validator.validate(fn, config);
-            console.log(JSON.stringify(r, null, 2));
         });
     }
 }

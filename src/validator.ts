@@ -13,12 +13,14 @@ import { CheckReference } from "./validators/CheckReference";
 import { FoafImage } from "./validators/FoafImage";
 import { Literal } from "./validators/Literal";
 import { PrimalClass } from "./validators/PrimalClass";
+import { CheckSeeAlso } from "./validators/CheckSeeAlso";
 
 const SUB_VALIDATORS = [
   CheckReference,
   FoafImage,
   Literal,
   PrimalClass,
+  CheckSeeAlso,
 ];
 
 class ValidationErrorsGroupedByTriple {
