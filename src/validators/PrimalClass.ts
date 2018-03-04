@@ -1,4 +1,3 @@
-import * as N3 from "n3";
 import { TriplewiseValidator } from "../triplewise-validator";
 import { ValidationError } from "../validation-error";
 import { Triple } from "../triple";
