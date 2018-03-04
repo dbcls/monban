@@ -25,10 +25,10 @@ export class Monban {
 
         const config = new MonbanConfig();
         if (this.commander.primalClasses) {
-            config.PrimalClasses = await this.loadPrimalClasses();
+            config.primalClasses = await this.loadPrimalClasses();
         }
         if (this.commander.uriWhiteList) {
-            config.UriWhitelist = await UriWhitelist.loadTsv(this.commander.uriWhiteList);
+            config.uriWhitelist = await UriWhitelist.loadTsv(this.commander.uriWhiteList);
         }
 
         this.commander.args.forEach(async (fn) => {

@@ -1,6 +1,6 @@
 import { UriWhitelist } from "./uri-whitelist";
 
 export class MonbanConfig {
-    PrimalClasses: Set<string> = new Set<string>();
-    UriWhitelist: UriWhitelist = new UriWhitelist();
+    primalClasses: Set<string> = new Set<string>();
+    uriWhitelist: UriWhitelist = new UriWhitelist();
 }

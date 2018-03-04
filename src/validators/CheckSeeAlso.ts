@@ -23,7 +23,7 @@ export class CheckSeeAlso extends TriplewiseValidator {
         if (o.startsWith(identifiersOrgStem)) {
             return true;
         }
-        if (this.config.UriWhitelist.match(o)) {
+        if (this.config.uriWhitelist.match(o)) {
             return true;
         }
         return false;
