@@ -3,11 +3,11 @@ import * as zlib from "zlib";
 import { Readable, Writable } from "stream";
 
 import { Triple } from "./triple";
+import { UriWhitelist, UriWhitelistEntry } from "./uri-whitelist";
 
 import * as N3 from "n3";
 import { N3StreamParser } from "n3";
 import * as commander from "commander";
-import * as csvParse from "csv-parse";
 
 function tripleStream(path: string): N3StreamParser {
     const streamParser = N3.StreamParser();
@@ -94,33 +94,8 @@ class Consumer extends Writable {
     }
 }
 
-class UriWhitelistEntry {
-    name: string;
-    regexp: RegExp;
-
-    constructor(data: any) {
-        this.name = data.name;
-        this.regexp = new RegExp(data.pattern);
-    }
-
-    match(str: string): boolean {
-        return !!str.match(this.regexp);
-    }
-}
-
-class UriWhitelist {
-    entries: UriWhitelistEntry[];
-    constructor(data: any[]) {
-        this.entries = data.map((item) => new UriWhitelistEntry(item));
-    }
-
-    match(str: string): UriWhitelistEntry | undefined {
-        return this.entries.find((e) => e.match(str));
-    }
-}
-
 export class Aramashi {
-    uriWhitelist: UriWhitelist = new UriWhitelist([]);
+    uriWhitelist: UriWhitelist = new UriWhitelist();
     commander: commander.Command = commander;
     constructor(argv: string[]) {
         this.commander
@@ -129,38 +104,13 @@ export class Aramashi {
             .parse(argv);
     }
 
-    loadLinkPatternsTsv(fn: string): Promise<{ [key: string]: string }[]> {
-        return new Promise((resolve, reject) => {
-            const parser = new csvParse.Parser({ delimiter: "\t" });
-
-            const s = fs.createReadStream(fn);
-            const list: { [key: string]: string }[] = [];
-
-            class consumer extends Writable {
-                constructor() {
-                    super({ objectMode: true })
-                }
-
-                _write(data: any, encoding: string, done: () => void) {
-                    list.push({ name: data[0], pattern: data[1] });
-                    done();
-                }
-            }
-
-            s.pipe(parser).pipe(new consumer()).on('finish', () => {
-                resolve(list);
-            });
-        });
-    }
-
     async run() {
         if (this.commander.args.length == 0) {
             this.commander.help();
         }
 
         if (this.commander.linkPatterns) {
-            const list = await this.loadLinkPatternsTsv(this.commander.linkPatterns);
-            this.uriWhitelist = new UriWhitelist(list);
+            this.uriWhitelist = await UriWhitelist.loadTsv(this.commander.linkPatterns);
         }
 
         this.commander.args.forEach(async (fn) => {
