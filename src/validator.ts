@@ -7,15 +7,18 @@ import { N3StreamParser } from "n3";
 import { TriplewiseValidator } from "./triplewise-validator";
 import { Triple } from "./triple";
 import { ValidationError } from "./validation-error";
+import { MonbanConfig } from "./monban-config";
 
 import { CheckReference } from "./validators/CheckReference";
 import { FoafImage } from "./validators/FoafImage";
 import { Literal } from "./validators/Literal";
+import { PrimalClass } from "./validators/PrimalClass";
 
 const SUB_VALIDATORS = [
   CheckReference,
   FoafImage,
-  Literal
+  Literal,
+  PrimalClass,
 ];
 
 class ValidationErrorsGroupedByTriple {
@@ -28,16 +31,18 @@ class Consumer extends Writable {
   errors: ValidationErrorsGroupedByTriple[] = [];
   nthTriple = 0;
   subValidators: TriplewiseValidator[];
+  config: MonbanConfig = new MonbanConfig();
 
-  constructor(subValidators: TriplewiseValidator[]) {
+  constructor(subValidators: TriplewiseValidator[], config: MonbanConfig) {
     super({ objectMode: true });
     this.subValidators = subValidators;
+    this.config = config;
   }
 
   _write(triple: Triple, encoding: string, done: () => void) {
     const errorsOnTriple: ValidationError[] = [];
     this.subValidators.forEach((validator) => {
-      const e = validator.validate(triple);
+      const e = validator.validate(triple, this.config);
       if (e) {
         Array.prototype.push.apply(errorsOnTriple, e);
       }
@@ -75,9 +80,9 @@ class ValidationResults {
 }
 
 export class Validator {
-  validate(path: string): Promise<ValidationResults> {
-    const subValidators = SUB_VALIDATORS.map((cl) => new cl());
-    const consumer = new Consumer(subValidators);
+  validate(path: string, config: MonbanConfig): Promise<ValidationResults> {
+    const subValidators = SUB_VALIDATORS.map((cl) => new cl(config));
+    const consumer = new Consumer(subValidators, config);
     const stream = tripleStream(path);
     stream.pipe(consumer);
 

@@ -129,12 +129,12 @@ export class Aramashi {
             .parse(argv);
     }
 
-     loadLinkPatternsTsv(fn: string): Promise<{[key: string]: string}[]> {
+    loadLinkPatternsTsv(fn: string): Promise<{ [key: string]: string }[]> {
         return new Promise((resolve, reject) => {
             const parser = new csvParse.Parser({ delimiter: "\t" });
 
             const s = fs.createReadStream(fn);
-            const list: {[key: string]: string}[] = [];
+            const list: { [key: string]: string }[] = [];
 
             class consumer extends Writable {
                 constructor() {
