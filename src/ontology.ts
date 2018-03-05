@@ -30,6 +30,19 @@ export class Ontology {
     dataProperties: Set<string> = new Set();
     objectProperties: Set<string> = new Set();
 
+    isDataProperty(s: string): boolean {
+        return this.dataProperties.has(s);
+    }
+    isObjectProperty(s: string): boolean {
+        return this.objectProperties.has(s);
+    }
+    isProprety(s: string): boolean {
+        return this.isDataProperty(s) || this.isObjectProperty(s);
+    }
+    isClass(s: string): boolean {
+        return this.classes.has(s);
+    }
+
     static load(path: string): Promise<Ontology> {
         const ontology = new Ontology();
         if (!path) {

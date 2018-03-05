@@ -14,6 +14,7 @@ import { FoafImage } from "./validators/FoafImage";
 import { Literal } from "./validators/Literal";
 import { PrimalClass } from "./validators/PrimalClass";
 import { CheckSeeAlso } from "./validators/CheckSeeAlso";
+import { WithOntology } from "./validators/WithOntology";
 
 const SUB_VALIDATORS = [
   CheckReference,
@@ -21,6 +22,7 @@ const SUB_VALIDATORS = [
   Literal,
   PrimalClass,
   CheckSeeAlso,
+  WithOntology,
 ];
 
 class ValidationErrorsGroupedByTriple {
