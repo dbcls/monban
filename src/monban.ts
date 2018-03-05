@@ -5,6 +5,7 @@ import * as readline from "readline";
 import { Validator } from "./validator";
 import { MonbanConfig } from "./monban-config";
 import { UriWhitelist } from "./uri-whitelist";
+import { Ontology } from "./ontology";
 
 export class Monban {
     validator = new Validator();
@@ -15,6 +16,7 @@ export class Monban {
             .usage('[options] <file ...>')
             .option('--primal-classes <path>', 'path to primal classes definition')
             .option('--uri-whitelist <path>', 'path to white list definition')
+            .option('--ontology <path>', 'path to ontology')
             .parse(argv);
     }
 
@@ -29,6 +31,9 @@ export class Monban {
         }
         if (this.commander.uriWhiteList) {
             config.uriWhitelist = await UriWhitelist.loadTsv(this.commander.uriWhiteList);
+        }
+        if (this.commander.ontology) {
+            config.ontology = await Ontology.load(this.commander.ontology);
         }
 
         this.commander.args.forEach(async (fn) => {
