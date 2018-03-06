@@ -24,11 +24,13 @@ const owl = "http://www.w3.org/2002/07/owl#"
 const owlClass = owl + "Class";
 const owlDatatypeProperty = owl + "DatatypeProperty";
 const owlObjectProperty = owl + "ObjectProperty";
+const owlAnnotationProperty = owl + "AnnotationProperty";
 
 export class Ontology {
     classes: Set<string> = new Set();
     dataProperties: Set<string> = new Set();
     objectProperties: Set<string> = new Set();
+    annotationProperties: Set<string> = new Set();
 
     isDataProperty(s: string): boolean {
         return this.dataProperties.has(s);
@@ -36,8 +38,11 @@ export class Ontology {
     isObjectProperty(s: string): boolean {
         return this.objectProperties.has(s);
     }
+    isAnnotationProperty(s: string): boolean {
+        return this.annotationProperties.has(s);
+    }
     isProprety(s: string): boolean {
-        return this.isDataProperty(s) || this.isObjectProperty(s);
+        return this.isDataProperty(s) || this.isObjectProperty(s) || this.isAnnotationProperty(s);
     }
     isClass(s: string): boolean {
         return this.classes.has(s);
@@ -65,6 +70,9 @@ export class Ontology {
                             break;
                         case owlObjectProperty:
                             ontology.objectProperties.add(s);
+                            break;
+                        case owlAnnotationProperty:
+                            ontology.annotationProperties.add(s);
                             break;
                     }
                 }
