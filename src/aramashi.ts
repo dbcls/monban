@@ -41,7 +41,6 @@ class Statistics {
         this.numSubjects = Object.keys(this.subjectOccurrencies).length;
         this.numClasses = Object.keys(this.classAndNumInstances).length;
         this.numObjects = Object.keys(this.objectOccurrencies).length;
-        this.numLiterals = Object.keys(this.objectOccurrencies).filter((o) => N3.Util.isLiteral(o)).length;
         this.numPredicates = Object.keys(this.predicateOccurencies).length;
         this.numDatatypes = Object.keys(this.datatypeOccurrencies).length;
         this.numLinks = Object.keys(this.linkOccurrencies).reduce((acc, k): number => acc + this.linkOccurrencies[k], 0);
@@ -75,12 +74,12 @@ class Consumer extends Writable {
         st.predicateOccurencies[p] = (st.predicateOccurencies[p] === undefined ? 0 : st.predicateOccurencies[p]) + 1;
 
         if (N3.Util.isLiteral(o)) {
+            st.numLiterals++;
             const t = N3.Util.getLiteralType(o);
-            st.datatypeOccurrencies[t] = (st.datatypeOccurrencies[t] === undefined ? 0 : st.datatypeOccurrencies[t]) + 1
+            st.datatypeOccurrencies[t] = (st.datatypeOccurrencies[t] === undefined ? 0 : st.datatypeOccurrencies[t]) + 1;
+        } else {
+            st.objectOccurrencies[o] = (st.objectOccurrencies[o] === undefined ? 0 : st.objectOccurrencies[o]) + 1;
         }
-
-        // NOTE below is too memory consuming for some datasets
-        st.objectOccurrencies[o] = (st.objectOccurrencies[o] === undefined ? 0 : st.objectOccurrencies[o]) + 1;
 
         if (p === rdfsSeeAlso) {
             const e = this.uriWhitelistPattern.match(o)
