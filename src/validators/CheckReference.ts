@@ -4,27 +4,32 @@ import { Triple } from "../triple";
 
 const dcReferences = 'http://purl.org/dc/terms/references';
 
-const acceptableStems = [
+const referenceStems = [
   'http://identifiers.org/pubmed/',
   'http://identifiers.org/pmc/',
   'http://doi.org/',
 ];
 
 export class CheckReference extends TriplewiseValidator {
-  private filter(triple: Triple): Boolean {
-    return triple.predicate === dcReferences;
-  }
   validate(triple: Triple): ValidationError[] {
-    if (!this.filter(triple)) {
-      return [];
+    const errors = [];
+    if (triple.predicate === dcReferences && !this.isReference(triple.object)) {
+      errors.push(
+        {
+          message: `${triple.object} is not expected URI for dcterms:references`
+        }
+      );
     }
-    if (acceptableStems.some((stem) => triple.object.startsWith(stem))) {
-      return [];
+    if (this.isReference(triple.object) && triple.predicate !== dcReferences) {
+      errors.push(
+        {
+          message: `${triple.object} is not expected URI for dcterms:references`
+        }
+      );
     }
-    return [
-      {
-        message: `${triple.object} is not expected URI for dcterms:references`
-      }
-    ];
+    return errors;
+  }
+  isReference(o: string): boolean {
+    return referenceStems.some((stem) => o.startsWith(stem));
   }
 }
