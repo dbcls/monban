@@ -1,0 +1,778 @@
+ABS	^http://genome\.crg\.es/datasets/abs2005/
+Aceview Worm	^http://www\.ncbi\.nlm\.nih\.gov/IEB/Research/Acembly/index\.html\?worm
+AphidBase Transcript	^http://www\.aphidbase\.com/aphidbase
+BindingDB	^http://www\.bindingdb\.org/bind/index\.jsp
+BacMap Biography	^http://bacmap\.wishartlab\.com/
+Bgee family	^http://bgee\.unil\.ch/bgee/bgee
+3DMET	^http://www\.3dmet\.dna\.affrc\.go\.jp/
+APD	^http://aps\.unmc\.edu/AP/
+arXiv	^http://arxiv\.org/
+AGRICOLA	^http://agricola\.nal\.usda\.gov/
+BiGG Metabolite	^http://bigg\.ucsd\.edu/universal/metabolites
+Animal Diversity Web	^http://animaldiversity\.ummz\.umich\.edu/
+Antibiotic Resistance Genes Database	^http://ardb\.cbcb\.umd\.edu/
+ATCC	^http://www\.atcc\.org/
+APID Interactomes	^http://cicblade\.dep\.usal\.es:8080/APID/
+AntWeb	^http://www\.antweb\.org/
+Affymetrix Probeset	^http://www\.affymetrix\.com/
+Affymetrix Probeset	^http://cu\.affymetrix\.bio2rdf\.org/fct/
+Allergome	^http://www\.allergome\.org/
+UniGene	^http://www\.ncbi\.nlm\.nih\.gov/unigene
+Database of Interacting Proteins	^http://dip\.doe\-mbi\.ucla\.edu/
+UM-BBD Pathway	^http://umbbd\.ethz\.ch/
+UM-BBD Pathway	^http://umbbd\.msi\.umn\.edu/index\.html
+E-cyanobacterium rule	^http://e\-cyanobacterium\.org/bcs/
+H-InvDb Transcript	^http://h\-invitational\.jp/hinv/ahg\-db/index\.jsp
+DATF	^http://datf\.cbi\.pku\.edu\.cn/
+Cell Image Library	^http://cellimagelibrary\.org/
+European Genome-phenome Archive Dataset	^https://www\.ebi\.ac\.uk/ega/dataset
+Animal Genome Sheep QTL	^http://www\.animalgenome\.org/cgi\-bin/QTLdb/OA/index
+ASAP	^http://asap\.ahabs\.wisc\.edu/asap/home\.php
+Sequence Ontology	^http://www\.sequenceontology\.org/
+Sequence Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/so
+Sequence Ontology	^http://bioportal\.bioontology\.org/ontologies/SO
+Phytozome Locus	^http://www\.phytozome\.net/
+GWAS Central Study	^http://www\.gwascentral\.org/studies
+SPLASH	^http://mona\.fiehnlab\.ucdavis\.edu/
+MassBank	^http://www\.massbank\.jp
+MassBank	^http://www\.massbank\.eu/
+MassBank	^http://msbi\.ipb\-halle\.de/MassBank/
+PubMed	^http://www\.ebi\.ac\.uk/citexplore/
+PubMed	^http://www\.ebi\.ac\.uk/Databases/MEDLINE/medline\.html
+PubMed	^http://europepmc\.org/
+PubMed	^http://www\.hubmed\.org/
+PubMed	^http://ukpmc\.ac\.uk/
+PubMed	^http://linkedlifedata\.com/
+PubMed	^http://www\.ncbi\.nlm\.nih\.gov/PubMed/
+PubMed	^http://pubmed\.bio2rdf\.org/fct
+National Drug Code	^http://www\.accessdata\.fda\.gov/scripts/cder/ndc/
+National Drug Code	^http://healthprovidersdata\.com/
+National Drug Code	^http://ndc\.bio2rdf\.org/fct
+STAP	^http://psb\.kobic\.re\.kr/STAP/refinement/
+IMEx	^http://www\.ebi\.ac\.uk/intact/
+IMEx	^http://www\.imexconsortium\.org/
+ZFIN Expression	^http://zfin\.org
+FuncBase Fly	^http://func\.mshri\.on\.ca/fly
+ClinVar Submission	^http://www\.ncbi\.nlm\.nih\.gov/clinvar/
+GPCRDB	^http://www\.gpcrdb\.org/
+NeuronDB	^http://senselab\.med\.yale\.edu/NeuronDB/
+JCGGDB	^http://jcggdb\.jp/index_en\.html
+InChIKey	^http://cactus\.nci\.nih\.gov/chemical/structure
+InChIKey	^http://www\.chemspider\.com/
+BOLD Taxonomy	^http://www\.boldsystems\.org/
+Google Patents	^https://www\.google\.com/patents/
+DragonDB DNA	^http://www\.antirrhinum\.net/
+Rat Genome Database qTL	^http://rgd\.mcw\.edu/
+PomBase	^http://www\.pombase\.org/
+PMP	^http://www\.proteinmodelportal\.org/
+Tetrahymena Genome Database	^http://ciliate\.org/index\.php/
+OMIA	^http://www\.ncbi\.nlm\.nih\.gov/sites/entrez\?db=omia
+OMIA	^http://omia\.angis\.org\.au/
+ClinVar Variant	^http://www\.ncbi\.nlm\.nih\.gov/clinvar/
+Microbial Protein Interaction Database	^http://www\.ebi\.ac\.uk/intact/
+Microbial Protein Interaction Database	^http://www\.jcvi\.org/mpidb/about\.php
+PhosphoSite Residue	^http://www\.phosphosite\.org/homeAction\.do
+PINA	^http://cbg\.garvan\.unsw\.edu\.au/pina/
+Plant Transcription Factor Database	^http://planttfdb\.cbi\.pku\.edu\.cn
+UNII	^http://fdasis\.nlm\.nih\.gov/srs/
+ArrayExpress	^http://www\.ebi\.ac\.uk/arrayexpress/
+eggNOG	^http://eggnog\.embl\.de/version_3\.0/
+eggNOG	^http://eggnog\.embl\.de/version_2/
+Cell Cycle Ontology	^http://bioportal\.bioontology\.org/
+Cell Cycle Ontology	^http://www\.ebi\.ac\.uk/ontology\-lookup/browse\.do\?ontName=CCO
+SABIO-RK EC Record	^http://sabiork\.h\-its\.org/
+Integrated Microbial Genomes Taxon	^http://img\.jgi\.doe\.gov/
+HOVERGEN	^http://pbil\.univ\-lyon1\.fr/databases/hovergen\.php
+DASHR	^http://lisanwanglab\.org/DASHR/
+Rice Genome Annotation Project	^http://rice\.plantbiology\.msu\.edu/annotation_pseudo_current\.shtml
+MycoBrowser leprae	^http://mycobrowser\.epfl\.ch/leprosy\.html
+Small Molecule Pathway Database	^http://www\.smpdb\.ca/pathways
+Relation Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/ro
+Relation Ontology	^http://obofoundry\.org/ontology/ro\.html
+Relation Ontology	^http://www\.obofoundry\.org/ro/
+Flystock	^http://flystocks\.bio\.indiana\.edu/bloomhome\.htm
+PubChem-compound	^http://pubchem\.ncbi\.nlm\.nih\.gov/
+GLIDA GPCR	^http://pharminfo\.pharm\.kyoto\-u\.ac\.jp/services/glida/
+IUPHAR ligand	^http://www\.guidetopharmacology\.org/GRAC/LigandListForward\?database=all
+IUPHAR family	^http://www\.guidetopharmacology\.org/
+IUPHAR family	^http://www\.iuphar\-db\.org/
+PANTHER Pathway	^http://www\.pantherdb\.org/
+UniParc	^http://www\.uniprot\.org/uniparc/
+UniParc	^http://www\.ebi\.ac\.uk/uniparc/
+GLIDA Ligand	^http://pharminfo\.pharm\.kyoto\-u\.ac\.jp/services/glida/
+HOGENOM	^http://pbil\.univ\-lyon1\.fr/databases/hogenom/
+AmoebaDB	^http://amoebadb\.org/amoeba/
+Nucleotide Sequence Database	^http://srs\.ebi\.ac\.uk/srsbin/cgi\-bin/wgetz\?\-page\+LibInfo\+\-lib\+EMBL
+Nucleotide Sequence Database	^http://www\.ebi\.ac\.uk/ena/
+Nucleotide Sequence Database	^http://www\.ddbj\.nig\.ac\.jp/
+Nucleotide Sequence Database	^http://www\.ncbi\.nlm\.nih\.gov/Genbank/
+Nucleotide Sequence Database	^http://www\.ncbi\.nlm\.nih\.gov/nuccore/
+Ontology for Biomedical Investigations	^http://bioportal\.bioontology\.org/ontologies/OBI
+Ontology for Biomedical Investigations	^http://www\.ebi\.ac\.uk/ols/ontologies/obi
+Ontology for Biomedical Investigations	^http://obi\-ontology\.org/page/Main_Page
+Ontology for Biomedical Investigations	^http://www\.ontobee\.org/
+Ontology for Biomedical Investigations	^http://www\.ebi\.ac\.uk/ols/beta/ontologies/obi
+KiSAO	^http://bioportal\.bioontology\.org/ontologies/KISAO
+KiSAO	^http://www\.ebi\.ac\.uk/ols/ontologies/kisao
+Aclame	^http://aclame\.ulb\.ac\.be/
+Protein Ontology	^http://pir\.georgetown\.edu/pro/pro\.shtml
+Protein Ontology	^http://bioportal\.bioontology\.org/ontologies/PR
+Protein Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/pr
+Oryzabase Stage	^http://www\.shigen\.nig\.ac\.jp/rice/oryzabaseV4/
+Bgee gene	^http://bgee\.unil\.ch/bgee/bgee
+RESID	^http://pir0\.georgetown\.edu/resid/
+RESID	^http://www\.ebi\.ac\.uk/RESID/
+FunCat	^http://mips\.helmholtz\-muenchen\.de/funcatDB/
+VFDB Gene	^http://www\.mgc\.ac\.cn/VFs/
+VBRC	^http://vbrc\.org/
+MeSH 2013	^http://www\.nlm\.nih\.gov/mesh/
+InChI	^http://webbook\.nist\.gov/chemistry
+InChI	^http://rdf\.openmolecules\.net/
+InChI	^http://www\.chemspider\.com/
+InChI	^http://www\.ebi\.ac\.uk/chebi/
+OMIM	^http://us\-east\.omim\.org/
+OMIM	^http://europe\.omim\.org/
+OMIM	^http://mirror\.omim\.org/
+OMIM	^http://omim\.bio2rdf\.org/fct
+OMIM	^http://omim\.org/
+NITE Biological Research Center Catalogue	^http://www\.nbrc\.nite\.go\.jp/e/index\.html
+GEO	^http://www\.ncbi\.nlm\.nih\.gov/geo/
+MycoBrowser tuberculosis	^http://tuberculist\.epfl\.ch/
+P3DB Protein	^http://www\.p3db\.org/
+Golm Metabolome Database GC-MS spectra	^http://gmd\.mpimp\-golm\.mpg\.de/
+Gene Wiki	^http://en\.wikipedia\.org/wiki/Gene_Wiki
+ChEBI	^http://www\.ebi\.ac\.uk/chebi/
+ChEBI	^http://bioportal\.bioontology\.org/ontologies/CHEBI
+ChEBI	^http://www\.ebi\.ac\.uk/ols/ontologies/chebi
+BioCarta Pathway	^http://www\.biocarta\.com/
+TIGRFAMS	^http://www\.jcvi\.org/cgi\-bin/tigrfams/Listing\.cgi
+Cube db	^http://epsf\.bmad\.bii\.a\-star\.edu\.sg/cube/db/html/home\.html
+LIPID MAPS	^http://www\.lipidmaps\.org
+AutDB	^http://autism\.mindspec\.org/autdb/
+VectorBase	^http://www\.vectorbase\.org/
+FuncBase Yeast	^http://func\.mshri\.on\.ca/yeast
+STITCH	^http://stitch\.embl\.de/
+ToxoDB	^http://toxodb\.org/toxo/
+GenPept	^http://www\.ncbi\.nlm\.nih\.gov/protein
+NIAEST	^http://lgsun\.grc\.nia\.nih\.gov/cDNA/
+MMRRC	^http://www\.mmrrc\.org/
+ProtoNet ProteinCard	^http://www\.protonet\.cs\.huji\.ac\.il/
+HPA	^http://www\.proteinatlas\.org/
+Electron Microscopy Data Bank	^http://www\.ebi\.ac\.uk/pdbe/emdb/
+Sol Genomics Network	^http://solgenomics\.net/
+ArrayExpress Platform	^http://www\.ebi\.ac\.uk/arrayexpress/
+Environment Ontology	^http://purl\.bioontology\.org/ontology/ENVO/
+Environment Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/envo
+ScerTF	^http://stormo\.wustl\.edu/ScerTF/
+Brenda Tissue Ontology	^http://bioportal\.bioontology\.org/ontologies/BTO
+Brenda Tissue Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/bto
+GeneDB	^http://www\.genedb\.org/
+SwissLipids	^http://www\.swisslipids\.org/\#/
+EU Clinical Trials	^https://www\.clinicaltrialsregister\.eu/
+GlycoEpitope	^http://www\.glycoepitope\.jp/epitopes/
+Odor Molecules DataBase	^http://senselab\.med\.yale\.edu/OdorDB
+STRING	^http://string\.embl\.de/
+STRING	^http://string\-db\.org/
+Japan Chemical Substance Dictionary	^http://jglobal\.jst\.go\.jp/en/
+Tree of Life	^http://tolweb\.org/tree/
+Broad Fungal Genome Initiative	^http://www\.broadinstitute\.org/annotation/genome/magnaporthe_grisea/
+VIRsiRNA	^http://crdd\.osdd\.net/servers/virsirnadb
+GreenGenes	^http://greengenes\.lbl\.gov/
+BitterDB Receptor	^http://bitterdb\.agri\.huji\.ac\.il/dbbitter\.php
+OMA Protein	^http://omabrowser\.org/cgi\-bin/gateway\.pl
+BioNumbers	^http://www\.bionumbers\.hms\.harvard\.edu/search\.aspx
+Fungal Barcode	^http://www\.fungalbarcoding\.org/
+Mass Spectrometry Controlled Vocabulary	^https://bioportal\.bioontology\.org/ontologies/MS
+Mass Spectrometry Controlled Vocabulary	^http://www\.ebi\.ac\.uk/ols/ontologies/ms
+VariO	^http://bioportal\.bioontology\.org/ontologies/VARIO
+VariO	^http://www\.variationontology\.org/
+VariO	^http://www\.ebi\.ac\.uk/ols/ontologies/vario
+OriDB Saccharomyces	^http://cerevisiae\.oridb\.org/index\.php
+GXA Expt	^http://www\.ebi\.ac\.uk/gxa/
+UniPathway Compound	^http://www\.grenoble\.prabi\.fr/obiwarehouse/unipathway
+Rhea	^http://www\.rhea\-db\.org/
+MeSH	^http://id\.nlm\.nih\.gov/mesh/
+PhylomeDB	^http://phylomedb\.org/
+TrichDB	^http://trichdb\.org/trichdb/
+Spectral Database for Organic Compounds	^http://riodb01\.ibase\.aist\.go\.jp/sdbs/cgi\-bin/direct_frame_top\.cgi
+World Register of Marine Species	^http://www\.marinespecies\.org/
+TOPDB	^http://topdb\.enzim\.hu/
+ICD	^http://www\.who\.int/classifications/icd/en/
+PubChem-substance	^http://pubchem\.ncbi\.nlm\.nih\.gov/
+Integrated Microbial Genomes Gene	^http://img\.jgi\.doe\.gov/
+FuncBase Human	^http://func\.mshri\.on\.ca/human/
+Ensembl Metazoa	^http://metazoa\.ensembl\.org/
+MedDRA	^http://bioportal\.bioontology\.org/ontologies/MEDDRA
+TTD Target	^http://bidd\.nus\.edu\.sg/group/ttd/ttd\.asp
+CTD Disease	^http://ctdbase\.org/
+Genatlas	^http://genatlas\.medecine\.univ\-paris5\.fr/
+Cell Signaling Technology Pathways	^http://www\.cellsignal\.com/pathways/index\.html
+KEGG Disease	^http://www\.genome\.jp/kegg/disease/
+Evidence Code Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/eco
+Evidence Code Ontology	^http://bioportal\.bioontology\.org/ontologies/ECO
+IMGT HLA	^http://www\.ebi\.ac\.uk/imgt/hla/allele\.html
+Mouse Genome Database	^http://www\.informatics\.jax\.org/
+Mouse Genome Database	^http://mgi\.bio2rdf\.org/fct
+NeuroLex	^http://www\.neurolex\.org/wiki/Main_Page
+NeuroLex	^http://bioportal\.bioontology\.org/ontologies/BIRNLEX
+ProGlycProt	^http://www\.proglycprot\.org/
+VFDB Genus	^http://www\.mgc\.ac\.cn/VFs/
+NARCIS	^http://persistent\-identifier\.nl/
+NARCIS	^http://www\.narcis\.nl/\?Language=en
+Gene Ontology Reference	^http://www\.geneontology\.org/cgi\-bin/references\.cgi
+RFAM	^http://janelia\.org/
+RFAM	^http://rfam\.xfam\.org/
+RFAM	^http://rfam\.sanger\.ac\.uk/
+HomoloGene	^http://www\.ncbi\.nlm\.nih\.gov/homologene/
+HomoloGene	^http://homologene\.bio2rdf\.org/fct
+Animal Genome Chicken QTL	^http://www\.animalgenome\.org/cgi\-bin/QTLdb/GG/index
+dbProbe	^http://www\.ncbi\.nlm\.nih\.gov/sites/entrez\?db=probe
+ProteomicsDB Peptide	^https://www\.proteomicsdb\.org/\#peptideSearch
+GiardiaDB	^http://giardiadb\.org/giardiadb/
+CORUM	^http://mips\.helmholtz\-muenchen\.de/genre/proj/corum/
+DrugBank Target v4	^http://www\.drugbank\.ca/targets
+Consensus CDS	^http://www\.ncbi\.nlm\.nih\.gov/CCDS/
+EBI Metagenomics Sample	^http://www\.ebi\.ac\.uk/metagenomics
+BDGP insertion DB	^http://flypush\.imgen\.bcm\.tmc\.edu/pscreen/
+PASS2	^http://caps\.ncbs\.res\.in/pass2/
+IMGT LIGM	^http://genius\.embnet\.dkfz\-heidelberg\.de/
+IMGT LIGM	^http://www\.imgt\.org/
+IMGT LIGM	^http://www\.ebi\.ac\.uk/imgt/
+SMART	^http://smart\.embl\-heidelberg\.de/
+ZFIN Gene	^http://zfin\.org
+Pathway Commons	^http://www\.pathwaycommons\.org/pc/
+InterPro	^http://interpro\.bio2rdf\.org/fct/
+InterPro	^http://www\.ebi\.ac\.uk/interpro/
+KEGG Glycan	^http://www\.genome\.jp/kegg/glycan/
+OPM	^http://opm\.phar\.umich\.edu/
+Coriell Cell Repositories	^http://ccr\.coriell\.org/
+MicrosporidiaDB	^http://microsporidiadb\.org/micro/
+Candida Genome Database	^http://www\.candidagenome\.org/
+BioCyc	^http://biocyc\.org
+CGSC Strain	^http://cgsc\.biology\.yale\.edu/index\.php
+SUPFAM	^http://supfam\.org/SUPERFAMILY/
+ICEberg element	^http://db\-mml\.sjtu\.edu\.cn/ICEberg/
+MIPModDB	^http://bioinfo\.iitk\.ac\.in/MIPModDB
+BeetleBase	^http://beetlebase\.org/
+CATH domain	^http://www\.cathdb\.info/
+nextProt	^http://www\.nextprot\.org/
+PRINTS	^http://www\.bioinf\.manchester\.ac\.uk/dbbrowser/sprint/
+DBG2 Introns	^http://webapps2\.ucalgary\.ca/~groupii/
+Oryza Tag Line	^http://oryzatagline\.cirad\.fr/
+PANTHER Family	^http://www\.pantherdb\.org/
+Molecular Interactions Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/mi
+Molecular Interactions Ontology	^http://bioportal\.bioontology\.org/ontologies/PPIO
+ChemBank	^http://chembank\.broadinstitute\.org/
+Melanoma Molecular Map Project Biomaps	^http://www\.mmmp\.org/MMMP/public/biomap/listBiomap\.mmmp
+Human Proteome Map Protein	^http://www\.humanproteomemap\.org/index\.php
+ExAC Variant	^http://exac\.broadinstitute\.org/
+UM-BBD Biotransformation Rule	^http://umbbd\.ethz\.ch/servlets/pageservlet\?ptype=allrules
+UM-BBD Biotransformation Rule	^http://umbbd\.msi\.umn\.edu/servlets/pageservlet\?ptype=allrules
+TopFind	^http://clipserve\.clip\.ubc\.ca/topfind
+GeneTree	^http://www\.ensembl\.org/
+Sequence Read Archive	^http://www\.ebi\.ac\.uk/ena
+Sequence Read Archive	^http://www\.ncbi\.nlm\.nih\.gov/sra
+Sequence Read Archive	^http://trace\.ddbj\.nig\.ac\.jp/dra/
+Conoserver	^http://www\.conoserver\.org/
+PharmGKB Pathways	^http://www\.pharmgkb\.org/
+SitEx	^http://www\-bionet\.sscc\.ru/sitex/
+TTD Drug	^http://bidd\.nus\.edu\.sg/group/ttd/ttd\.asp
+PlasmoDB	^http://plasmodb\.org/plasmo/
+Ensembl Protists	^http://protists\.ensembl\.org
+Golm Metabolome Database Analyte	^http://gmd\.mpimp\-golm\.mpg\.de/
+Oryzabase Strain	^http://www\.shigen\.nig\.ac\.jp/rice/oryzabaseV4/
+MGED Ontology	^http://bioportal\.bioontology\.org/
+MGED Ontology	^http://mged\.sourceforge\.net/ontologies/MGEDontology\.php
+iRefWeb	^http://wodaklab\.org/iRefWeb/
+PiroplasmaDB	^http://piroplasmadb\.org/
+GRID	^https://www\.grid\.ac/
+Unimod	^http://www\.unimod\.org/
+DragonDB Protein	^http://www\.antirrhinum\.net/
+KEGG Reaction	^http://www\.genome\.jp/kegg/reaction/
+OMA Group	^http://omabrowser\.org/cgi\-bin/gateway\.pl
+MetaNetX compartment	^http://metanetx\.org/
+UMLS	^http://linkedlifedata\.com/
+LigandBox	^http://ligandbox\.protein\.osaka\-u\.ac\.jp/ligandbox//cgi\-bin/index\.cgi\?LANG=en
+UM-BBD Reaction	^http://umbbd\.ethz\.ch/
+UM-BBD Reaction	^http://umbbd\.msi\.umn\.edu/index\.html
+Pfam	^http://pfam\.ccbb\.re\.kr/index\.shtml
+Pfam	^http://pfam\.xfam\.org/
+Pfam	^http://pfam\.sbc\.su\.se/
+Pfam	^http://pfam\.janelia\.org/
+Pfam	^http://pfam\.sanger\.ac\.uk/
+Pfam	^http://pfam\.jouy\.inra\.fr/
+ChEMBL compound	^https://www\.ebi\.ac\.uk/chembldb/
+ChEMBL compound	^https://www\.ebi\.ac\.uk/rdf/services/chembl/
+ChEMBL compound	^https://github\.com/egonw/chembl\.rdf
+F-SNP	^http://compbio\.cs\.queensu\.ca/F\-SNP/
+SWISS-MODEL	^http://swissmodel\.expasy\.org/
+Pseudomonas Genome Database	^http://www\.pseudomonas\.com/
+DragonDB Locus	^http://www\.antirrhinum\.net/
+BiGG Reaction	^http://bigg\.ucsd\.edu/universal/reactions
+ProteomeXchange	^http://www\.proteomexchange\.org/
+ChEMBL target	^https://www\.ebi\.ac\.uk/chembldb/
+ChEMBL target	^https://github\.com/egonw/chembl\.rdf
+ChEMBL target	^http://rdf\.ebi\.ac\.uk/resource/chembl/
+SIDER Side Effect	^http://sideeffects\.embl\.de/
+MedGen	^https://www\.ncbi\.nlm\.nih\.gov/medgen/
+MIRIAM Registry resource	^http://www\.ebi\.ac\.uk/miriam/
+P3DB Site	^http://www\.p3db\.org/
+DOMMINO	^http://dommino\.org/
+Ligand Expo	^http://ligand\-depot\.rutgers\.edu/index\.html
+Ligand Expo	^http://ligand\-expo\.rcsb\.org/
+PANTHER Node	^http://pantree\.org/
+BiGG Compartment	^http://bigg\.ucsd\.edu/compartments/
+COMBINE specifications	^http://co\.mbine\.org/standards/
+E-cyanobacterium entity	^http://e\-cyanobacterium\.org/bcs/
+IntAct	^http://www\.ebi\.ac\.uk/intact/
+PSCDB	^http://idp1\.force\.cs\.is\.nagoya\-u\.ac\.jp/pscdb/index\.html
+MultiCellDS collection	^http://multicellds\.org/MultiCellDB\.php
+Pathway Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/pw
+Pathway Ontology	^http://bioportal\.bioontology\.org/ontologies/PW
+Pathway Ontology	^http://rgd\.mcw\.edu/rgdweb/ontology/search\.html
+PhosphoPoint Phosphoprotein	^http://kinase\.bioinformatics\.tw/
+UniPathway Reaction	^http://www\.grenoble\.prabi\.fr/obiwarehouse/unipathway
+DisProt	^http://www\.disprot\.org/
+MedlinePlus	^http://www\.nlm\.nih\.gov/medlineplus/
+ICEberg family	^http://db\-mml\.sjtu\.edu\.cn/ICEberg/
+Wikipedia (En)	^http://en\.wikipedia\.org/wiki/Main_Page
+Wikipedia (En)	^http://wiki\.dbpedia\.org/
+DPV	^http://www\.dpvweb\.net/
+GOLD metadata	^http://www\.genomesonline\.org/cgi\-bin/GOLD/index\.cgi
+Protein Affinity Reagents	^http://www\.ebi\.ac\.uk/ontology\-lookup/browse\.do\?ontName=PAR
+CATH superfamily	^http://www\.cathdb\.info/
+Antibody Registry	^http://antibodyregistry\.org/
+KEGG Metagenome	^http://www\.genome\.jp/kegg/catalog/org_list3\.html
+UM-BBD Compound	^http://umbbd\.ethz\.ch/
+UM-BBD Compound	^http://umbbd\.msi\.umn\.edu/index\.html
+Tissue List	^http://www\.uniprot\.org/docs/tisslist\.txt
+MaizeGDB Locus	^http://www\.maizegdb\.org/
+JAX Mice	^http://jaxmice\.jax\.org/
+Mathematical Modelling Ontology	^http://bioportal\.bioontology\.org/ontologies/MAMO
+Mathematical Modelling Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/mamo
+ExAC Transcript	^http://exac\.broadinstitute\.org/
+ArachnoServer	^http://www\.arachnoserver\.org/
+Gramene genes	^http://www\.gramene\.org/
+dbSNP	^http://www\.ncbi\.nlm\.nih\.gov/sites/entrez\?db=snp
+MEROPS Family	^http://merops\.sanger\.ac\.uk/index\.htm
+TAIR Locus	^http://arabidopsis\.org/index\.jsp
+MatrixDB	^http://matrixdb\.univ\-lyon1\.fr/
+ViPR Strain	^http://www\.viprbrc\.org/brc/home\.do\?decorator=vipr
+FlyBase	^http://flybase\.org/
+FuncBase Mouse	^http://func\.mshri\.on\.ca/mouse/
+National Bibliography Number	^http://nbn\-resolving\.org/resolve_urn\.htm
+TarBase	^http://diana\.imis\.athena\-innovation\.gr/DianaTools/index\.php\?r=tarbase/index
+TarBase	^http://diana\.cslab\.ece\.ntua\.gr/DianaToolsNew/index\.php\?r=tarbase
+KEGG Compound	^http://www\.genome\.jp/kegg/ligand\.html
+KEGG Pathway	^http://www\.genome\.jp/kegg/pathway\.html
+Ensembl	^http://www\.ensembl\.org/
+Ensembl	^http://uswest\.ensembl\.org/
+Ensembl	^http://asia\.ensembl\.org/
+Ensembl	^http://useast\.ensembl\.org/
+Oryzabase Mutant	^http://www\.shigen\.nig\.ac\.jp/rice/oryzabaseV4/
+ModelDB	^http://senselab\.med\.yale\.edu/ModelDB/
+UBERON	^http://bioportal\.bioontology\.org/ontologies/UBERON
+UBERON	^http://www\.ebi\.ac\.uk/ols/ontologies/uberon
+Cooperative Patent Classification	^http://worldwide\.espacenet\.com/classification
+KEGG Genes	^http://www\.genome\.jp/kegg/genes\.html
+NASC code	^http://arabidopsis\.info/
+Olfactory Receptor Database	^http://senselab\.med\.yale\.edu/OrDB/
+miRTarBase	^http://mirtarbase\.mbc\.nctu\.edu\.tw/
+BugBase Expt	^http://bugs\.sgul\.ac\.uk/E\-BUGS
+GWAS Central Phenotype	^http://www\.gwascentral\.org/phenotypes
+HAMAP	^http://hamap\.expasy\.org/
+Ontology of Physics for Biology	^http://bioportal\.bioontology\.org/ontologies/OPB
+REBASE	^http://rebase\.neb\.com/rebase/
+MetaboLights	^http://www\.ebi\.ac\.uk/metabolights/
+DOOR	^http://csbl1\.bmb\.uga\.edu/OperonDB/DOOR\.php
+PharmGKB Disease	^http://www\.pharmgkb\.org/
+HUGE	^http://www\.kazusa\.or\.jp/huge/
+USPTO	^http://patft\.uspto\.gov/netahtml/PTO/index\.html
+mirEX	^http://comgen\.pl/mirex/\?page=home
+NONCODE v3	^http://www\.noncode\.org/
+Taxonomy	^http://www\.ebi\.ac\.uk/ena/
+Taxonomy	^http://taxonomy\.bio2rdf\.org/fct/
+Taxonomy	^http://www\.ncbi\.nlm\.nih\.gov/Taxonomy/
+Taxonomy	^http://bioportal\.bioontology\.org/ontologies/NCBITAXON
+Taxonomy	^http://www\.ebi\.ac\.uk/ols/ontologies/ncbitaxon/
+Taxonomy	^http://www\.uniprot\.org/taxonomy/
+Kyoto Encyclopedia of Genes and Genomes	^http://www\.kegg\.jp/
+Orphanet Rare Disease Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/ordo
+GlycomeDB	^http://www\.glycome\-db\.org/showMenu\.action\?major=database
+Yeast Intron Database v3	^http://compbio\.soe\.ucsc\.edu/yeast_introns\.html
+Golm Metabolome Database	^http://gmd\.mpimp\-golm\.mpg\.de/
+GeneFarm	^http://urgi\.versailles\.inra\.fr/Genefarm/
+PANTHER Pathway Component	^http://www\.pantherdb\.org/
+Mouse Adult Gross Anatomy	^http://www\.informatics\.jax\.org/
+Mouse Adult Gross Anatomy	^http://bioportal\.bioontology\.org/ontologies/MA
+Mouse Adult Gross Anatomy	^http://www\.ebi\.ac\.uk/ols/ontologies/ma
+NONCODE v4 Gene	^http://www\.bioinfo\.org/NONCODEv4/
+CTD Chemical	^http://ctdbase\.org/
+IRD Segment Sequence	^http://www\.fludb\.org/
+Peroxibase	^http://peroxibase\.toulouse\.inra\.fr/
+CryptoDB	^http://cryptodb\.org/cryptodb/
+Reactome	^http://www\.reactome\.org/
+UniSTS	^http://www\.ncbi\.nlm\.nih\.gov/sites/entrez\?db=unists
+Xenbase	^http://www\.xenbase\.org/
+RRID	^https://scicrunch\.org/resolver
+KEGG Module	^http://www\.kegg\.jp/kegg/module\.html
+MDM	^https://medical\-data\-models\.org/
+UniProt Isoform	^http://www\.uniprot\.org/
+UniProt Isoform	^http://www\.uniprot\.org/uniparc/
+UniProt Isoform	^http://purl\.uniprot\.org/
+MetaNetX reaction	^http://metanetx\.org/
+SubtiWiki	^http://www\.subtiwiki\.uni\-goettingen\.de/wiki/index\.php/Main_Page
+SNOMED CT	^http://vtsl\.vetmed\.vt\.edu/
+SNOMED CT	^http://www\.ihtsdo\.org/snomed\-ct/
+SNOMED CT	^http://www\.snomedbrowser\.com/
+Rat Genome Database	^http://rgd\.mcw\.edu/
+Yeast Intron Database v4.3	^http://intron\.ucsc\.edu/yeast4\.3/
+HOMD Sequence Metainformation	^http://www\.homd\.org/index\.php
+RefSeq	^http://www\.ncbi\.nlm\.nih\.gov/projects/RefSeq/
+PaleoDB	^http://paleodb\.org/
+PaleoDB	^http://museumu03\.museumwww\.naturkundemuseum\-berlin\.de/
+PaleoDB	^http://paleodb\.geology\.wisc\.edu/
+Gramene Growth Stage Ontology	^http://www\.gramene\.org/
+miRBase Sequence	^http://www\.mirbase\.org/
+miRBase Sequence	^http://microrna\.sanger\.ac\.uk/
+Protein Modification Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/mod
+Protein Modification Ontology	^http://bioportal\.bioontology\.org/ontologies/PSIMOD
+BugBase Protocol	^http://bugs\.sgul\.ac\.uk/E\-BUGS
+CharProt	^http://www\.jcvi\.org/charprotdb
+EcoGene	^http://maxd\.cs\.purdue\.edu:9455
+EcoGene	^http://ecogene\.org/
+METLIN	^http://masspec\.scripps\.edu/
+PhosphoSite Protein	^http://www\.phosphosite\.org/homeAction\.do
+GRIN Plant Taxonomy	^http://www\.ars\-grin\.gov/cgi\-bin/npgs/html/index\.pl\?language=en
+Bgee organ	^http://bgee\.unil\.ch/bgee/bgee
+SubtiList	^http://genolist\.pasteur\.fr/SubtiList/
+WikiGenes	^http://www\.wikigenes\.org/
+Systems Biology Ontology	^http://bioportal\.bioontology\.org/ontologies/SBO
+Systems Biology Ontology	^http://www\.ebi\.ac\.uk/sbo/
+Systems Biology Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/sbo
+miRNEST	^http://rhesus\.amu\.edu\.pl/mirnest/copy/
+SBML RDF Vocabulary	^http://biomodels\.net/rdf/vocabulary\.rdf
+FMA	^http://www\.ebi\.ac\.uk/ols/ontologies/fma/
+FMA	^http://bioportal\.bioontology\.org/ontologies/FMA
+ENA	^http://www\.ebi\.ac\.uk/ena/
+YRC PDR	^http://www\.yeastrc\.org/pdr/
+PharmGKB Drug	^http://www\.pharmgkb\.org/
+NONCODE v4 Transcript	^http://www\.bioinfo\.org/NONCODEv4/
+KEGG Environ	^http://www\.genome\.jp/kegg/drug/environ\.html
+Plant Environment Ontology	^http://archive\.gramene\.org/db/ontology/search_term\?id=EO:0007359
+Plant Environment Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/eo
+Plant Environment Ontology	^http://bioportal\.bioontology\.org/ontologies/PECO
+Canadian Drug Product Database	^http://webprod3\.hc\-sc\.gc\.ca/dpd\-bdpp/index\-eng\.jsp
+BacMap Map	^http://bacmap\.wishartlab\.com/
+ISBN	^http://www\.worldcat\.org/
+ISBN	^http://isbndb\.com/
+Anatomical Therapeutic Chemical	^http://www\.whocc\.no/atc_ddd_index/
+ViralZone	^http://www\.expasy\.org/viralzone/
+ChemDB	^http://cdb\.ics\.uci\.edu/
+NCIt	^http://ncit\.nci\.nih\.gov/
+NCI Pathway Interaction Database: Pathway	^http://pid\.nci\.nih\.gov/
+MeSH 2012	^http://www\.nlm\.nih\.gov/mesh/
+MeSH 2012	^http://bioportal\.bioontology\.org/
+UM-BBD Enzyme	^http://umbbd\.ethz\.ch/
+UM-BBD Enzyme	^http://umbbd\.msi\.umn\.edu/index\.html
+UniProt Knowledgebase	^http://www\.uniprot\.org/
+UniProt Knowledgebase	^http://www\.ebi\.uniprot\.org/
+UniProt Knowledgebase	^http://www\.ncbi\.nlm\.nih\.gov/protein/
+UniProt Knowledgebase	^http://purl\.uniprot\.org/
+UniProt Knowledgebase	^http://www\.expasy\.uniprot\.org/
+UniProt Knowledgebase	^http://www\.pir\.uniprot\.org/
+Protein Data Bank Ligand	^http://www\.pdb\.org/
+Protein Data Bank Ligand	^http://www\.pdbe\.org/
+LINCS Data	^http://lincsportal\.ccs\.miami\.edu/datasets/
+CutDB	^http://cutdb\.burnham\.org
+PharmGKB Gene	^http://www\.pharmgkb\.org/
+IntAct Molecule	^http://www\.ebi\.ac\.uk/intact/
+Transport Classification Database	^http://www\.tcdb\.org/
+Mammalian Phenotype Ontology	^https://bioportal\.bioontology\.org/ontologies/MP
+Mammalian Phenotype Ontology	^http://www\.informatics\.jax\.org/
+Mammalian Phenotype Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/mp/
+TAIR Protein	^http://arabidopsis\.org/index\.jsp
+AFTOL	^http://aftol\.org/data\.php
+CAZy	^http://www\.cazy\.org/
+CAS	^http://commonchemistry\.org
+CAS	^http://www\.ncbi\.nlm\.nih\.gov/pccompound
+EBI Metagenomics Project	^https://www\.ebi\.ac\.uk/metagenomics
+HPRD	^http://www\.hprd\.org/
+BioPortal	^http://bioportal\.bioontology\.org/
+Golm Metabolome Database Profile	^http://gmd\.mpimp\-golm\.mpg\.de/
+SoyBase	^http://soybase\.org/
+Ensembl Bacteria	^http://bacteria\.ensembl\.org/
+miRBase mature sequence	^http://www\.mirbase\.org/
+NCBI Protein	^http://www\.ncbi\.nlm\.nih\.gov/protein
+Degradome Database	^http://degradome\.uniovi\.es/
+SGD	^http://sgd\.bio2rdf\.org/fct
+SGD	^http://www\.yeastgenome\.org/
+Oryzabase Gene	^http://www\.shigen\.nig\.ac\.jp/rice/oryzabaseV4/
+TreeFam	^http://www\.treefam\.org/
+Rouge	^http://www\.kazusa\.or\.jp/rouge/
+Japan Collection of Microorganisms	^http://www\.jcm\.riken\.go\.jp/
+YeTFasCo	^http://yetfasco\.ccbr\.utoronto\.ca/
+YDPM	^http://www\-deletion\.stanford\.edu/YDPM/
+SABIO-RK Kinetic Record	^http://sabiork\.h\-its\.org/
+Pocketome	^http://www\.pocketome\.org/sfSearch\.cgi\?act=browseall
+ProtClustDB	^http://www\.ncbi\.nlm\.nih\.gov/proteinclusters\?db=proteinclusters
+MEROPS	^http://merops\.sanger\.ac\.uk/index\.htm
+ChemSpider	^http://www\.chemspider\.com/
+MEROPS Inhibitor	^http://merops\.sanger\.ac\.uk/index\.htm
+JWS Online	^http://jjj\.biochem\.sun\.ac\.za/models/
+JWS Online	^http://jjj\.mib\.ac\.uk/index\.html
+JWS Online	^http://jjj\.bio\.vu\.nl/models/
+MultiCellDS Digital snapshot	^http://multicellds\.org/MultiCellDB\.php
+KEGG Genome	^http://www\.genome\.jp/kegg/catalog/org_list\.html
+CABRI	^http://www\.be\.cabri\.org/
+CABRI	^http://www\.cabri\.org/
+CABRI	^http://www\.fr\.cabri\.org/
+Compulyeast	^http://compluyeast2dpage\.dacya\.ucm\.es/
+HOMD Taxonomy	^http://www\.homd\.org/index\.php
+Molecular Modeling Database	^http://www\.ncbi\.nlm\.nih\.gov/sites/entrez\?db=structure
+WormBase RNAi	^http://www\.wormbase\.org/
+Gene Ontology	^http://www\.ebi\.ac\.uk/QuickGO/
+Gene Ontology	^http://amigo\.geneontology\.org/
+Gene Ontology	^http://www\.pantherdb\.org/
+Gene Ontology	^http://www\.informatics\.jax\.org/searches/GO_form\.shtml
+Gene Ontology	^http://ep\.ebi\.ac\.uk/EP/GO/
+Gene Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/go
+Gene Ontology	^http://amigo2\.berkeleybop\.org/cgi\-bin/amigo2/amigo/
+Gene Ontology	^http://bioportal\.bioontology\.org/ontologies/GO
+RNA Modification Database	^http://rna\-mdb\.cas\.albany\.edu/RNAmods/rnaover\.htm
+TreeBASE	^http://treebase\.org/
+Protein Model Database	^https://bioinformatics\.cineca\.it/PMDB/
+NAPP	^http://napp\.u\-psud\.fr/
+NCBI GI	^http://www\.ncbi\.nlm\.nih\.gov/protein/
+H-InvDb Locus	^http://h\-invitational\.jp/hinv/ahg\-db/index\.jsp
+GRSDB	^http://bioinformatics\.ramapo\.edu/GRSDB2/
+PRIDE	^http://www\.ebi\.ac\.uk/pride/
+PIRSF	^http://pir\.georgetown\.edu/pirsf/
+MycoBrowser marinum	^http://mycobrowser\.epfl\.ch/marinolist\.html
+Human Disease Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/doid
+Human Disease Ontology	^http://bioportal\.bioontology\.org/ontologies/DOID
+Human Disease Ontology	^http://disease\-ontology\.org/
+MimoDB	^http://immunet\.cn/bdb/
+HGNC gene family	^http://www\.genenames\.org/
+DRSC	^http://flyrnai\.org/
+HGMD	^http://www\.hgmd\.cf\.ac\.uk/ac/index\.php
+ExAC Gene	^http://exac\.broadinstitute\.org/
+NCBI Gene	^http://www\.ncbi\.nlm\.nih\.gov/gene
+NCBI Gene	^http://ncbigene\.bio2rdf\.org/fct
+EDAM Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/edam
+EDAM Ontology	^http://bioportal\.bioontology\.org/ontologies/EDAM
+EDAM Ontology	^http://www\.ebi\.ac\.uk/ontology\-lookup/
+PaxDb Organism	^http://pax\-db\.org/
+CYGD	^http://pedant\.helmholtz\-muenchen\.de/pedant3htmlview/pedant3view\?Method=start_method&Db=p3_p13838_Sac_cerev
+CYGD	^http://mips\.gsf\.de/genre/proj/yeast/
+CYGD	^http://mips\.helmholtz\-muenchen\.de/genre/proj/yeast/
+ProDom	^http://prodom\.prabi\.fr/prodom/current/html/home\.php
+Locus Reference Genomic	^http://www\.ensembl\.org/
+Locus Reference Genomic	^http://www\.lrg\-sequence\.org/
+Locus Reference Genomic	^http://uswest\.ensembl\.org/
+Locus Reference Genomic	^http://asia\.ensembl\.org/
+Locus Reference Genomic	^http://useast\.ensembl\.org/
+Pazar Transcription Factor	^http://www\.pazar\.info/
+MIRIAM Registry collection	^http://www\.ebi\.ac\.uk/miriam/
+Saccharomyces genome database pathways	^http://pathway\.yeastgenome\.org/
+Animal TFDB Family	^http://www\.bioguo\.org/AnimalTFDB/family_index\.php
+MACiE	^http://www\.ebi\.ac\.uk/thornton\-srv/databases/MACiE/index\.html
+SABIO-RK Reaction	^http://sabiork\.h\-its\.org/
+DragonDB Allele	^http://www\.antirrhinum\.net/
+Experimental Factor Ontology	^http://bioportal\.bioontology\.org/ontologies/EFO
+Experimental Factor Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/efo
+Experimental Factor Ontology	^http://www\.ebi\.ac\.uk/efo/
+ARK	^http://n2t\.net/
+GABI	^http://www\.gabipd\.org/
+Database of Quantitative Cellular Signaling: Model	^http://doqcs\.ncbs\.res\.in/
+STOREDB	^https://www\.storedb\.org/
+LipidBank	^http://lipidbank\.jp/index\.html
+BitterDB Compound	^http://bitterdb\.agri\.huji\.ac\.il/dbbitter\.php
+MultiCellDS Digital Cell Line	^http://multicellds\.org/MultiCellDB\.php
+LINCS Cell	^http://lincs\.hms\.harvard\.edu/db/cells/
+Ligand-Gated Ion Channel database	^http://www\.ebi\.ac\.uk/compneur\-srv/LGICdb/LGICdb\.php
+Unite	^http://unite\.ut\.ee/
+Cell Signaling Technology Antibody	^http://www\.cellsignal\.com/catalog/index\.html
+PhosphoPoint Kinase	^http://kinase\.bioinformatics\.tw/
+HCVDB	^http://euhcvdb\.ibcp\.fr/euHCVdb/
+ISSN	^http://catalog\.loc\.gov/webvoy\.htm
+BDGP EST	^http://www\.ncbi\.nlm\.nih\.gov/dbEST/index\.html
+Dictybase EST	^http://dictybase\.org/
+NeuroMorpho	^http://neuromorpho\.org/index\.jsp
+KEGG Drug	^http://www\.genome\.jp/kegg/drug/
+PATO	^http://bioportal\.bioontology\.org/ontologies/PATO
+PATO	^http://www\.ebi\.ac\.uk/ols/ontologies/pato
+GOLD genome	^http://www\.genomesonline\.org/cgi\-bin/GOLD/index\.cgi
+FungiDB	^http://FungiDB\.org
+CTD Gene	^http://ctdbase\.org/
+Gramene Taxonomy	^http://www\.gramene\.org/
+Conserved Domain Database	^http://www\.ncbi\.nlm\.nih\.gov/sites/entrez\?db=cdd
+Protein Data Bank	^http://www\.pdb\.org/
+Protein Data Bank	^http://www\.pdbj\.org/
+Protein Data Bank	^http://www\.ebi\.ac\.uk/pdbsum/
+Protein Data Bank	^http://www\.pdbe\.org/
+Protein Data Bank	^http://www\.proteopedia\.org/
+Dictybase Gene	^http://dictybase\.org/
+Human Phenotype Ontology	^http://human\-phenotype\-ontology\.github\.io/
+Human Phenotype Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/hp
+DrugBank	^http://www\.drugbank\.ca/
+DrugBank	^http://drugbank\.bio2rdf\.org/fct/
+Animal Genome Cattle QTL	^http://www\.animalgenome\.org/cgi\-bin/QTLdb/BT/index
+Cell Type Ontology	^http://bioportal\.bioontology\.org/ontologies/CL
+Cell Type Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/cl
+KEGG Orthology	^http://www\.genome\.jp/kegg/ko\.html
+BiGG Model	^http://bigg\.ucsd\.edu/models
+ChemIDplus	^http://chem\.sis\.nlm\.nih\.gov/chemidplus/chemidheavy\.jsp
+Ensembl Fungi	^http://fungi\.ensembl\.org/
+GXA Gene	^http://www\.ebi\.ac\.uk/gxa/
+Wormpep	^http://crfb\-3\.univ\-mrs\.fr/db/seq/protein
+Wormpep	^http://www\.wormbase\.org/db/seq/protein
+Wormpep	^http://wormbase\.sanger\.ac\.uk/
+Wormpep	^http://imbb\.wormbase\.org/db/seq/protein
+Wormpep	^http://caltech\.wormbase\.org/db/seq/protein
+Orphanet	^http://orphanet\.bio2rdf\.org/fct
+Orphanet	^http://www\.orpha\.net/consor/
+PaxDb Protein	^http://pax\-db\.org/
+ZFIN Phenotype	^http://zfin\.org
+PMC International	^http://europepmc\.org/
+PMC International	^http://www\.ncbi\.nlm\.nih\.gov/pmc/
+PMC International	^http://ukpmc\.ac\.uk/
+PMC International	^http://pubmedcentralcanada\.ca/pmcc
+WormBase	^http://imbb\.wormbase\.org/
+WormBase	^http://wormbase\.sanger\.ac\.uk/
+WormBase	^http://wormbase\.bio2rdf\.org/fct
+WormBase	^http://www\.wormbase\.org/
+WormBase	^http://crfb\-3\.univ\-mrs\.fr/
+WormBase	^http://caltech\.wormbase\.org/
+Plant Ontology	^http://bioportal\.bioontology\.org/ontologies/PO
+Plant Ontology	^http://www\.plantontology\.org/
+Plant Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/po
+ORCID	^http://orcid\.org
+ELM	^http://elm\.eu\.org/
+Golm Metabolome Database Reference Substance	^http://gmd\.mpimp\-golm\.mpg\.de/
+BYKdb	^http://bykdb\.ibcp\.fr/BYKdb/
+MetaNetX chemical	^http://metanetx\.org/
+ProbOnto	^http://www\.ebi\.ac\.uk/ols/ontologies/probonto
+NucleaRDB	^http://www\.receptors\.org/nucleardb/
+GOA	^http://www\.ebi\.ac\.uk/GOA/
+Signaling Gateway	^http://www\.signaling\-gateway\.org/molecule
+BioCatalogue	^http://www\.biocatalogue\.org/
+Molbase	^http://www\.molbase\.com/
+GeneCards	^http://genecards_v3\.hgc\.jp/
+GeneCards	^http://genecards\.bioinformatics\.nl/
+GeneCards	^http://www6\.unito\.it/cards/
+GeneCards	^http://genecards\.bii\.a\-star\.edu\.sg/
+GeneCards	^http://www\.genecards\.org/
+GeneCards	^http://p570e70p1\.ophid\.utoronto\.ca/genecards/index\.php
+GeneCards	^http://bioinformatics\.mdanderson\.org/genecards/
+BioSystems	^http://www\.ncbi\.nlm\.nih\.gov/biosystems/
+E-cyanobacterium model	^http://e\-cyanobacterium\.org/models/
+Phenol-Explorer	^http://www\.phenol\-explorer\.eu/foods/
+BioModels Database	^http://www\.ebi\.ac\.uk/biomodels/
+BioModels Database	^http://biomodels\.caltech\.edu/
+BioModels Database	^http://cu\.biomodels\.bio2rdf\.org/fct/
+Gramene QTL	^http://www\.gramene\.org/
+IUPHAR receptor	^http://www\.guidetopharmacology\.org/targets\.jsp
+PROSITE	^http://www\.expasy\.org/prosite/
+TAIR Gene	^http://arabidopsis\.org/index\.jsp
+ProtoNet Cluster	^http://www\.protonet\.cs\.huji\.ac\.il/
+SEED Subsystem	^http://seed\-viewer\.theseed\.org/seedviewer\.cgi
+Rat Genome Database strain	^http://rgd\.mcw\.edu/
+DBD	^http://www\.transcriptionfactor\.org/
+BioGRID	^http://thebiogrid\.org/
+DARC	^http://darcsite\.genzentrum\.lmu\.de/darc/index\.php
+GWAS Central Marker	^http://www\.gwascentral\.org/markers/
+Human Proteome Map Peptide	^http://www\.humanproteomemap\.org/index\.php
+SASBDB	^http://www\.sasbdb\.org/
+MINT	^http://mint\.bio\.uniroma2\.it/mint/
+MINT	^http://www\.ebi\.ac\.uk/intact/
+EchoBASE	^http://www\.york\.ac\.uk/
+LINCS Protein	^http://lincs\.hms\.harvard\.edu/db/proteins/
+OrthoDB	^http://cegg\.unige\.ch/orthodb4
+SCOP	^http://scop\.berkeley\.edu/
+SCOP	^http://scop\.mrc\-lmb\.cam\.ac\.uk/scop/
+SCOP	^http://scop\.bic\.nus\.edu\.sg/
+H-InvDb Protein	^http://h\-invitational\.jp/hinv/ahg\-db/index\.jsp
+WikiPathways	^http://www\.wikipathways\.org/
+dbEST	^http://www\.ddbj\.nig\.ac\.jp/
+dbEST	^http://www\.ebi\.ac\.uk/ena
+dbEST	^http://www\.ncbi\.nlm\.nih\.gov/nucest
+BRENDA	^http://www\.brenda\-enzymes\.org/
+IDEAL	^http://www\.ideal\.force\.cs\.is\.nagoya\-u\.ac\.jp/IDEAL/
+NEXTDB	^http://nematode\.lab\.nig\.ac\.jp/
+DailyMed	^http://dailymed\.nlm\.nih\.gov/dailymed/
+HGNC Symbol	^http://www\.genenames\.org/
+KnapSack	^http://kanaya\.aist\-nara\.ac\.jp/KNApSAcK/
+Wikidata	^https://www\.wikidata\.org/
+Worfdb	^http://worfdb\.dfci\.harvard\.edu/
+Unipathway	^http://www\.grenoble\.prabi\.fr/obiwarehouse/unipathway
+ISFinder	^http://www\-is\.biotoul\.fr/i
+EPD	^http://srs\.ebi\.ac\.uk/srs6bin/cgi\-bin/wgetz\?\-page\+LibInfo\+\-lib\+EPD
+EPD	^http://epd\.vital\-it\.ch/
+DOI	^http://www\.doi\.org/
+DOI	^http://www\.handle\.net/index\.html
+DOI	^http://doai\.io/
+EcoliWiki	^http://ecoliwiki\.net/colipedia/
+Bgee stage	^http://bgee\.unil\.ch/bgee/bgee
+HGNC Family	^http://www\.genenames\.org/
+European Genome-phenome Archive Study	^https://www\.ebi\.ac\.uk/ega/studies
+CAPS-DB	^http://www\.bioinsilico\.org/cgi\-bin/CAPSDB/staticHTML/home
+DASHR expression	^http://lisanwanglab\.org/DASHR/show\-expression\-table\.php\?start=0
+Vbase2	^http://www\.vbase2\.org/vbase2\.php
+PubChem-bioassay	^http://www\.ncbi\.nlm\.nih\.gov/sites/entrez\?db=pcassay
+T3DB	^http://www\.t3db\.org/
+Homeodomain Research	^http://research\.nhgri\.nih\.gov/apps/homeodomain/web/
+BioProject	^http://www\.ncbi\.nlm\.nih\.gov/bioproject
+BioProject	^http://trace\.ddbj\.nig\.ac\.jp/bioproject/
+BioProject	^http://www\.ebi\.ac\.uk/ena/
+JSTOR	^http://www\.jstor\.org/
+Unit Ontology	^http://www\.ebi\.ac\.uk/ols/ontologies/uo
+Unit Ontology	^http://bioportal\.bioontology\.org/ontologies/UO
+FooDB Compound	^http://foodb\.ca/foods
+MycoBank	^http://www\.mycobank\.org/
+BioSharing	^https://www\.biosharing\.org/
+ProteomicsDB Protein	^https://www\.proteomicsdb\.org/\#human
+Enzyme Nomenclature	^http://www\.ebi\.ac\.uk/intenz/
+Enzyme Nomenclature	^http://www\.genome\.jp/dbget\-bin/www_bfind\?enzyme
+Enzyme Nomenclature	^http://www\.enzyme\-database\.org/
+Enzyme Nomenclature	^http://enzyme\.expasy\.org/
+CLDB	^http://bioinformatics\.hsanmartino\.it/hypercldb/indexes\.html
+PolBase	^http://polbase\.neb\.com/
+DEPOD	^http://www\.koehnlab\.de/depod/
+AspGD Locus	^http://www\.aspgd\.org/
+Animal Genome Pig QTL	^http://www\.animalgenome\.org/cgi\-bin/QTLdb/SS/index
+Database of Quantitative Cellular Signaling: Pathway	^http://doqcs\.ncbs\.res\.in/
+AspGD Protein	^http://www\.aspgd\.org/
+Anatomical Therapeutic Chemical Vetinary	^http://www\.whocc\.no/atcvet/atcvet_index/
+CSA	^http://www\.ebi\.ac\.uk/thornton\-srv/databases/CSA/
+BioSample	^http://www\.ncbi\.nlm\.nih\.gov/biosample
+BioSample	^http://trace\.ddbj\.nig\.ac\.jp/biosample/
+BioSample	^http://www\.ebi\.ac\.uk/biosamples/
+ClinicalTrials.gov	^http://clinicaltrials\.gov/
+ClinicalTrials.gov	^http://clinicaltrials\.bio2rdf\.org/fct
+SEED Compound	^http://seed\-viewer\.theseed\.org/seedviewer\.cgi\?page=Home
+TriTrypDB	^http://tritrypdb\.org/tritrypdb/
+OriDB Schizosaccharomyces	^http://pombe\.oridb\.org/index\.php
+SubstrateDB	^http://substrate\.burnham\.org/
+uBio NameBank	^http://www\.ubio\.org
+PeptideAtlas	^http://www\.peptideatlas\.org/
+Chemical Component Dictionary	^http://www\.ebi\.ac\.uk/pdbe\-srv/pdbechem/
+ClinVar Record	^http://www\.ncbi\.nlm\.nih\.gov/clinvar/
+HMDB	^http://www\.hmdb\.ca/
+HSSP	^http://swift\.cmbi\.kun\.nl/swift/hssp/
+HSSP	^ftp://ftp\.cmbi\.ru\.nl/pub/molbio/data/hssp/
+SPIKE Map	^http://www\.cs\.tau\.ac\.il/~spike/
+Identifiers.org Terms	^http://identifiers\.org/
+TEDDY	^http://teddyontology\.sourceforge\.net/
+TEDDY	^http://www\.ebi\.ac\.uk/ols/ontologies/teddy
+Gramene protein	^http://www\.gramene\.org/
+Ensembl Plants	^http://plants\.ensembl\.org/
+NORINE	^http://bioinfo\.lifl\.fr/norine/
+LINCS Molecule	^http://lincs\.hms\.harvard\.edu/db/sm/
+HGNC	^http://hgnc\.bio2rdf\.org/fct
+HGNC	^http://www\.genenames\.org
+NCIm	^http://ncim\.nci\.nih\.gov/
+SIDER Drug	^http://sideeffects\.embl\.de/
+MycoBrowser smegmatis	^http://mycobrowser\.epfl\.ch/smegmalist\.html
+PRIDE Project	^http://www\.ebi\.ac\.uk/pride/
+ZINC	^http://zinc15\.docking\.org/
