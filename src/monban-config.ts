@@ -4,5 +4,6 @@ import { Ontology } from "./ontology";
 export class MonbanConfig {
     primalClasses: Set<string> = new Set<string>();
     uriWhitelist: UriWhitelist = new UriWhitelist();
+    uriBlacklist: UriWhitelist = new UriWhitelist();
     ontology: Ontology = new Ontology();
 }

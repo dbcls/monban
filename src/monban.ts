@@ -16,6 +16,7 @@ export class Monban {
             .usage('[options] <file ...>')
             .option('--primal-classes <path>', 'path to primal classes definition')
             .option('--uri-whitelist <path>', 'path to white list definition')
+            .option('--uri-blacklist <path>', 'path to black list definition')
             .option('--ontology <path>', 'path to ontology')
             .parse(argv);
     }
@@ -29,8 +30,11 @@ export class Monban {
         if (this.commander.primalClasses) {
             config.primalClasses = await this.loadPrimalClasses();
         }
-        if (this.commander.uriWhiteList) {
-            config.uriWhitelist = await UriWhitelist.loadTsv(this.commander.uriWhiteList);
+        if (this.commander.uriWhitelist) {
+            config.uriWhitelist = await UriWhitelist.loadTsv(this.commander.uriWhitelist);
+        }
+        if (this.commander.uriBlacklist) {
+            config.uriBlacklist = await UriWhitelist.loadTsv(this.commander.uriBlacklist);
         }
         if (this.commander.ontology) {
             config.ontology = await Ontology.load(this.commander.ontology);
