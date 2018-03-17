@@ -3,7 +3,7 @@ import * as zlib from "zlib";
 import { Readable, Writable } from "stream";
 
 import { Triple } from "./triple";
-import { UriWhitelist, UriWhitelistEntry } from "./uri-whitelist";
+import { UriPatterns, UriPattern } from "./uri-patterns";
 
 import * as N3 from "n3";
 import { N3StreamParser } from "n3";
@@ -52,9 +52,9 @@ const rdfsSeeAlso = 'http://www.w3.org/2000/01/rdf-schema#seeAlso';
 
 class Consumer extends Writable {
     statictics = new Statistics();
-    uriWhitelistPattern: UriWhitelist;
+    uriWhitelistPattern: UriPatterns;
 
-    constructor(uriWhitelistPattern: UriWhitelist) {
+    constructor(uriWhitelistPattern: UriPatterns) {
         super({ objectMode: true })
         this.uriWhitelistPattern = uriWhitelistPattern;
     }
@@ -94,7 +94,7 @@ class Consumer extends Writable {
 }
 
 export class Aramashi {
-    uriWhitelist: UriWhitelist = new UriWhitelist();
+    uriWhitelist: UriPatterns = new UriPatterns();
     commander: commander.Command = commander;
     constructor(argv: string[]) {
         this.commander
@@ -109,7 +109,7 @@ export class Aramashi {
         }
 
         if (this.commander.linkPatterns) {
-            this.uriWhitelist = await UriWhitelist.loadTsv(this.commander.linkPatterns);
+            this.uriWhitelist = await UriPatterns.loadTsv(this.commander.linkPatterns);
         }
 
         this.commander.args.forEach(async (fn) => {

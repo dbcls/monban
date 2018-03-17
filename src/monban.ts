@@ -4,7 +4,7 @@ import * as readline from "readline";
 
 import { Validator } from "./validator";
 import { MonbanConfig } from "./monban-config";
-import { UriWhitelist } from "./uri-whitelist";
+import { UriPatterns } from "./uri-patterns";
 import { Ontology } from "./ontology";
 
 export class Monban {
@@ -31,10 +31,10 @@ export class Monban {
             config.primalClasses = await this.loadPrimalClasses();
         }
         if (this.commander.uriWhitelist) {
-            config.uriWhitelist = await UriWhitelist.loadTsv(this.commander.uriWhitelist);
+            config.uriWhitelist = await UriPatterns.loadTsv(this.commander.uriWhitelist);
         }
         if (this.commander.uriBlacklist) {
-            config.uriBlacklist = await UriWhitelist.loadTsv(this.commander.uriBlacklist);
+            config.uriBlacklist = await UriPatterns.loadTsv(this.commander.uriBlacklist);
         }
         if (this.commander.ontology) {
             config.ontology = await Ontology.load(this.commander.ontology);

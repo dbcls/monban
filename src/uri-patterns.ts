@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as readline from "readline";
 
-export class UriWhitelistEntry {
+export class UriPattern {
     name: string;
     regexp: RegExp;
 
@@ -15,28 +15,28 @@ export class UriWhitelistEntry {
     }
 }
 
-export class UriWhitelist {
-    entries: UriWhitelistEntry[];
+export class UriPatterns {
+    entries: UriPattern[];
     constructor() {
         this.entries = [];
     }
 
-    match(str: string): UriWhitelistEntry | undefined {
+    match(str: string): UriPattern | undefined {
         return this.entries.find((e) => e.match(str));
     }
 
-    static loadTsv(fn: string): Promise<UriWhitelist> {
+    static loadTsv(fn: string): Promise<UriPatterns> {
         const s = fs.createReadStream(fn);
         const rl = readline.createInterface(s);
         const primalClasses = new Set();
-        const uwl = new UriWhitelist();//FIXME
+        const uwl = new UriPatterns();
 
         rl.on('line', (l: string) => {
             if (l == "") {
                 return;
             }
             const cols = l.split("\t", 2);
-            uwl.entries.push(new UriWhitelistEntry(cols[0], cols[1]));
+            uwl.entries.push(new UriPattern(cols[0], cols[1]));
         });
         return new Promise((resolve, reject) => {
             rl.on('close', () => resolve(uwl));
