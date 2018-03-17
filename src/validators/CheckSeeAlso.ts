@@ -23,7 +23,6 @@ export class CheckSeeAlso extends TriplewiseValidator {
         const errors: ValidationError[] = [];
         this.seeAlsos.forEach((os, s) => {
             const uris = Array.from(os.keys());
-            console.log(uris, this.blacklistedUriFound(uris), this.whitelistedUriFound(uris));
             if (this.blacklistedUriFound(uris) && (!this.whitelistedUriFound(uris))) {
                 errors.push({ message: `no suitable seeAlso objects found for subject ${s}; found: ${uris.join(', ')}` });
             }
