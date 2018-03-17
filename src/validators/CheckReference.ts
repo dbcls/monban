@@ -23,7 +23,7 @@ export class CheckReference extends TriplewiseValidator {
     if (this.isReference(triple.object) && triple.predicate !== dcReferences) {
       errors.push(
         {
-          message: `${triple.object} is not expected URI for dcterms:references`
+        message: `${triple.object} is a reference, but dcterms:references is not used (used ${triple.predicate})`
         }
       );
     }
