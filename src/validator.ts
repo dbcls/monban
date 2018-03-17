@@ -15,6 +15,7 @@ import { Literal } from "./validators/Literal";
 import { PrimalClass } from "./validators/PrimalClass";
 import { CheckSeeAlso } from "./validators/CheckSeeAlso";
 import { WithOntology } from "./validators/WithOntology";
+import { ValueWithUnit } from "./validators/ValueWithUnit";
 
 const SUB_VALIDATORS = [
   CheckReference,
@@ -23,6 +24,7 @@ const SUB_VALIDATORS = [
   PrimalClass,
   CheckSeeAlso,
   WithOntology,
+  ValueWithUnit,
 ];
 
 class ValidationErrorsGroupedByTriple {
