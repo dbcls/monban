@@ -36,7 +36,7 @@ class Consumer extends Writable {
   subValidators: TriplewiseValidator[];
   config: MonbanConfig = new MonbanConfig();
 
-  constructor(subValidators: TriplewiseValidator[], config: MonbanConfig) {
+  constructor(pass: number, subValidators: TriplewiseValidator[], config: MonbanConfig) {
     super({ objectMode: true });
     this.subValidators = subValidators;
     this.config = config;
@@ -54,6 +54,8 @@ class Consumer extends Writable {
 
 function tripleStream(path: string): N3StreamParser {
   const streamParser = N3.StreamParser();
+  (<any>N3.Parser)._resetBlankNodeIds(); // make sure we have the same ids on different passes
+
   const inputStream = fs.createReadStream(path);
   let rdfStream: Readable;
   rdfStream = inputStream;
@@ -87,7 +89,11 @@ export class Validator {
   async validate(): Promise<ValidationResults> {
     const t0 = new Date();
 
-    await this.process();
+    const subValidators = SUB_VALIDATORS.map((cl) => new cl(this.config, this.errorLogger));
+    const numPassesRequired = Math.max(...subValidators.map(v => v.numPassesRequired()));
+    for (let i = 0; i < numPassesRequired; i++) {
+      await this.process(i, subValidators);
+    }
 
     const statistics = new Statistics();
     statistics.elapsed = new Date().getTime() - t0.getTime();
@@ -95,9 +101,9 @@ export class Validator {
     return { statistics, errors: this.errorLogger.errors(), path: this.path };
   }
 
-  process(): Promise<void> {
-    const subValidators = SUB_VALIDATORS.map((cl) => new cl(this.config, this.errorLogger));
-    const consumer = new Consumer(subValidators, this.config);
+  process(pass: number, subValidators: TriplewiseValidator[]): Promise<void> {
+    subValidators.forEach(v => v.pass = pass);
+    const consumer = new Consumer(pass, subValidators, this.config);
     const stream = tripleStream(this.path);
     stream.pipe(consumer);
 

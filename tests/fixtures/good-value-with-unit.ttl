@@ -1,0 +1,7 @@
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+
+<http://example.com/s> sio:SIO_000216 [
+sio:SIO_000300 21.5 ;
+sio:SIO_000221 obo:UO_0000017
+] .
