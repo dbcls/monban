@@ -3,4 +3,5 @@ export interface Triple {
   predicate: string;
   object: string;
   graph: string;
+  nth: number | undefined;
 }

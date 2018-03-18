@@ -1,6 +1,5 @@
 import * as N3 from "n3";
 import { TriplewiseValidator } from "../triplewise-validator";
-import { ValidationError } from "../validation-error";
 import { Triple } from "../triple";
 
 N3.Util; // Workaround to load N3.Util
@@ -19,7 +18,7 @@ xsd:int
 */
 
 export class Literal extends TriplewiseValidator {
-  validate(triple: Triple): ValidationError[] {
+  validate(triple: Triple) {
     if (!N3.Util.isLiteral(triple.object)) {
       return [];
     }
@@ -28,7 +27,7 @@ export class Literal extends TriplewiseValidator {
     switch (type) {
       case 'http://www.w3.org/2001/XMLSchema#int':
         if (!value.match(/^[+-]?[0-9]+$/)) {
-          return [{message: `illegal integer value '${value}'`}];
+          this.errorOnNode(value, `illegal integer value '${value}'`);
         }
     }
     return [];

@@ -1,5 +1,4 @@
 import { TriplewiseValidator } from "../triplewise-validator";
-import { ValidationError } from "../validation-error";
 import { Triple } from "../triple";
 
 const depiction = 'http://xmlns.com/foaf/0.1/depiction';
@@ -9,17 +8,13 @@ export class FoafImage extends TriplewiseValidator {
     imageishNodes: { [key: string]: Boolean; } = {};
     depictsOrDepictionSpecified: { [key: string]: Boolean; } = {};
 
-    validate(triple: Triple): ValidationError[] {
-        const errors: ValidationError[] = [];
+    validate(triple: Triple) {
         if (this.isImageish(triple.object) && triple.predicate !== depiction) {
-            errors.push({
-                message: `object '${triple.object}' is image-ish but '${triple.predicate}' is not 'foaf:depiction'`
-            });
-            console.log(errors);
+            this.errorOnTriple(triple, `object '${triple.object}' is image-ish but '${triple.predicate}' is not 'foaf:depiction'`);
         }
 
         if (triple.predicate === depicts && !this.isImageish(triple.subject)) {
-            errors.push({ message: `subject '${triple.subject}' of 'foaf:depicts' is not image-ish` });
+            this.errorOnTriple(triple, `subject '${triple.subject}' of 'foaf:depicts' is not image-ish`);
         }
 
         if (this.isImageish(triple.subject)) {
@@ -34,17 +29,14 @@ export class FoafImage extends TriplewiseValidator {
         if (triple.predicate === depiction) {
             this.depictsOrDepictionSpecified[triple.object] = true;
         }
-        return errors;
     }
 
-    done(): ValidationError[] {
-        const errors: ValidationError[] = [];
+    done() {
         Object.keys(this.imageishNodes).forEach(s => {
             if (!this.depictsOrDepictionSpecified[s]) {
-                errors.push({ message: `'${s}' is image-ish but neither 'foaf:depicts' nor 'foaf:depiction' is found for this` });
+                this.errorOnNode(s, `'${s}' is image-ish but neither 'foaf:depicts' nor 'foaf:depiction' is found for this`);
             }
         });
-        return errors;
     }
 
     private isImageish(node: string): Boolean {

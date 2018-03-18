@@ -6,8 +6,8 @@ import { Readable, Writable, Transform } from "stream";
 import { N3StreamParser } from "n3";
 import { TriplewiseValidator } from "./triplewise-validator";
 import { Triple } from "./triple";
-import { ValidationError } from "./validation-error";
 import { MonbanConfig } from "./monban-config";
+import { ErrorLogger } from "./error-logger";
 
 import { CheckReference } from "./validators/CheckReference";
 import { FoafImage } from "./validators/FoafImage";
@@ -31,14 +31,7 @@ const SUB_VALIDATORS = [
   Ontology,
 ];
 
-class ValidationErrorsGroupedByTriple {
-  nthTriple: number = 0;
-  triple: Triple | undefined;
-  errors: ValidationError[] = [];
-}
-
 class Consumer extends Writable {
-  errors: ValidationErrorsGroupedByTriple[] = [];
   nthTriple = 0;
   subValidators: TriplewiseValidator[];
   config: MonbanConfig = new MonbanConfig();
@@ -50,16 +43,10 @@ class Consumer extends Writable {
   }
 
   _write(triple: Triple, encoding: string, done: () => void) {
-    const errorsOnTriple: ValidationError[] = [];
+    triple.nth = this.nthTriple;
     this.subValidators.forEach((validator) => {
-      const e = validator.validate(triple, this.config);
-      if (e) {
-        Array.prototype.push.apply(errorsOnTriple, e);
-      }
+      validator.validate(triple, this.config);
     });
-    if (errorsOnTriple.length > 0) {
-      this.errors.push({ nthTriple: this.nthTriple, triple, errors: errorsOnTriple });
-    }
     this.nthTriple++;
     done();
   }
@@ -84,13 +71,13 @@ class Statistics {
 class ValidationResults {
   path = "";
   statistics: Statistics = new Statistics();
-  errors: ValidationErrorsGroupedByTriple[] = [];
+  errors: any[] = [];
 }
 
 export class Validator {
   path: string;
   config: MonbanConfig;
-  errors: ValidationErrorsGroupedByTriple[] = [];
+  errorLogger: ErrorLogger = new ErrorLogger();
 
   constructor(path: string, config: MonbanConfig) {
     this.path = path;
@@ -100,30 +87,23 @@ export class Validator {
   async validate(): Promise<ValidationResults> {
     const t0 = new Date();
 
-    await this.processPass();
+    await this.process();
 
     const statistics = new Statistics();
     statistics.elapsed = new Date().getTime() - t0.getTime();
 
-    return { statistics, errors: this.errors, path: this.path };
+    return { statistics, errors: this.errorLogger.errors(), path: this.path };
   }
 
-  processPass(): Promise<void> {
-    const subValidators = SUB_VALIDATORS.map((cl) => new cl(this.config));
+  process(): Promise<void> {
+    const subValidators = SUB_VALIDATORS.map((cl) => new cl(this.config, this.errorLogger));
     const consumer = new Consumer(subValidators, this.config);
     const stream = tripleStream(this.path);
     stream.pipe(consumer);
 
     return new Promise((resolve, reject) => {
       stream.on('end', () => {
-        const errors: ValidationErrorsGroupedByTriple[] = [];
-        subValidators.forEach((v) => {
-          const e = v.done();
-          Array.prototype.push.apply(this.errors, e);
-        });
-
-        // TODO fix consumer.error to be compatible with ValidationErrorsGroupedByTriple
-        Array.prototype.push.apply(this.errors, consumer.errors);
+        subValidators.forEach(v => v.done());
         resolve();
       });
     });

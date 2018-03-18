@@ -1,5 +1,4 @@
 import { TriplewiseValidator } from "../triplewise-validator";
-import { ValidationError } from "../validation-error";
 import { Triple } from "../triple";
 
 const rdfType = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
@@ -32,7 +31,7 @@ export class Ontology extends TriplewiseValidator {
     rangeDefined: Set<string> = new Set<string>();
     domainDefined: Set<string> = new Set<string>();
 
-    validate(triple: Triple): ValidationError[] {
+    validate(triple: Triple) {
         switch (triple.predicate) {
             case rdfType:
                 if (isProperty(triple.object)) {
@@ -56,27 +55,23 @@ export class Ontology extends TriplewiseValidator {
         return [];
     }
 
-    done(): ValidationError[] {
-        const errors: ValidationError[] = [];
-
+    done() {
         this.properties.forEach(p => {
             if (!this.labeled.has(p)) {
-                errors.push({ message: `${p} is a property, but rdfs:label is not found for it` });
+                this.errorOnNode(p, `${p} is a property, but rdfs:label is not found for it`);
             }
             if (!this.domainDefined.has(p)) {
-                errors.push({ message: `${p} is a property, but rdfs:domain is not found for it` });
+                this.errorOnNode(p, `${p} is a property, but rdfs:domain is not found for it`);
             }
             if (!this.rangeDefined.has(p)) {
-                errors.push({ message: `${p} is a property, but rdfs:range is not found for it` });
+                this.errorOnNode(p, `${p} is a property, but rdfs:range is not found for it`);
             }
         });
 
         this.classes.forEach(c => {
             if (!this.labeled.has(c)) {
-                errors.push({ message: `${c} is a class, but rdfs:label is not found for it` });
+                this.errorOnNode(c, `${c} is a class, but rdfs:label is not found for it`);
             }
         });
-
-        return errors;
     }
 }

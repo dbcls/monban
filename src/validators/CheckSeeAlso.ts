@@ -1,5 +1,4 @@
 import { TriplewiseValidator } from "../triplewise-validator";
-import { ValidationError } from "../validation-error";
 import { Triple } from "../triple";
 
 const rdfsSeeAlso = 'http://www.w3.org/2000/01/rdf-schema#seeAlso';
@@ -7,7 +6,7 @@ const rdfsSeeAlso = 'http://www.w3.org/2000/01/rdf-schema#seeAlso';
 export class CheckSeeAlso extends TriplewiseValidator {
     seeAlsos: Map<string, Set<string>> = new Map<string, Set<string>>();
 
-    validate(triple: Triple): ValidationError[] {
+    validate(triple: Triple) {
         if (triple.predicate === rdfsSeeAlso) {
             let sa = this.seeAlsos.get(triple.subject);
             if (!sa) {
@@ -16,18 +15,15 @@ export class CheckSeeAlso extends TriplewiseValidator {
             }
             sa.add(triple.object);
         }
-        return [];
     }
 
-    done(): ValidationError[] {
-        const errors: ValidationError[] = [];
+    done() {
         this.seeAlsos.forEach((os, s) => {
             const uris = Array.from(os.keys());
             if (this.blacklistedUriFound(uris) && (!this.whitelistedUriFound(uris))) {
-                errors.push({ message: `no suitable seeAlso objects found for subject ${s}; found: ${uris.join(', ')}` });
+                this.errorOnNode(s, `no suitable seeAlso objects found for subject ${s}; found: ${uris.join(', ')}`);
             }
         });
-        return errors;
     }
 
     blacklistedUriFound(uris: string[]): boolean {

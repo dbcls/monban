@@ -1,9 +1,8 @@
 import { TriplewiseValidator } from "../triplewise-validator";
-import { ValidationError } from "../validation-error";
 import { Triple } from "../triple";
 
 export class ValueWithUnit extends TriplewiseValidator {
-    validate(triple: Triple): ValidationError[] {
+    validate(triple: Triple) {
         // FIXME WIP
         return [];
     }

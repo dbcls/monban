@@ -1,5 +1,4 @@
 import { TriplewiseValidator } from "../triplewise-validator";
-import { ValidationError } from "../validation-error";
 import { Triple } from "../triple";
 
 const subclassesOfFaldoPosition = new Set<string>([
@@ -24,7 +23,7 @@ export class Faldo extends TriplewiseValidator {
   faldoPositionInstances: Set<string> = new Set<string>();
   subjectsHavingfaldoReference: Set<string> = new Set<string>();
 
-  validate(triple: Triple): ValidationError[] {
+  validate(triple: Triple) {
     if (triple.predicate === rdfType &&
       subclassesOfFaldoPosition.has(triple.object)) {
       this.faldoPositionInstances.add(triple.subject);
@@ -35,13 +34,11 @@ export class Faldo extends TriplewiseValidator {
     return [];
   }
 
-  done(): ValidationError[] {
-    const errors: ValidationError[] = [];
+  done() {
     this.faldoPositionInstances.forEach(inst => {
       if (!this.subjectsHavingfaldoReference.has(inst)) {
-        errors.push({ message: `${inst} is a faldo:Position, but faldo:reference is not found` });
+        this.errorOnNode(inst, `${inst} is a faldo:Position, but faldo:reference is not found`);
       }
     })
-    return errors;
   }
 }
