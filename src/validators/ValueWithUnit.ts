@@ -9,8 +9,23 @@ const sio000300 = sio + 'SIO_000300'; // has value
 
 const uoRegexp = new RegExp('^http://purl\.obolibrary\.org/obo/UO_\\d+');
 
+const xsd = 'http://www.w3.org/2001/XMLSchema#';
+
+const numericTypes: Set<string> = new Set<string>([
+    xsd + 'int',
+    xsd + 'integer',
+    xsd + 'decimal',
+    xsd + 'float',
+    xsd + 'decimal',
+    xsd + 'double',
+]);
+
 function isNumeric(node: string): boolean {
-    return N3.Util.isLiteral(node); //TODO check type
+    if (!N3.Util.isLiteral(node)) {
+        return false;
+    }
+    const type = N3.Util.getLiteralType(node);
+    return numericTypes.has(type);
 }
 
 
