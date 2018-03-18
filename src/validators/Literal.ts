@@ -20,7 +20,7 @@ xsd:int
 export class Literal extends TriplewiseValidator {
   triple(triple: Triple) {
     if (!N3.Util.isLiteral(triple.object)) {
-      return [];
+      return;
     }
     const type = N3.Util.getLiteralType(triple.object);
     const value = N3.Util.getLiteralValue(triple.object);
@@ -30,6 +30,5 @@ export class Literal extends TriplewiseValidator {
           this.errorOnNode(value, `illegal integer value '${value}'`);
         }
     }
-    return [];
   }
 }
