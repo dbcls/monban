@@ -88,19 +88,27 @@ class ValidationResults {
 }
 
 export class Validator {
-  async validate(path: string, config: MonbanConfig): Promise<ValidationResults> {
+  path: string;
+  config: MonbanConfig;
+
+  constructor(path: string, config: MonbanConfig) {
+    this.path = path;
+    this.config = config;
+  }
+
+  async validate(): Promise<ValidationResults> {
     const t0 = new Date();
-    const errors = await this.processPass(path, config);
+    const errors = await this.processPass();
     const statistics = new Statistics();
     statistics.elapsed = new Date().getTime() - t0.getTime();
 
-    return { statistics, errors, path };
+    return { statistics, errors, path: this.path };
   }
 
-  processPass(path: string, config: MonbanConfig): Promise<ValidationErrorsGroupedByTriple[]> {
-    const subValidators = SUB_VALIDATORS.map((cl) => new cl(config));
-    const consumer = new Consumer(subValidators, config);
-    const stream = tripleStream(path);
+  processPass(): Promise<ValidationErrorsGroupedByTriple[]> {
+    const subValidators = SUB_VALIDATORS.map((cl) => new cl(this.config));
+    const consumer = new Consumer(subValidators, this.config);
+    const stream = tripleStream(this.path);
     stream.pipe(consumer);
 
     return new Promise<ValidationErrorsGroupedByTriple[]>((resolve: (value: ValidationErrorsGroupedByTriple[]) => void, reject) => {

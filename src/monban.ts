@@ -8,8 +8,6 @@ import { UriPatterns } from "./uri-patterns";
 import { Ontology } from "./ontology";
 
 export class Monban {
-    validator = new Validator();
-
     commander: commander.Command = commander;
     constructor(argv: string[]) {
         this.commander
@@ -41,7 +39,8 @@ export class Monban {
         }
 
         this.commander.args.forEach(async (fn) => {
-            const r = await this.validator.validate(fn, config);
+            const validator = new Validator(fn, config);
+            const r = await validator.validate();
             console.log(JSON.stringify(r, null, 2));
         });
     }
