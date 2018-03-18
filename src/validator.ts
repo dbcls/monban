@@ -90,6 +90,7 @@ class ValidationResults {
 export class Validator {
   path: string;
   config: MonbanConfig;
+  errors: ValidationErrorsGroupedByTriple[] = [];
 
   constructor(path: string, config: MonbanConfig) {
     this.path = path;
@@ -98,30 +99,32 @@ export class Validator {
 
   async validate(): Promise<ValidationResults> {
     const t0 = new Date();
-    const errors = await this.processPass();
+
+    await this.processPass();
+
     const statistics = new Statistics();
     statistics.elapsed = new Date().getTime() - t0.getTime();
 
-    return { statistics, errors, path: this.path };
+    return { statistics, errors: this.errors, path: this.path };
   }
 
-  processPass(): Promise<ValidationErrorsGroupedByTriple[]> {
+  processPass(): Promise<void> {
     const subValidators = SUB_VALIDATORS.map((cl) => new cl(this.config));
     const consumer = new Consumer(subValidators, this.config);
     const stream = tripleStream(this.path);
     stream.pipe(consumer);
 
-    return new Promise<ValidationErrorsGroupedByTriple[]>((resolve: (value: ValidationErrorsGroupedByTriple[]) => void, reject) => {
+    return new Promise((resolve, reject) => {
       stream.on('end', () => {
         const errors: ValidationErrorsGroupedByTriple[] = [];
         subValidators.forEach((v) => {
           const e = v.done();
-          Array.prototype.push.apply(errors, e);
+          Array.prototype.push.apply(this.errors, e);
         });
 
         // TODO fix consumer.error to be compatible with ValidationErrorsGroupedByTriple
-        Array.prototype.push.apply(errors, consumer.errors);
-        resolve(errors);
+        Array.prototype.push.apply(this.errors, consumer.errors);
+        resolve();
       });
     });
   }
