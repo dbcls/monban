@@ -5,8 +5,8 @@ const depiction = 'http://xmlns.com/foaf/0.1/depiction';
 const depicts = 'http://xmlns.com/foaf/0.1/depicts';
 
 export class FoafImage extends TriplewiseValidator {
-    imageishNodes: { [key: string]: Boolean; } = {};
-    depictsOrDepictionSpecified: { [key: string]: Boolean; } = {};
+    imageishNodes: Set<string> = new Set<string>();
+    depictsOrDepictionSpecified: Set<string> = new Set<string>();
 
     triple(triple: Triple) {
         if (this.isImageish(triple.object) && triple.predicate !== depiction) {
@@ -18,22 +18,22 @@ export class FoafImage extends TriplewiseValidator {
         }
 
         if (this.isImageish(triple.subject)) {
-            this.imageishNodes[triple.subject] = true;
+            this.imageishNodes.add(triple.subject);
         }
         if (this.isImageish(triple.object)) {
-            this.imageishNodes[triple.object] = true;
+            this.imageishNodes.add(triple.object);
         }
         if (triple.predicate === depicts) {
-            this.depictsOrDepictionSpecified[triple.subject] = true;
+            this.depictsOrDepictionSpecified.add(triple.subject);
         }
         if (triple.predicate === depiction) {
-            this.depictsOrDepictionSpecified[triple.object] = true;
+            this.depictsOrDepictionSpecified.add(triple.object);
         }
     }
 
     done() {
-        Object.keys(this.imageishNodes).forEach(s => {
-            if (!this.depictsOrDepictionSpecified[s]) {
+        this.imageishNodes.forEach(s => {
+            if (!this.depictsOrDepictionSpecified.has(s)) {
                 this.errorOnNode(s, `'${s}' is image-ish but neither 'foaf:depicts' nor 'foaf:depiction' is found for this`);
             }
         });
