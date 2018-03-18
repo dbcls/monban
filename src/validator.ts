@@ -79,8 +79,6 @@ function tripleStream(path: string): N3StreamParser {
 
 class Statistics {
   elapsed: number = 0;
-  numTriples: number = 0;
-  triplesPerSecond: number = 0;
 }
 
 class ValidationResults {
@@ -90,14 +88,22 @@ class ValidationResults {
 }
 
 export class Validator {
-  validate(path: string, config: MonbanConfig): Promise<ValidationResults> {
+  async validate(path: string, config: MonbanConfig): Promise<ValidationResults> {
+    const t0 = new Date();
+    const errors = await this.processPass(path, config);
+    const statistics = new Statistics();
+    statistics.elapsed = new Date().getTime() - t0.getTime();
+
+    return { statistics, errors, path };
+  }
+
+  processPass(path: string, config: MonbanConfig): Promise<ValidationErrorsGroupedByTriple[]> {
     const subValidators = SUB_VALIDATORS.map((cl) => new cl(config));
     const consumer = new Consumer(subValidators, config);
     const stream = tripleStream(path);
     stream.pipe(consumer);
 
-    const t0 = new Date();
-    return new Promise<ValidationResults>((resolve: (value: ValidationResults) => void, reject) => {
+    return new Promise<ValidationErrorsGroupedByTriple[]>((resolve: (value: ValidationErrorsGroupedByTriple[]) => void, reject) => {
       stream.on('end', () => {
         const errors: ValidationErrorsGroupedByTriple[] = [];
         subValidators.forEach((v) => {
@@ -105,14 +111,9 @@ export class Validator {
           Array.prototype.push.apply(errors, e);
         });
 
-        const statistics = new Statistics();
-        statistics.elapsed = new Date().getTime() - t0.getTime();
-        statistics.numTriples = consumer.nthTriple;
-        statistics.triplesPerSecond = statistics.numTriples / statistics.elapsed * 1000;
-
         // TODO fix consumer.error to be compatible with ValidationErrorsGroupedByTriple
         Array.prototype.push.apply(errors, consumer.errors);
-        resolve({ path, statistics, errors });
+        resolve(errors);
       });
     });
   }
