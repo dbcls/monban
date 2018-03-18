@@ -45,7 +45,7 @@ class Consumer extends Writable {
   _write(triple: Triple, encoding: string, done: () => void) {
     triple.nth = this.nthTriple;
     this.subValidators.forEach((validator) => {
-      validator.validate(triple, this.config);
+      validator.triple(triple, this.config);
     });
     this.nthTriple++;
     done();

@@ -18,7 +18,7 @@ xsd:int
 */
 
 export class Literal extends TriplewiseValidator {
-  validate(triple: Triple) {
+  triple(triple: Triple) {
     if (!N3.Util.isLiteral(triple.object)) {
       return [];
     }

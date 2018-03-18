@@ -31,7 +31,7 @@ export class Ontology extends TriplewiseValidator {
     rangeDefined: Set<string> = new Set<string>();
     domainDefined: Set<string> = new Set<string>();
 
-    validate(triple: Triple) {
+    triple(triple: Triple) {
         switch (triple.predicate) {
             case rdfType:
                 if (isProperty(triple.object)) {

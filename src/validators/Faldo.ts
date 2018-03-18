@@ -23,7 +23,7 @@ export class Faldo extends TriplewiseValidator {
   faldoPositionInstances: Set<string> = new Set<string>();
   subjectsHavingfaldoReference: Set<string> = new Set<string>();
 
-  validate(triple: Triple) {
+  triple(triple: Triple) {
     if (triple.predicate === rdfType &&
       subclassesOfFaldoPosition.has(triple.object)) {
       this.faldoPositionInstances.add(triple.subject);

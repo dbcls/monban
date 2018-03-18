@@ -6,7 +6,7 @@ const rdfsSeeAlso = 'http://www.w3.org/2000/01/rdf-schema#seeAlso';
 export class CheckSeeAlso extends TriplewiseValidator {
     seeAlsos: Map<string, Set<string>> = new Map<string, Set<string>>();
 
-    validate(triple: Triple) {
+    triple(triple: Triple) {
         if (triple.predicate === rdfsSeeAlso) {
             let sa = this.seeAlsos.get(triple.subject);
             if (!sa) {

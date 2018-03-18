@@ -6,7 +6,7 @@ import { Triple } from "../triple";
 N3.Util; // Workaround to load N3.Util
 
 export class WithOntology extends TriplewiseValidator {
-    validate(triple: Triple) {
+    triple(triple: Triple) {
         const ont = this.config.ontology;
         if (ont.isClass(triple.predicate)) {
             this.errorOnTriple(triple, `class ${triple.predicate} is used as a property`);

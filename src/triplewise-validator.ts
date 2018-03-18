@@ -11,7 +11,7 @@ export class TriplewiseValidator {
         this.errorLogger = errorLogger;
     }
 
-    validate(triple: Triple, config: MonbanConfig) {
+    triple(triple: Triple, config: MonbanConfig) {
     }
 
     done() {

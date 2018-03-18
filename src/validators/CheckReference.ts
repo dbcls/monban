@@ -10,7 +10,7 @@ const referenceStems = [
 ];
 
 export class CheckReference extends TriplewiseValidator {
-  validate(triple: Triple) {
+  triple(triple: Triple) {
     if (triple.predicate === dcReferences && !this.isReference(triple.object)) {
       this.errorOnTriple(triple, `${triple.object} is not expected URI for dcterms:references`);
     }

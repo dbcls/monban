@@ -10,7 +10,7 @@ export class PrimalClass extends TriplewiseValidator {
     labeledSubjects: Set<string> = new Set<string>();
     identifierSpecified: Set<string> = new Set<string>();
 
-    validate(triple: Triple) {
+    triple(triple: Triple) {
         if (triple.predicate === isA && this.config.primalClasses.has(triple.object)) {
             this.instancesOfPrimalClasses.add(triple.subject);
         }

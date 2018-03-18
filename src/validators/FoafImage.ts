@@ -8,7 +8,7 @@ export class FoafImage extends TriplewiseValidator {
     imageishNodes: { [key: string]: Boolean; } = {};
     depictsOrDepictionSpecified: { [key: string]: Boolean; } = {};
 
-    validate(triple: Triple) {
+    triple(triple: Triple) {
         if (this.isImageish(triple.object) && triple.predicate !== depiction) {
             this.errorOnTriple(triple, `object '${triple.object}' is image-ish but '${triple.predicate}' is not 'foaf:depiction'`);
         }
