@@ -36,19 +36,19 @@ class ErrorOnNode extends Error {
 
 class ErrorOnSubjectOfTriple extends ErrorOnTriple {
     message(): string {
-        return `error on subject "${this.triple.subject}" of triple ${this.triple}`
+        return `subject "${this.triple.subject}"`
     }
 }
 
 class ErrorOnPredicateOfTriple extends ErrorOnTriple {
     message(): string {
-        return `error on predicate "${this.triple.predicate}" of triple ${this.triple}`
+        return `predicate "${this.triple.predicate}"`
     }
 }
 
 class ErrorOnObjectOfTriple extends ErrorOnTriple {
     message(): string {
-        return `error on object "${this.triple.object}" of triple ${this.triple}`
+        return `object "${this.triple.object}"`
     }
 }
 
@@ -77,13 +77,13 @@ export class ErrorNoSuitableSeeAlsoFor extends ErrorOnNode {
 
 export class ErrorFaldoPositionReferenceNotFound extends ErrorOnNode {
     message() {
-        return `is a faldo:Position, but faldo:reference is not found`;
+        return `${this.node} is a faldo:Position, but faldo:reference is not found`;
     }
 }
 
 export class ErrorDepictsDepictionNotFound extends ErrorOnNode {
     message() {
-        return `is image-is but neigher foaf:depicts nor foaf:depiction is found for this`;
+        return `${this.node} is image-is but neigher foaf:depicts nor foaf:depiction is found for this`;
     }
 }
 
@@ -110,7 +110,7 @@ export class ErrorLangtagMismatch extends ErrorOnNode {
     }
 
     message() {
-        return `looks like @${this.guess}, but @${this.actual} specified`;
+        return `${this.node} looks like @${this.guess}, but @${this.actual} specified`;
     }
 }
 
@@ -128,25 +128,25 @@ export class ErrorLiteralFormat extends ErrorOnNode {
 
 export class ErrorRdfsLabelNotFoundForProperty extends ErrorOnNode {
     message() {
-        return `is a property, but rdfs:label is not found for it`;
+        return `${this.node} is a property, but rdfs:label is not found for it`;
     }
 }
 
 export class ErrorRdfsDomainNotFoundForProperty extends ErrorOnNode {
     message() {
-        return `is a property, but rdfs:domain is not found for it`;
+        return `${this.node} is a property, but rdfs:domain is not found for it`;
     }
 }
 
 export class ErrorRdfsRangeNotFoundForProperty extends ErrorOnNode {
     message() {
-        return `is a property, but rdfs:range is not found for it`;
+        return `${this.node} is a property, but rdfs:range is not found for it`;
     }
 }
 
 export class ErrorRdfsLabelNotFoundForClass extends ErrorOnNode {
     message() {
-        return `is a class, but rdfs:label is not found for it`;
+        return `${this.node} is a class, but rdfs:label is not found for it`;
     }
 }
 
