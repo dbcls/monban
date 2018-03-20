@@ -15,24 +15,41 @@ xsd:time
 xsd:date
 */
 
-const pattern = {
-  integer: /^[+-]?[0-9]+$/
+type Checker = (value: string) => boolean;
+
+function xsd(typeName: string): string {
+  return `http://www.w3.org/2001/XMLSchema#${typeName}`;
+}
+
+function match(patternName: string): Checker {
+  const pat = pattern[patternName];
+
+  return value => !!value.match(pat);
+}
+
+const pattern: {[key: string]: RegExp} = {
+  integer: /^[+-]?[0-9]+$/,
+  decimal: /^[+-]?(?:[0-9]*\.[0-9]+|[0-9]+)$/,
+  numeric: /^[+-]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+\-]?[0-9]+)?$/,
 };
 
-const patternFor: {[key: string]: RegExp} = {
-  'http://www.w3.org/2001/XMLSchema#integer':             pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#nonPositiveInteger':  pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#negativeInteger':     pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#long':                pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#int':                 pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#short':               pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#byte':                pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#nonNegativeInteger':  pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#unsignedLong':        pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#unsignedInt':         pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#unsignedShort':       pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#unsignedByte':        pattern.integer,
-  'http://www.w3.org/2001/XMLSchema#positiveInteger':     pattern.integer,
+const checkerFor: {[key: string]: Checker} = {
+  [xsd('integer')]:            match('integer'),
+  [xsd('nonPositiveInteger')]: match('integer'),
+  [xsd('negativeInteger')]:    match('integer'),
+  [xsd('long')]:               match('integer'),
+  [xsd('int')]:                match('integer'),
+  [xsd('short')]:              match('integer'),
+  [xsd('byte')]:               match('integer'),
+  [xsd('nonNegativeInteger')]: match('integer'),
+  [xsd('unsignedLong')]:       match('integer'),
+  [xsd('unsignedInt')]:        match('integer'),
+  [xsd('unsignedShort')]:      match('integer'),
+  [xsd('unsignedByte')]:       match('integer'),
+  [xsd('positiveInteger')]:    match('integer'),
+  [xsd('decimal')]:            match('decimal'),
+  [xsd('float')]:              match('numeric'),
+  [xsd('double')]:             match('numeric'),
 };
 
 export class Literal extends TriplewiseValidator {
@@ -42,10 +59,10 @@ export class Literal extends TriplewiseValidator {
     const type  = N3.Util.getLiteralType(triple.object);
     const value = N3.Util.getLiteralValue(triple.object);
 
-    const pattern = patternFor[type];
+    const checker = checkerFor[type];
 
-    if (!pattern)             { return; }
-    if (value.match(pattern)) { return; }
+    if (!checker)       { return; }
+    if (checker(value)) { return; }
 
     this.errorOnNode(value, `illegal value '${value}' for ${type}`);
   }
