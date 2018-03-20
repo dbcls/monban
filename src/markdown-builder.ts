@@ -6,7 +6,11 @@ export class MarkdownBuilder {
 
         buf += "# monban results\n\n";
 
-        const errors: any[] = [];
+        if (results.errors.size === 0) {
+            buf += "no errors found";
+            return buf;
+        }
+
         results.errors.forEach((errs, type) => {
             buf += `## ${type}\n\n`;
             errs.forEach(err => {
