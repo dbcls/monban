@@ -1,6 +1,7 @@
 import * as N3 from "n3";
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
+import { ErrorSio000300NotFound, ErrorSio000221NotFound, ErrorSio000216NotFound, ErrorValueIsNotNumeric, ErrorObjectIsNotUOClass } from "../error";
 
 const sio = 'http://semanticscience.org/resource/';
 const sio000216 = sio + 'SIO_000216'; // has measurement value
@@ -47,53 +48,53 @@ export class ValueWithUnit extends TriplewiseValidator {
         this.objectsOfSio000216.forEach(s => {
             const values = <string[]>this.store.getObjects(s, sio000300);
             if (values.length === 0) {
-                this.errorOnNode(s, `${s} has no sio:SIO_000300 predicates`)
+                this.error(new ErrorSio000300NotFound(s));
             }
             values.forEach(v => {
                 if (!isNumeric(v)) {
-                    this.errorOnNode(v, `value ${v} is not numeric; in the context of ${s} sio:SIO_000300 ${v}`)
+                    this.error(new ErrorValueIsNotNumeric({ subject: s, predicate: sio000300, object: v, graph: '', nth: undefined }));
                 }
             });
 
             const units = <string[]>this.store.getObjects(s, sio000221);
             if (units.length === 0) {
-                this.errorOnNode(s, `${s} has no sio:SIO_000221 predicates`);
+                this.error(new ErrorSio000221NotFound(s));
             }
             units.forEach(u => {
                 if (!u.match(uoRegexp)) {
-                    this.errorOnNode(u, `${u} is not a class of Units of Measurement Ontology; in the context of ${s} sio:SIO_000221 ${u}`)
+                    this.error(new ErrorObjectIsNotUOClass({ subject: s, predicate: sio000221, object: u, graph: '', nth: undefined }));
                 }
             });
         });
 
         this.subjectsOfSio000221.forEach(s => {
             if (this.store.countTriples(null, sio000216, s) === 0) {
-                this.errorOnNode(s, `no sio:SIO_000216 found with object ${s}`);
+                this.error(new ErrorSio000216NotFound(s));
             }
 
             const values = <string[]>this.store.getObjects(s, sio000300);
             if (values.length === 0) {
-                this.errorOnNode(s, `${s} has no sio:SIO_000300 predicates`)
+                this.error(new ErrorSio000300NotFound(s));
             }
             values.forEach(v => {
                 if (!isNumeric(v)) {
-                    this.errorOnNode(v, `value ${v} is not numeric; in the context of ${s} sio:SIO_000300 ${v}`)
+                    this.error(new ErrorValueIsNotNumeric({ subject: s, predicate: sio000300, object: v, graph: '', nth: undefined }));
                 }
             });
         });
 
         this.subjectsOfSio000300.forEach(s => {
             if (this.store.countTriples(null, sio000216, s) === 0) {
-                this.errorOnNode(s, `no sio:SIO_000216 found with object ${s}`);
+                this.error(new ErrorSio000216NotFound(s))
             }
 
             const units = <string[]>this.store.getObjects(s, sio000221);
             if (units.length === 0) {
-                this.errorOnNode(s, `${s} has no sio:SIO_000221 predicates`);
+                this.error(new ErrorSio000221NotFound(s));
             }
             units.forEach(u => {
                 if (!u.match(uoRegexp)) {
-                    this.errorOnNode(u, `${u} is not a class of Units of Measurement Ontology; in the context of ${s} sio:SIO_000221 ${u}`)
+                    this.error(new ErrorObjectIsNotUOClass({ subject: s, predicate: sio000221, object: u, graph: '', nth: undefined }));
                 }
             });
         })

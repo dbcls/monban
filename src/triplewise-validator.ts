@@ -1,6 +1,7 @@
 import { Triple } from "./triple";
 import { MonbanConfig } from "./monban-config";
 import { ErrorLogger } from "./error-logger";
+import { Error } from "./error";
 
 export class TriplewiseValidator {
     config: MonbanConfig;
@@ -23,11 +24,7 @@ export class TriplewiseValidator {
         return 1;
     }
 
-    errorOnTriple(triple: Triple, message: string) {
-        this.errorLogger.addErrorOnTriple(triple, message);
-    }
-
-    errorOnNode(node: string, message: string) {
-        this.errorLogger.addErrorOnNode(node, message);
+    error(error: Error) {
+        this.errorLogger.add(error);
     }
 }

@@ -101,7 +101,7 @@ export class Validator {
     const statistics = new Statistics();
     statistics.elapsed = new Date().getTime() - t0.getTime();
 
-    return { statistics, errors: this.errorLogger.errors(), path: this.path };
+    return { statistics, errors: this.errorLogger.errors, path: this.path };
   }
 
   process(pass: number, subValidators: TriplewiseValidator[]): Promise<void> {

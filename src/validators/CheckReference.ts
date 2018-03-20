@@ -1,5 +1,6 @@
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
+import { ErrorObjectOfDctermsReferences, ErrorPredicateForReferences } from "../error";
 
 const dcReferences = 'http://purl.org/dc/terms/references';
 
@@ -12,10 +13,10 @@ const referenceStems = [
 export class CheckReference extends TriplewiseValidator {
   triple(triple: Triple) {
     if (triple.predicate === dcReferences && !this.isReference(triple.object)) {
-      this.errorOnTriple(triple, `${triple.object} is not expected URI for dcterms:references`);
+      this.error(new ErrorObjectOfDctermsReferences(triple))
     }
     if (this.isReference(triple.object) && triple.predicate !== dcReferences) {
-      this.errorOnTriple(triple, `${triple.object} is a reference, but dcterms:references is not used (used ${triple.predicate})`);
+      this.error(new ErrorPredicateForReferences(triple))
     }
     return [];
   }

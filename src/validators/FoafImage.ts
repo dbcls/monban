@@ -1,5 +1,6 @@
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
+import { ErrorDepictsDepictionNotFound, ErrorDepictsForNotImageishSubject, ErrorDepictionForNotImageshObject } from "../error";
 
 const depiction = 'http://xmlns.com/foaf/0.1/depiction';
 const depicts = 'http://xmlns.com/foaf/0.1/depicts';
@@ -10,11 +11,11 @@ export class FoafImage extends TriplewiseValidator {
 
     triple(triple: Triple) {
         if (this.isImageish(triple.object) && triple.predicate !== depiction) {
-            this.errorOnTriple(triple, `object '${triple.object}' is image-ish but '${triple.predicate}' is not 'foaf:depiction'`);
+            this.error(new ErrorDepictionForNotImageshObject(triple));
         }
 
         if (triple.predicate === depicts && !this.isImageish(triple.subject)) {
-            this.errorOnTriple(triple, `subject '${triple.subject}' of 'foaf:depicts' is not image-ish`);
+            this.error(new ErrorDepictsForNotImageishSubject(triple));
         }
 
         if (this.isImageish(triple.subject)) {
@@ -34,7 +35,7 @@ export class FoafImage extends TriplewiseValidator {
     done() {
         this.imageishNodes.forEach(s => {
             if (!this.depictsOrDepictionSpecified.has(s)) {
-                this.errorOnNode(s, `'${s}' is image-ish but neither 'foaf:depicts' nor 'foaf:depiction' is found for this`);
+                this.error(new ErrorDepictsDepictionNotFound(s));
             }
         });
     }

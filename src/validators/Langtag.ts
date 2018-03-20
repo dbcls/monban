@@ -1,6 +1,7 @@
 import * as N3 from "n3";
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
+import { ErrorLangtagMismatch } from "../error";
 
 N3.Util; // Workaround to load N3.Util
 
@@ -25,7 +26,7 @@ export class Langtag extends TriplewiseValidator {
 
         const guess = guessLanguage(value);
         if (lang !== guess) {
-            this.errorOnNode(triple.object, `looks like @${guess}, but @${lang} specified`)
+            this.error(new ErrorLangtagMismatch(triple.object, guess, lang));
         }
     }
 }

@@ -1,5 +1,6 @@
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
+import { ErrorRdfsDomainNotFoundForProperty, ErrorRdfsLabelNotFoundForProperty, ErrorRdfsLabelNotFoundForClass, ErrorRdfsRangeNotFoundForProperty } from "../error";
 
 const rdfType = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 const owl = "http://www.w3.org/2002/07/owl#"
@@ -58,19 +59,19 @@ export class Ontology extends TriplewiseValidator {
     done() {
         this.properties.forEach(p => {
             if (!this.labeled.has(p)) {
-                this.errorOnNode(p, `${p} is a property, but rdfs:label is not found for it`);
+                this.error(new ErrorRdfsLabelNotFoundForProperty(p));
             }
             if (!this.domainDefined.has(p)) {
-                this.errorOnNode(p, `${p} is a property, but rdfs:domain is not found for it`);
+                this.error(new ErrorRdfsDomainNotFoundForProperty(p));
             }
             if (!this.rangeDefined.has(p)) {
-                this.errorOnNode(p, `${p} is a property, but rdfs:range is not found for it`);
+                this.error(new ErrorRdfsRangeNotFoundForProperty(p));
             }
         });
 
         this.classes.forEach(c => {
             if (!this.labeled.has(c)) {
-                this.errorOnNode(c, `${c} is a class, but rdfs:label is not found for it`);
+                this.error(new ErrorRdfsLabelNotFoundForClass(c));
             }
         });
     }

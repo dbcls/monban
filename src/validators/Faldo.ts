@@ -1,5 +1,6 @@
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
+import { ErrorFaldoPositionReferenceNotFound } from "../error";
 
 const subclassesOfFaldoPosition = new Set<string>([
   'http://biohackathon.org/resource/faldo#Position',
@@ -37,7 +38,7 @@ export class Faldo extends TriplewiseValidator {
   done() {
     this.faldoPositionInstances.forEach(inst => {
       if (!this.subjectsHavingfaldoReference.has(inst)) {
-        this.errorOnNode(inst, `${inst} is a faldo:Position, but faldo:reference is not found`);
+        this.error(new ErrorFaldoPositionReferenceNotFound(inst));
       }
     })
   }

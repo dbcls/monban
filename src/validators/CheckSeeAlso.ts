@@ -1,5 +1,6 @@
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
+import { ErrorNoSuitableSeeAlsoFor } from "../error";
 
 const rdfsSeeAlso = 'http://www.w3.org/2000/01/rdf-schema#seeAlso';
 
@@ -21,7 +22,7 @@ export class CheckSeeAlso extends TriplewiseValidator {
         this.seeAlsos.forEach((os, s) => {
             const uris = Array.from(os.keys());
             if (this.blacklistedUriFound(uris) && (!this.whitelistedUriFound(uris))) {
-                this.errorOnNode(s, `no suitable seeAlso objects found for subject ${s}; found: ${uris.join(', ')}`);
+                this.error(new ErrorNoSuitableSeeAlsoFor(s, uris));
             }
         });
     }
