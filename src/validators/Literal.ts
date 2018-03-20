@@ -2,6 +2,7 @@ import * as N3 from "n3";
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
 import { ErrorLiteralFormat } from "../error";
+import { URL } from 'url';
 
 N3.Util; // Workaround to load N3.Util
 
