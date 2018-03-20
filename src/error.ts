@@ -1,6 +1,7 @@
 import { Triple } from "./triple";
 
 export abstract class Error {
+    triple: Triple | undefined;
     message(): string { return "" };
 }
 

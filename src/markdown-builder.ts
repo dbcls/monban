@@ -14,7 +14,11 @@ export class MarkdownBuilder {
         results.errors.forEach((errs, type) => {
             buf += `## ${type}\n\n`;
             errs.forEach(err => {
-                buf += `* ${err.message()}\n`;
+                if (err.triple) {
+                    buf += `* ${err.message()} ${JSON.stringify(err.triple)}\n`;
+                } else {
+                    buf += `* ${err.message()}\n`;
+                }
             })
             buf += "\n"
         });
