@@ -1,5 +1,10 @@
 import { Triple } from "./triple";
 
+interface Errors {
+    cause: Triple | string | undefined
+    errors: string[]
+}
+
 export class ErrorLogger {
     errorsOnTriples: Map<Triple, Set<string>> = new Map<Triple, Set<string>>();
     errorsOnNodes: Map<string, Set<string>> = new Map<string, Set<string>>();
@@ -22,17 +27,17 @@ export class ErrorLogger {
         errors.add(message);
     }
 
-    errors(): any[] {
-        const errors: any[] = [];
+    errors(): Errors[] {
+        const errors: Errors[] = [];
         this.errorsOnTriples.forEach((errs, triple) => {
             errors.push({
-                triple: triple,
+                cause: triple,
                 errors: Array.from(errs),
             });
         });
         this.errorsOnNodes.forEach((errs, node) => {
             errors.push({
-                node: node,
+                cause: node,
                 errors: Array.from(errs),
             });
         });
