@@ -18,6 +18,7 @@ import { WithOntology } from "./validators/WithOntology";
 import { ValueWithUnit } from "./validators/ValueWithUnit";
 import { Faldo } from "./validators/Faldo";
 import { Ontology } from "./validators/Ontology";
+import { Langtag } from "./validators/Langtag";
 
 const SUB_VALIDATORS = [
   CheckReference,
@@ -29,6 +30,7 @@ const SUB_VALIDATORS = [
   ValueWithUnit,
   Faldo,
   Ontology,
+  Langtag,
 ];
 
 class Consumer extends Writable {
