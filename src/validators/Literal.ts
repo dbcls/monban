@@ -1,10 +1,8 @@
-import * as N3 from "n3";
+import { Util as N3Util } from "n3";
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
 import { ErrorLiteralFormat } from "../error";
 import { URL } from 'url';
-
-N3.Util; // Workaround to load N3.Util
 
 type Checker = (value: string) => boolean;
 
@@ -64,10 +62,10 @@ const checkerFor: { [key: string]: Checker } = {
 
 export class Literal extends TriplewiseValidator {
   triple(triple: Triple) {
-    if (!N3.Util.isLiteral(triple.object)) { return; }
+    if (!N3Util.isLiteral(triple.object)) { return; }
 
-    const type = N3.Util.getLiteralType(triple.object);
-    const value = N3.Util.getLiteralValue(triple.object);
+    const type = N3Util.getLiteralType(triple.object);
+    const value = N3Util.getLiteralValue(triple.object);
     const checker = checkerFor[type];
 
     if (!checker) { return; }
