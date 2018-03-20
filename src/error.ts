@@ -83,7 +83,7 @@ export class ErrorFaldoPositionReferenceNotFound extends ErrorOnNode {
 
 export class ErrorDepictsDepictionNotFound extends ErrorOnNode {
     message() {
-        return `${this.node} is image-is but neigher foaf:depicts nor foaf:depiction is found for this`;
+        return `${this.node} is image-ish but neigher foaf:depicts nor foaf:depiction is found for this`;
     }
 }
 
