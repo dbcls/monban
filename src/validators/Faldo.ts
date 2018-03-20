@@ -32,7 +32,6 @@ export class Faldo extends TriplewiseValidator {
     if (triple.predicate === faldoReference) {
       this.subjectsHavingfaldoReference.add(triple.subject);
     }
-    return [];
   }
 
   done() {

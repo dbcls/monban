@@ -52,8 +52,6 @@ export class Ontology extends TriplewiseValidator {
                 this.rangeDefined.add(triple.subject);
                 break;
         }
-
-        return [];
     }
 
     done() {

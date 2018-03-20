@@ -18,7 +18,6 @@ export class CheckReference extends TriplewiseValidator {
     if (this.isReference(triple.object) && triple.predicate !== dcReferences) {
       this.error(new ErrorPredicateForReferences(triple))
     }
-    return [];
   }
 
   isReference(o: string): boolean {
