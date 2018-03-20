@@ -1,4 +1,4 @@
-import * as N3 from "n3";
+import { Util as N3Util, Store as N3Store } from "n3";
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
 import { ErrorSio000300NotFound, ErrorSio000221NotFound, ErrorSio000216NotFound, ErrorValueIsNotNumeric, ErrorObjectIsNotUOClass } from "../error";
@@ -21,16 +21,16 @@ const numericTypes: Set<string> = new Set<string>([
 ]);
 
 function isNumeric(node: string): boolean {
-    if (!N3.Util.isLiteral(node)) {
+    if (!N3Util.isLiteral(node)) {
         return false;
     }
-    const type = N3.Util.getLiteralType(node);
+    const type = N3Util.getLiteralType(node);
     return numericTypes.has(type);
 }
 
 
 export class ValueWithUnit extends TriplewiseValidator {
-    store: any = N3.Store();
+    store: any = N3Store();
     objectsOfSio000216: Set<string> = new Set<string>();
     subjectsOfSio000221: Set<string> = new Set<string>();
     subjectsOfSio000300: Set<string> = new Set<string>();

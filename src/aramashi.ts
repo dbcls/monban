@@ -6,7 +6,7 @@ import { Triple } from "./triple";
 import { UriPatterns, UriPattern } from "./uri-patterns";
 
 import * as N3 from "n3";
-import { N3StreamParser } from "n3";
+import { Util as N3Util, N3StreamParser } from "n3";
 import * as commander from "commander";
 
 function tripleStream(path: string): N3StreamParser {
@@ -73,9 +73,9 @@ class Consumer extends Writable {
 
         st.predicateOccurencies[p] = (st.predicateOccurencies[p] === undefined ? 0 : st.predicateOccurencies[p]) + 1;
 
-        if (N3.Util.isLiteral(o)) {
+        if (N3Util.isLiteral(o)) {
             st.numLiterals++;
-            const t = N3.Util.getLiteralType(o);
+            const t = N3Util.getLiteralType(o);
             st.datatypeOccurrencies[t] = (st.datatypeOccurrencies[t] === undefined ? 0 : st.datatypeOccurrencies[t]) + 1;
         } else {
             st.objectOccurrencies[o] = (st.objectOccurrencies[o] === undefined ? 0 : st.objectOccurrencies[o]) + 1;

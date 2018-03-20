@@ -1,9 +1,7 @@
-import * as N3 from "n3";
+import { Util as N3Util } from "n3";
 import { TriplewiseValidator } from "../triplewise-validator";
 import { Triple } from "../triple";
 import { ErrorLangtagMismatch } from "../error";
-
-N3.Util; // Workaround to load N3.Util
 
 const xsdLangString = "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString";
 
@@ -14,15 +12,15 @@ function guessLanguage(value: string): string {
 
 export class Langtag extends TriplewiseValidator {
     triple(triple: Triple) {
-        if (!N3.Util.isLiteral(triple.object)) {
+        if (!N3Util.isLiteral(triple.object)) {
             return;
         }
-        const type = N3.Util.getLiteralType(triple.object);
+        const type = N3Util.getLiteralType(triple.object);
         if (type !== xsdLangString) {
             return;
         }
-        const value = N3.Util.getLiteralValue(triple.object);
-        const lang = N3.Util.getLiteralLanguage(triple.object);
+        const value = N3Util.getLiteralValue(triple.object);
+        const lang = N3Util.getLiteralLanguage(triple.object);
 
         const guess = guessLanguage(value);
         if (lang !== guess) {
