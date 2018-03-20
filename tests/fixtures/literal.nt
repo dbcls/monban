@@ -1,0 +1,19 @@
+# good
+<http://example.com/s> <http://example.com/p> "42"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://example.com/s> <http://example.com/p> "42.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.com/s> <http://example.com/p> "4e-2"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://example.com/s> <http://example.com/p> "gopher://example.com"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://example.com/s> <http://example.com/p> "2018-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://example.com/s> <http://example.com/p> "00:42:42.0"^^<http://www.w3.org/2001/XMLSchema#time> .
+<http://example.com/s> <http://example.com/p> "2018-01-01T00:42:42.0"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://example.com/s> <http://example.com/p> "hello"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://example.com/s> <http://example.com/p> "bye"^^<http://www.w3.org/2001/XMLSchema#_any-unknown-type> .
+
+# bad
+<http://example.com/s> <http://example.com/p> "42.0"^^<http://www.w3.org/2001/XMLSchema#int> .
+<http://example.com/s> <http://example.com/p> "42..0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.com/s> <http://example.com/p> "4ee-2"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://example.com/s> <http://example.com/p> "example.com"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://example.com/s> <http://example.com/p> "2018-01-42"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://example.com/s> <http://example.com/p> "00:42:42..0"^^<http://www.w3.org/2001/XMLSchema#time> .
+<http://example.com/s> <http://example.com/p> "2018-01-01T00:42:42..0"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
