@@ -7,6 +7,11 @@ import { MonbanConfig } from "./monban-config";
 import { UriPatterns } from "./uri-patterns";
 import { Ontology } from "./ontology";
 
+function collect(val: string, memo: string[]): string[] {
+    memo.push(val);
+    return memo;
+}
+
 export class Monban {
     commander: commander.Command = commander;
     constructor(argv: string[]) {
@@ -15,7 +20,7 @@ export class Monban {
             .option('--primal-classes <path>', 'path to primal classes definition')
             .option('--uri-whitelist <path>', 'path to white list definition')
             .option('--uri-blacklist <path>', 'path to black list definition')
-            .option('--ontology <path>', 'path to ontology')
+            .option('--ontology <path>', 'path to ontology', collect, [])
             .parse(argv);
     }
 

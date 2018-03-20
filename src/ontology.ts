@@ -48,12 +48,9 @@ export class Ontology {
         return this.classes.has(s);
     }
 
-    static load(path: string): Promise<Ontology> {
-        const ontology = new Ontology();
-        if (!path) {
-            return Promise.resolve(ontology);
-        }
+    load(path: string): Promise<void> {
         const stream = tripleStream(path);
+        const ontology = this;
         class OntologyConsumer extends Writable {
             constructor() {
                 super({ objectMode: true });
@@ -83,8 +80,16 @@ export class Ontology {
         stream.pipe(oc);
         return new Promise((resolve, reject) => {
             stream.on('end', () => {
-                resolve(ontology);
+                resolve();
             });
         });
+    }
+
+    static async load(paths: string[]): Promise<Ontology> {
+        const ontology = new Ontology();
+        await Promise.all(
+            paths.map(path => ontology.load(path))
+        );
+        return ontology;
     }
 }
