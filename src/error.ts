@@ -61,7 +61,7 @@ export class ErrorObjectOfDctermsReferences extends ErrorOnObjectOfTriple {
 
 export class ErrorPredicateForReferences extends ErrorOnPredicateOfTriple {
     message() {
-        return `dcterms:references is not used for reference ${this.triple.object} (used ${this.triple.predicate})`;
+        return `dcterms:references is not used for reference ${this.triple.object}`;
     }
 }
 
@@ -102,16 +102,14 @@ export class ErrorDepictionForNotImageshObject extends ErrorOnObjectOfTriple {
 
 export class ErrorLangtagMismatch extends ErrorOnNode {
     guess: string;
-    actual: string;
 
-    constructor(node: string, guess: string, actual: string) {
+    constructor(node: string, guess: string) {
         super(node);
         this.guess = guess;
-        this.actual = actual;
     }
 
     message() {
-        return `${this.node} looks like @${this.guess}, but @${this.actual} specified`;
+        return `${this.node} looks like @${this.guess}`;
     }
 }
 

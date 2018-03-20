@@ -1,4 +1,9 @@
+import * as N3 from "n3";
+
 import { ValidationResults } from "./validation-results";
+import { Triple } from "./triple";
+
+const N3Writer = <any>N3.Writer();
 
 export class MarkdownBuilder {
     static build(results: ValidationResults): string {
@@ -14,8 +19,10 @@ export class MarkdownBuilder {
         results.errors.forEach((errs, type) => {
             buf += `## ${type}\n\n`;
             errs.forEach(err => {
-                if (err.triple) {
-                    buf += `* ${err.message()} ${JSON.stringify(err.triple)}\n`;
+                const triple = err.triple;
+                if (triple) {
+                    const nt = N3Writer.tripleToString(triple.subject, triple.predicate, triple.object, triple.graph);
+                    buf += `* ${err.message()} \`${nt}\`\n`;
                 } else {
                     buf += `* ${err.message()}\n`;
                 }

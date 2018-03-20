@@ -26,7 +26,7 @@ export class Langtag extends TriplewiseValidator {
 
         const guess = guessLanguage(value);
         if (lang !== guess) {
-            this.error(new ErrorLangtagMismatch(triple.object, guess, lang));
+            this.error(new ErrorLangtagMismatch(triple.object, guess));
         }
     }
 }
