@@ -6,12 +6,19 @@ import { Validator } from "./validator";
 import { MonbanConfig } from "./monban-config";
 import { UriPatterns } from "./uri-patterns";
 import { Ontology } from "./ontology";
+
 import { JsonBuilder } from "./json-builder";
+import { MarkdownBuilder } from "./markdown-builder";
 
 function collect(val: string, memo: string[]): string[] {
     memo.push(val);
     return memo;
 }
+
+const builders: { [key: string]: any } = {
+    'json': JsonBuilder,
+    'markdown': MarkdownBuilder,
+};
 
 export class Monban {
     commander: commander.Command = commander;
@@ -22,6 +29,7 @@ export class Monban {
             .option('--uri-whitelist <path>', 'path to white list definition')
             .option('--uri-blacklist <path>', 'path to black list definition')
             .option('--ontology <path>', 'path to ontology', collect, [])
+            .option('--output-format <format>', `output format ${Object.keys(builders).join(', ')}`, 'markdown')
             .parse(argv);
     }
 
@@ -44,11 +52,17 @@ export class Monban {
             config.ontology = await Ontology.load(this.commander.ontology);
         }
 
+        const builder = builders[this.commander.outputFormat];
+        if (!builder) {
+            console.error(`builder ${this.commander.outputFormat} not supported`);
+            return;
+        }
+
         this.commander.args.forEach(async (fn) => {
             const validator = new Validator(fn, config);
             const r = await validator.validate();
 
-            console.log(JsonBuilder.build(r));
+            console.log(builder.build(r));
         });
     }
 
