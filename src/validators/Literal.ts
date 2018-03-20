@@ -7,7 +7,7 @@ N3.Util; // Workaround to load N3.Util
 
 type Checker = (value: string) => boolean;
 
-const pattern: { [key: string]: RegExp } = {
+const patterns: { [key: string]: RegExp } = {
   integer: /^[+-]?[0-9]+$/,
   decimal: /^[+-]?(?:[0-9]*\.[0-9]+|[0-9]+)$/,
   numeric: /^[+-]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+\-]?[0-9]+)?$/,
@@ -21,7 +21,9 @@ function xsd(typeName: string): string {
 }
 
 function match(patternName: string): Checker {
-  return value => pattern[patternName].test(value);
+  const pattern = patterns[patternName];
+
+  return value => pattern.test(value);
 }
 
 function url(): Checker {
