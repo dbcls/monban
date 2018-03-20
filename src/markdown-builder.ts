@@ -21,7 +21,7 @@ export class MarkdownBuilder {
             errs.forEach(err => {
                 const triple = err.triple;
                 if (triple) {
-                    const nt = N3Writer.tripleToString(triple.subject, triple.predicate, triple.object, triple.graph);
+                    const nt = N3Writer.tripleToString(triple.subject, triple.predicate, triple.object, triple.graph).trim();
                     buf += `* ${err.message()} \`${nt}\`\n`;
                 } else {
                     buf += `* ${err.message()}\n`;
