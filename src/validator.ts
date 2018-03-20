@@ -92,7 +92,8 @@ export class Validator {
     const subValidators = SUB_VALIDATORS.map((cl) => new cl(this.config, this.errorLogger));
     const numPassesRequired = Math.max(...subValidators.map(v => v.numPassesRequired()));
     for (let i = 0; i < numPassesRequired; i++) {
-      await this.process(i, subValidators);
+      const vs = subValidators.filter(v => v.numPassesRequired() > i);
+      await this.process(i, vs);
     }
 
     const statistics = new Statistics();
