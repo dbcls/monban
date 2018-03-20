@@ -17,7 +17,6 @@ const numericTypes: Set<string> = new Set<string>([
     xsd + 'integer',
     xsd + 'decimal',
     xsd + 'float',
-    xsd + 'decimal',
     xsd + 'double',
 ]);
 
