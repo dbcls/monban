@@ -6,6 +6,7 @@ import { Validator } from "./validator";
 import { MonbanConfig } from "./monban-config";
 import { UriPatterns } from "./uri-patterns";
 import { Ontology } from "./ontology";
+import { JsonBuilder } from "./json-builder";
 
 function collect(val: string, memo: string[]): string[] {
     memo.push(val);
@@ -46,7 +47,8 @@ export class Monban {
         this.commander.args.forEach(async (fn) => {
             const validator = new Validator(fn, config);
             const r = await validator.validate();
-            console.log(JSON.stringify(r, null, 2));
+
+            console.log(JsonBuilder.build(r));
         });
     }
 

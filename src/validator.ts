@@ -8,6 +8,7 @@ import { TriplewiseValidator } from "./triplewise-validator";
 import { Triple } from "./triple";
 import { MonbanConfig } from "./monban-config";
 import { ErrorLogger } from "./error-logger";
+import { ValidationResults, Statistics } from "./validation-results";
 
 import { CheckReference } from "./validators/CheckReference";
 import { FoafImage } from "./validators/FoafImage";
@@ -68,16 +69,6 @@ function tripleStream(path: string): N3StreamParser {
   return rdfStream.pipe(streamParser);
 }
 
-class Statistics {
-  elapsed: number = 0;
-}
-
-class ValidationResults {
-  path = "";
-  statistics: Statistics = new Statistics();
-  errors: any[] = [];
-}
-
 export class Validator {
   path: string;
   config: MonbanConfig;
@@ -101,7 +92,7 @@ export class Validator {
     const statistics = new Statistics();
     statistics.elapsed = new Date().getTime() - t0.getTime();
 
-    return { statistics, errors: this.errorLogger.errors(), path: this.path };
+    return { statistics, errors: this.errorLogger.errors, path: this.path };
   }
 
   process(pass: number, subValidators: TriplewiseValidator[]): Promise<void> {
