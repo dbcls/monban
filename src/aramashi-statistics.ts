@@ -1,14 +1,15 @@
 import { Writable } from "stream";
 import * as fs from "fs";
 import * as util from "util";
+import { ZlibOptions } from "zlib";
+
+import * as N3 from "n3";
+import { Util as N3Util, N3StreamParser } from "n3";
+import * as uuid from "uuid";
 
 import { Triple } from "./triple";
 import { UriPatterns, UriPattern } from "./uri-patterns";
 import { TripleReader } from "./triple-reader";
-
-import * as N3 from "n3";
-import { Util as N3Util, N3StreamParser } from "n3";
-import { ZlibOptions } from "zlib";
 
 const rdfType = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
 const rdfsSeeAlso = 'http://www.w3.org/2000/01/rdf-schema#seeAlso';
@@ -131,17 +132,25 @@ export class Statistics {
 class Consumer extends Writable {
     statictics = new Statistics();
     uriWhitelistPattern: UriPatterns;
+    uuid: string = uuid.v4();
 
     constructor(uriWhitelistPattern: UriPatterns) {
         super({ objectMode: true })
         this.uriWhitelistPattern = uriWhitelistPattern;
     }
 
+    uniquifyBlankNode(node: string): string {
+        if (N3Util.isBlank(node)) {
+            return node + "." + this.uuid;
+        }
+        return node;
+    }
+
     _write(triple: Triple, encoding: string, done: () => void) {
         const st = this.statictics;
-        const s = triple.subject;
-        const p = triple.predicate;
-        const o = triple.object;
+        const s = this.uniquifyBlankNode(triple.subject);
+        const p = this.uniquifyBlankNode(triple.predicate);
+        const o = this.uniquifyBlankNode(triple.object);
         st.numTriples++;
         st.subjectOccurrencies.add(s);
 
