@@ -55,7 +55,7 @@ class ErrorOnObjectOfTriple extends ErrorOnTriple {
 
 export class ErrorObjectOfDctermsReferences extends ErrorOnObjectOfTriple {
     message() {
-        return `not expected URI for dcterms:references`;
+        return `${this.triple.object} is not expected URI for dcterms:references`;
     }
 }
 
