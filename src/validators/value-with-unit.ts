@@ -39,63 +39,38 @@ export class ValueWithUnit extends TriplewiseValidator {
         [this.pass0, this.pass1][this.pass].bind(this)(triple);
     }
 
+    validateAsSio000074(s: string): void {
+        if (this.store.countTriples(null, sio000216, s) === 0) {
+            this.error(new ErrorSio000216NotFound(s));
+        }
+
+        const values = <string[]>this.store.getObjects(s, sio000300);
+        if (values.length === 0) {
+            this.error(new ErrorSio000300NotFound(s));
+        }
+        values.forEach(v => {
+            if (!isNumeric(v)) {
+                this.error(new ErrorValueIsNotNumeric({ subject: s, predicate: sio000300, object: v, graph: '', nth: undefined }));
+            }
+        });
+
+        const units = <string[]>this.store.getObjects(s, sio000221);
+        if (units.length === 0) {
+            this.error(new ErrorSio000221NotFound(s));
+        }
+        units.forEach(u => {
+            if (!u.match(uoRegexp)) {
+                this.error(new ErrorObjectIsNotUOClass({ subject: s, predicate: sio000221, object: u, graph: '', nth: undefined }));
+            }
+        });
+    }
+
     done() {
         if (this.pass === 0) {
             return;
         }
-
-        this.objectsOfSio000216.forEach(s => {
-            const values = <string[]>this.store.getObjects(s, sio000300);
-            if (values.length === 0) {
-                this.error(new ErrorSio000300NotFound(s));
-            }
-            values.forEach(v => {
-                if (!isNumeric(v)) {
-                    this.error(new ErrorValueIsNotNumeric({ subject: s, predicate: sio000300, object: v, graph: '', nth: undefined }));
-                }
-            });
-
-            const units = <string[]>this.store.getObjects(s, sio000221);
-            if (units.length === 0) {
-                this.error(new ErrorSio000221NotFound(s));
-            }
-            units.forEach(u => {
-                if (!u.match(uoRegexp)) {
-                    this.error(new ErrorObjectIsNotUOClass({ subject: s, predicate: sio000221, object: u, graph: '', nth: undefined }));
-                }
-            });
-        });
-
-        this.subjectsOfSio000221.forEach(s => {
-            if (this.store.countTriples(null, sio000216, s) === 0) {
-                this.error(new ErrorSio000216NotFound(s));
-            }
-
-            const values = <string[]>this.store.getObjects(s, sio000300);
-            if (values.length === 0) {
-                this.error(new ErrorSio000300NotFound(s));
-            }
-            values.forEach(v => {
-                if (!isNumeric(v)) {
-                    this.error(new ErrorValueIsNotNumeric({ subject: s, predicate: sio000300, object: v, graph: '', nth: undefined }));
-                }
-            });
-        });
-
-        this.subjectsOfSio000300.forEach(s => {
-            if (this.store.countTriples(null, sio000216, s) === 0) {
-                this.error(new ErrorSio000216NotFound(s))
-            }
-
-            const units = <string[]>this.store.getObjects(s, sio000221);
-            if (units.length === 0) {
-                this.error(new ErrorSio000221NotFound(s));
-            }
-            units.forEach(u => {
-                if (!u.match(uoRegexp)) {
-                    this.error(new ErrorObjectIsNotUOClass({ subject: s, predicate: sio000221, object: u, graph: '', nth: undefined }));
-                }
-            });
+        [this.objectsOfSio000216, this.subjectsOfSio000221, this.subjectsOfSio000300].forEach(nodes => {
+            nodes.forEach(this.validateAsSio000074.bind(this));
         })
     }
 
