@@ -117,16 +117,16 @@ class Consumer extends Writable {
 }
 
 export class Counter {
-    uriWhitelist: UriPatterns;
+    linkPatterns: UriPatterns;
 
-    constructor(uriWhitelist: UriPatterns) {
-        this.uriWhitelist = uriWhitelist;
+    constructor(linkPatterns: UriPatterns) {
+        this.linkPatterns = linkPatterns;
     }
 
     statistics(path: string): Promise<Statistics> {
         const stream = TripleReader.fromFile(path).stream();
 
-        const consumer = new Consumer(this.uriWhitelist);
+        const consumer = new Consumer(this.linkPatterns);
         stream.pipe(consumer);
 
         return new Promise((resolve, reject) => {
