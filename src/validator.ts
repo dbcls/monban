@@ -16,7 +16,7 @@ import { ValueWithUnit } from "./validators/ValueWithUnit";
 import { Faldo } from "./validators/Faldo";
 import { Ontology } from "./validators/Ontology";
 import { Langtag } from "./validators/Langtag";
-import { TripleStream } from "./triple-stream";
+import { TripleReader } from "./triple-reader";
 
 const SUB_VALIDATORS = [
   CheckReference,
@@ -81,7 +81,7 @@ export class Validator {
   process(pass: number, subValidators: TriplewiseValidator[]): Promise<void> {
     subValidators.forEach(v => v.pass = pass);
     const consumer = new Consumer(pass, subValidators, this.config);
-    const stream = TripleStream.fromFile(this.path);
+    const stream = TripleReader.fromFile(this.path).stream();
     stream.pipe(consumer);
 
     return new Promise((resolve, reject) => {

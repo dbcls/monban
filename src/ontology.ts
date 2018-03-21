@@ -6,7 +6,7 @@ import * as N3 from "n3";
 import { N3StreamParser } from "n3";
 
 import { Triple } from "./triple";
-import { TripleStream } from "./triple-stream";
+import { TripleReader } from "./triple-reader";
 
 const rdfType = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 const owl = "http://www.w3.org/2002/07/owl#"
@@ -38,7 +38,7 @@ export class Ontology {
     }
 
     load(path: string): Promise<void> {
-        const stream = TripleStream.fromFile(path);
+        const stream = TripleReader.fromFile(path).stream();
         const ontology = this;
         class OntologyConsumer extends Writable {
             constructor() {

@@ -4,7 +4,7 @@ import { Readable, Writable } from "stream";
 
 import { Triple } from "./triple";
 import { UriPatterns, UriPattern } from "./uri-patterns";
-import { TripleStream } from "./triple-stream";
+import { TripleReader } from "./triple-reader";
 
 import * as N3 from "n3";
 import { Util as N3Util, N3StreamParser } from "n3";
@@ -109,7 +109,7 @@ export class Aramashi {
     };
 
     statistics(path: string) {
-        const stream = TripleStream.fromFile(path);
+        const stream = TripleReader.fromFile(path).stream();
 
         const consumer = new Consumer(this.uriWhitelist);
         stream.pipe(consumer);
