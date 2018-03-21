@@ -1,9 +1,5 @@
-import * as fs from "fs";
-import * as N3 from "n3";
-import * as zlib from "zlib";
-import { Readable, Writable, Transform } from "stream";
+import { Writable } from "stream";
 
-import { N3StreamParser } from "n3";
 import { TriplewiseValidator } from "./triplewise-validator";
 import { Triple } from "./triple";
 import { MonbanConfig } from "./monban-config";
@@ -20,6 +16,7 @@ import { ValueWithUnit } from "./validators/ValueWithUnit";
 import { Faldo } from "./validators/Faldo";
 import { Ontology } from "./validators/Ontology";
 import { Langtag } from "./validators/Langtag";
+import { TripleStream } from "./triple-stream";
 
 const SUB_VALIDATORS = [
   CheckReference,
@@ -55,20 +52,6 @@ class Consumer extends Writable {
   }
 }
 
-function tripleStream(path: string): N3StreamParser {
-  const streamParser = N3.StreamParser();
-  (<any>N3.Parser)._resetBlankNodeIds(); // make sure we have the same ids on different passes
-
-  const inputStream = fs.createReadStream(path);
-  let rdfStream: Readable;
-  rdfStream = inputStream;
-
-  if (path.endsWith('.gz')) {
-    rdfStream = rdfStream.pipe(zlib.createGunzip());
-  }
-  return rdfStream.pipe(streamParser);
-}
-
 export class Validator {
   path: string;
   config: MonbanConfig;
@@ -98,7 +81,7 @@ export class Validator {
   process(pass: number, subValidators: TriplewiseValidator[]): Promise<void> {
     subValidators.forEach(v => v.pass = pass);
     const consumer = new Consumer(pass, subValidators, this.config);
-    const stream = tripleStream(this.path);
+    const stream = TripleStream.fromFile(this.path);
     stream.pipe(consumer);
 
     return new Promise((resolve, reject) => {

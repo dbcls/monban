@@ -6,18 +6,7 @@ import * as N3 from "n3";
 import { N3StreamParser } from "n3";
 
 import { Triple } from "./triple";
-
-function tripleStream(path: string): N3StreamParser {
-    const streamParser = N3.StreamParser();
-    const inputStream = fs.createReadStream(path);
-    let rdfStream: Readable;
-    rdfStream = inputStream;
-
-    if (path.endsWith('.gz')) {
-        rdfStream = rdfStream.pipe(zlib.createGunzip());
-    }
-    return rdfStream.pipe(streamParser);
-}
+import { TripleStream } from "./triple-stream";
 
 const rdfType = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 const owl = "http://www.w3.org/2002/07/owl#"
@@ -49,7 +38,7 @@ export class Ontology {
     }
 
     load(path: string): Promise<void> {
-        const stream = tripleStream(path);
+        const stream = TripleStream.fromFile(path);
         const ontology = this;
         class OntologyConsumer extends Writable {
             constructor() {

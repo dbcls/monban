@@ -4,22 +4,12 @@ import { Readable, Writable } from "stream";
 
 import { Triple } from "./triple";
 import { UriPatterns, UriPattern } from "./uri-patterns";
+import { TripleStream } from "./triple-stream";
 
 import * as N3 from "n3";
 import { Util as N3Util, N3StreamParser } from "n3";
 import * as commander from "commander";
 
-function tripleStream(path: string): N3StreamParser {
-    const streamParser = N3.StreamParser();
-    const inputStream = fs.createReadStream(path);
-    let rdfStream: Readable;
-    rdfStream = inputStream;
-
-    if (path.endsWith('.gz')) {
-        rdfStream = rdfStream.pipe(zlib.createGunzip());
-    }
-    return rdfStream.pipe(streamParser);
-}
 
 class Statistics {
     subjectOccurrencies: { [key: string]: number } = {};
@@ -119,7 +109,7 @@ export class Aramashi {
     };
 
     statistics(path: string) {
-        const stream = tripleStream(path);
+        const stream = TripleStream.fromFile(path);
 
         const consumer = new Consumer(this.uriWhitelist);
         stream.pipe(consumer);
