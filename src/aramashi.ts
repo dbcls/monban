@@ -10,14 +10,49 @@ import * as N3 from "n3";
 import { Util as N3Util, N3StreamParser } from "n3";
 import * as commander from "commander";
 
+class OccurrenciesCounter {
+    items: Map<string, number>;
+
+    constructor() {
+        this.items = new Map<string, number>();
+    }
+
+    add(item: string) {
+        let n = this.items.get(item);
+        if (!n) {
+            n = 0;
+        }
+        this.items.set(item, n + 1);
+    }
+
+    get size(): number {
+        return this.items.size;
+    }
+
+    get total(): number {
+        let sum = 0;
+        this.items.forEach(n => {
+            sum += n;
+        })
+        return sum;
+    }
+
+    toJSON(): { [key: string]: number } {
+        const obj: { [key: string]: number } = {};
+        this.items.forEach((n, item) => {
+            obj[item] = n;
+        });
+        return obj;
+    }
+}
 
 class Statistics {
-    subjectOccurrencies: { [key: string]: number } = {};
-    classAndNumInstances: { [key: string]: number } = {};
-    objectOccurrencies: { [key: string]: number } = {};
-    predicateOccurencies: { [key: string]: number } = {};
-    datatypeOccurrencies: { [key: string]: number } = {};
-    linkOccurrencies: { [key: string]: number } = {};
+    subjectOccurrencies = new OccurrenciesCounter();
+    classAndNumInstances = new OccurrenciesCounter();
+    objectOccurrencies = new OccurrenciesCounter();
+    predicateOccurencies = new OccurrenciesCounter();
+    datatypeOccurrencies = new OccurrenciesCounter();
+    linkOccurrencies = new OccurrenciesCounter();
     numTriples = 0;
     numSubjects = 0;
     numObjects = 0;
@@ -28,12 +63,12 @@ class Statistics {
     numLinks = 0;
 
     computeDerivations() {
-        this.numSubjects = Object.keys(this.subjectOccurrencies).length;
-        this.numClasses = Object.keys(this.classAndNumInstances).length;
-        this.numObjects = Object.keys(this.objectOccurrencies).length;
-        this.numPredicates = Object.keys(this.predicateOccurencies).length;
-        this.numDatatypes = Object.keys(this.datatypeOccurrencies).length;
-        this.numLinks = Object.keys(this.linkOccurrencies).reduce((acc, k): number => acc + this.linkOccurrencies[k], 0);
+        this.numSubjects = this.subjectOccurrencies.size;
+        this.numClasses = this.classAndNumInstances.size;
+        this.numObjects = this.objectOccurrencies.size;
+        this.numPredicates = this.predicateOccurencies.size;
+        this.numDatatypes = this.datatypeOccurrencies.size;
+        this.numLinks = this.linkOccurrencies.total;
     }
 }
 
@@ -55,27 +90,26 @@ class Consumer extends Writable {
         const p = triple.predicate;
         const o = triple.object;
         st.numTriples++;
-        st.subjectOccurrencies[s] = (st.subjectOccurrencies[s] === undefined ? 0 : st.subjectOccurrencies[s]) + 1;
+        st.subjectOccurrencies.add(s);
 
         if (p === rdfType) {
-            st.classAndNumInstances[o] = (st.classAndNumInstances[o] === undefined ? 0 : st.classAndNumInstances[o]) + 1;
+            st.classAndNumInstances.add(o);
         }
 
-        st.predicateOccurencies[p] = (st.predicateOccurencies[p] === undefined ? 0 : st.predicateOccurencies[p]) + 1;
+        st.predicateOccurencies.add(p);
 
         if (N3Util.isLiteral(o)) {
             st.numLiterals++;
             const t = N3Util.getLiteralType(o);
-            st.datatypeOccurrencies[t] = (st.datatypeOccurrencies[t] === undefined ? 0 : st.datatypeOccurrencies[t]) + 1;
+            st.datatypeOccurrencies.add(t);
         } else {
-            st.objectOccurrencies[o] = (st.objectOccurrencies[o] === undefined ? 0 : st.objectOccurrencies[o]) + 1;
+            st.objectOccurrencies.add(o);
         }
 
         if (p === rdfsSeeAlso) {
             const e = this.uriWhitelistPattern.match(o)
             if (e) {
-                const ln = e.name;
-                st.linkOccurrencies[ln] = (st.linkOccurrencies[ln] === undefined ? 0 : st.linkOccurrencies[ln]) + 1;
+                st.linkOccurrencies.add(e.name);
             }
         }
 
