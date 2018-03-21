@@ -54,10 +54,11 @@ class Statistics {
     datatypeOccurrencies = new OccurrenciesCounter();
     linkOccurrencies = new OccurrenciesCounter();
     numTriples = 0;
-    numSubjects = 0;
-    numObjects = 0;
     numLiterals = 0;
+
+    numSubjects = 0;
     numClasses = 0;
+    numObjects = 0;
     numPredicates = 0;
     numDatatypes = 0;
     numLinks = 0;
