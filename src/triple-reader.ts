@@ -11,6 +11,12 @@ export class TripleReader {
         return new TripleFileReader(path);
     }
 
+    static fromString(buffer: string): TripleReader {
+        return new TripleStringReader(buffer);
+    }
+
+    path: string = "";
+
     stream(): N3StreamParser { return N3.StreamParser(); }
 }
 
@@ -22,7 +28,7 @@ class TripleFileReader extends TripleReader {
         this.path = path;
     }
 
-    stream() {
+    stream(): N3StreamParser {
         const streamParser = N3.StreamParser();
         (<any>N3.Parser)._resetBlankNodeIds(); // make sure we have the same ids on different passes
 
@@ -34,5 +40,23 @@ class TripleFileReader extends TripleReader {
             rdfStream = rdfStream.pipe(zlib.createGunzip());
         }
         return rdfStream.pipe(streamParser);
+    }
+}
+
+class TripleStringReader extends TripleReader {
+    buf: string;
+
+    constructor(buf: string) {
+        super();
+        this.buf = buf;
+    }
+
+    stream(): N3StreamParser {
+        const streamParser = N3.StreamParser();
+        (<any>N3.Parser)._resetBlankNodeIds(); // make sure we have the same ids on different passes
+        const s = new Readable();
+        s.push(this.buf);
+        s.push(null);
+        return s.pipe(streamParser);
     }
 }

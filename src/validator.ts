@@ -53,12 +53,12 @@ class Consumer extends Writable {
 }
 
 export class Validator {
-  path: string;
+  reader: TripleReader;
   config: MonbanConfig;
   errorLogger: ErrorLogger = new ErrorLogger();
 
-  constructor(path: string, config: MonbanConfig) {
-    this.path = path;
+  constructor(reader: TripleReader, config: MonbanConfig) {
+    this.reader = reader;
     this.config = config;
   }
 
@@ -75,13 +75,13 @@ export class Validator {
     const statistics = new Statistics();
     statistics.elapsed = new Date().getTime() - t0.getTime();
 
-    return { statistics, errors: this.errorLogger.errors, path: this.path };
+    return { statistics, errors: this.errorLogger.errors, path: this.reader.path };
   }
 
   process(pass: number, subValidators: TriplewiseValidator[]): Promise<void> {
     subValidators.forEach(v => v.pass = pass);
     const consumer = new Consumer(pass, subValidators, this.config);
-    const stream = TripleReader.fromFile(this.path).stream();
+    const stream = this.reader.stream();
     stream.pipe(consumer);
 
     return new Promise((resolve, reject) => {

@@ -6,6 +6,7 @@ import { Validator } from "./validator";
 import { MonbanConfig } from "./monban-config";
 import { UriPatterns } from "./uri-patterns";
 import { Ontology } from "./ontology";
+import { TripleReader } from "./triple-reader"
 
 import { JsonBuilder } from "./json-builder";
 import { MarkdownBuilder } from "./markdown-builder";
@@ -59,7 +60,8 @@ export class Monban {
         }
 
         this.commander.args.forEach(async (fn) => {
-            const validator = new Validator(fn, config);
+            const reader = TripleReader.fromFile(fn);
+            const validator = new Validator(reader, config);
             const r = await validator.validate();
 
             console.log(builder.build(r));
