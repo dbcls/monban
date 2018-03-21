@@ -1,8 +1,9 @@
+import { URL } from 'url';
+import { Util as N3Util } from 'n3';
+
 import { ErrorLiteralFormat } from '../error';
 import { Triple } from '../triple';
 import { TriplewiseValidator } from '../triplewise-validator';
-import { URL } from 'url';
-import { Util as N3Util } from 'n3';
 
 type Checker = (value: string) => boolean;
 
