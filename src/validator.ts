@@ -5,25 +5,25 @@ import { Triple } from "./triple";
 import { MonbanConfig } from "./monban-config";
 import { ErrorLogger } from "./error-logger";
 import { ValidationResults, Statistics } from "./validation-results";
-
-import { CheckReference } from "./validators/CheckReference";
-import { FoafImage } from "./validators/FoafImage";
-import { Literal } from "./validators/Literal";
-import { PrimalClass } from "./validators/PrimalClass";
-import { CheckSeeAlso } from "./validators/CheckSeeAlso";
-import { WithOntology } from "./validators/WithOntology";
-import { ValueWithUnit } from "./validators/ValueWithUnit";
-import { Faldo } from "./validators/Faldo";
-import { Ontology } from "./validators/Ontology";
-import { Langtag } from "./validators/Langtag";
 import { TripleReader } from "./triple-reader";
 
+import { Reference } from "./validators/reference";
+import { FoafImage } from "./validators/foaf-image";
+import { Literal } from "./validators/literal";
+import { PrimalClass } from "./validators/primal-class";
+import { SeeAlso } from "./validators/see-also";
+import { WithOntology } from "./validators/with-ontology";
+import { ValueWithUnit } from "./validators/value-with-unit";
+import { Faldo } from "./validators/faldo";
+import { Ontology } from "./validators/ontology";
+import { Langtag } from "./validators/langtag";
+
 const SUB_VALIDATORS = [
-  CheckReference,
+  Reference,
   FoafImage,
   Literal,
   PrimalClass,
-  CheckSeeAlso,
+  SeeAlso,
   WithOntology,
   ValueWithUnit,
   Faldo,

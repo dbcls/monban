@@ -10,7 +10,7 @@ const referenceStems = [
   'http://doi.org/',
 ];
 
-export class CheckReference extends TriplewiseValidator {
+export class Reference extends TriplewiseValidator {
   triple(triple: Triple) {
     if (triple.predicate === dcReferences && !this.isReference(triple.object)) {
       this.error(new ErrorObjectOfDctermsReferences(triple))

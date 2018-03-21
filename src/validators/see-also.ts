@@ -4,7 +4,7 @@ import { ErrorNoSuitableSeeAlsoFor } from "../error";
 
 const rdfsSeeAlso = 'http://www.w3.org/2000/01/rdf-schema#seeAlso';
 
-export class CheckSeeAlso extends TriplewiseValidator {
+export class SeeAlso extends TriplewiseValidator {
     seeAlsos: Map<string, Set<string>> = new Map<string, Set<string>>();
 
     triple(triple: Triple) {
