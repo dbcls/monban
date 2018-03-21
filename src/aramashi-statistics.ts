@@ -1,4 +1,6 @@
 import { Writable } from "stream";
+import * as fs from "fs";
+import * as util from "util";
 
 import { Triple } from "./triple";
 import { UriPatterns, UriPattern } from "./uri-patterns";
@@ -6,6 +8,7 @@ import { TripleReader } from "./triple-reader";
 
 import * as N3 from "n3";
 import { Util as N3Util, N3StreamParser } from "n3";
+import { ZlibOptions } from "zlib";
 
 const rdfType = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
 const rdfsSeeAlso = 'http://www.w3.org/2000/01/rdf-schema#seeAlso';
@@ -17,12 +20,12 @@ class OccurrenciesCounter {
         this.items = new Map<string, number>();
     }
 
-    add(item: string) {
+    add(item: string, delta: number = 1) {
         let n = this.items.get(item);
         if (!n) {
             n = 0;
         }
-        this.items.set(item, n + 1);
+        this.items.set(item, n + delta);
     }
 
     get size(): number {
@@ -43,6 +46,21 @@ class OccurrenciesCounter {
             obj[item] = n;
         });
         return obj;
+    }
+
+    load(obj: { [key: string]: number }): void {
+        this.items.clear();
+        Object.keys(obj).forEach(k => {
+            const n = obj[k];
+            this.items.set(k, n);
+        });
+    }
+
+    merge(that: OccurrenciesCounter): OccurrenciesCounter {
+        that.items.forEach((n, item) => {
+            this.add(item, n);
+        });
+        return this;
     }
 }
 
@@ -71,8 +89,44 @@ export class Statistics {
         this.numDatatypes = this.datatypeOccurrencies.size;
         this.numLinks = this.linkOccurrencies.total;
     }
-}
 
+    load(obj: any): void {
+        this.subjectOccurrencies.load(obj.subjectOccurrencies);
+        this.classAndNumInstances.load(obj.classAndNumInstances);
+        this.objectOccurrencies.load(obj.objectOccurrencies);
+        this.predicateOccurencies.load(obj.predicateOccurencies);
+        this.datatypeOccurrencies.load(obj.datatypeOccurrencies);
+        this.linkOccurrencies.load(obj.linkOccurrencies);
+
+        this.numTriples = obj.numTriples;
+        this.numLiterals = obj.numLiterals;
+        this.computeDerivations();
+    }
+
+    merge(that: Statistics): Statistics {
+        this.subjectOccurrencies.merge(that.subjectOccurrencies);
+        this.classAndNumInstances.merge(that.classAndNumInstances);
+        this.objectOccurrencies.merge(that.objectOccurrencies);
+        this.predicateOccurencies.merge(that.predicateOccurencies);
+        this.datatypeOccurrencies.merge(that.datatypeOccurrencies);
+        this.linkOccurrencies.merge(that.linkOccurrencies);
+
+        this.numTriples += that.numTriples;
+        this.numLiterals += that.numLiterals;
+
+        this.computeDerivations();
+        return this;
+    }
+
+    static async loadFromFile(path: string): Promise<Statistics> {
+        const st = new Statistics();
+        const buf = await util.promisify(fs.readFile)(path);
+        const obj = JSON.parse(buf.toString());
+
+        st.load(obj);
+        return st;
+    }
+}
 
 class Consumer extends Writable {
     statictics = new Statistics();

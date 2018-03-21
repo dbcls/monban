@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+const AramashiMerge = require('../dists/aramashi-merge').AramashiMerge;
+
+const aramashiMerge = new AramashiMerge(process.argv);
+aramashiMerge.run();
