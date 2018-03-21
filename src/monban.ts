@@ -8,8 +8,8 @@ import { UriPatterns } from "./uri-patterns";
 import { Ontology } from "./ontology";
 import { TripleReader } from "./triple-reader"
 
-import { JsonBuilder } from "./json-builder";
-import { MarkdownBuilder } from "./markdown-builder";
+import { JsonReporter } from "./reporters/json-reporter";
+import { MarkdownReporter } from "./reporters/markdown-reporter";
 
 function collect(val: string, memo: string[]): string[] {
     memo.push(val);
@@ -17,8 +17,8 @@ function collect(val: string, memo: string[]): string[] {
 }
 
 const builders: { [key: string]: any } = {
-    'json': JsonBuilder,
-    'markdown': MarkdownBuilder,
+    'json': JsonReporter,
+    'markdown': MarkdownReporter,
 };
 
 export class Monban {

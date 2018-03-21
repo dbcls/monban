@@ -1,11 +1,11 @@
 import * as N3 from "n3";
 
-import { ValidationResults } from "./validation-results";
-import { Triple } from "./triple";
+import { ValidationResults } from "../validation-results";
+import { Triple } from "../triple";
 
 const N3Writer = <any>N3.Writer();
 
-export class MarkdownBuilder {
+export class MarkdownReporter {
     static build(results: ValidationResults): string {
         let buf = "";
 

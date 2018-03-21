@@ -1,6 +1,6 @@
-import { ValidationResults } from "./validation-results";
+import { ValidationResults } from "../validation-results";
 
-export class JsonBuilder {
+export class JsonReporter {
     static build(results: ValidationResults): string {
 
         const errors: any[] = [];
