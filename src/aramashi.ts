@@ -8,7 +8,7 @@ export class Aramashi {
     constructor(argv: string[]) {
         this.commander
             .usage('[options] <file ...>')
-            .option('--link-patterns <path>', 'path to link pattern definition')
+            .option('--link-patterns <path.tsv>', 'path to link pattern definition')
             .parse(argv);
     }
 

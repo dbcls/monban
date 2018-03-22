@@ -32,11 +32,11 @@ export class Monban {
     constructor(argv: string[]) {
         this.commander
             .usage('[options] <file ...>')
-            .option('--primal-classes <path>', 'path to primal classes definition')
-            .option('--uri-whitelist <path>', 'path to white list definition')
-            .option('--uri-blacklist <path>', 'path to black list definition')
-            .option('--ontology <path>', 'path to ontology', collect, [])
-            .option('--bib-patterns <path>', 'path to bibliography resource patterns')
+            .option('--primal-classes <path.txt>', 'path to primal classes definition')
+            .option('--uri-whitelist <path.tsv>', 'path to white list definition')
+            .option('--uri-blacklist <path.tsv>', 'path to black list definition')
+            .option('--ontology <path.ttl>', 'path to ontology', collect, [])
+            .option('--bib-patterns <path.tsv>', 'path to bibliography resource patterns')
             .option('--report-limit <number>', 'number of error instances per error (negative for no limit)', 10)
             .option('--output-format <format>', `output format ${Object.keys(reporters).join(', ')}`, 'markdown')
             .parse(argv);
