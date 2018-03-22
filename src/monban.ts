@@ -31,7 +31,7 @@ export class Monban {
             .option('--uri-blacklist <path>', 'path to black list definition')
             .option('--ontology <path>', 'path to ontology', collect, [])
             .option('--output-format <format>', `output format ${Object.keys(reporters).join(', ')}`, 'markdown')
-            .option('--report-limit <number>', 'number of error instances per error (negative for no limit)', 20)
+            .option('--report-limit <number>', 'number of error instances per error (negative for no limit)', 10)
             .parse(argv);
     }
 
