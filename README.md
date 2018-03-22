@@ -2,8 +2,8 @@
 
 ## Prerequisite
 
-* [Node.js](https://nodejs.org/) >= 8.9.4
-* [Yarn](https://yarnpkg.com)
+* [Node.js](https://nodejs.org/) >= 8.10.0
+* [Yarn](https://yarnpkg.com) >= 1.5.1
 
 ## Setup
 
@@ -13,4 +13,4 @@
 
 ## Use
 
-    $ ./bin/monban ./tests/good-reference.nt
+    $ ./bin/monban ./tests/fixtures/good-reference.nt
