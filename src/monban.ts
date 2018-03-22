@@ -4,7 +4,7 @@ import * as readline from "readline";
 
 import { Validator } from "./validator";
 import { MonbanConfig } from "./monban-config";
-import { UriPatterns } from "./uri-patterns";
+import { UriPatterns, UriPattern } from "./uri-patterns";
 import { Ontology } from "./ontology";
 import { TripleReader } from "./triple-reader"
 
@@ -21,6 +21,12 @@ const reporters: { [key: string]: any } = {
     'markdown': MarkdownReporter,
 };
 
+const defaultBibPatterns = new UriPatterns([
+    new UriPattern('PMC', '^http://identifiers\.org/pmc/'),
+    new UriPattern('PubMed', '^http://identifiers\.org/pubmed/'),
+    new UriPattern('DOI', '^http://doi\.org/'),
+]);
+
 export class Monban {
     commander: commander.Command = commander;
     constructor(argv: string[]) {
@@ -30,8 +36,9 @@ export class Monban {
             .option('--uri-whitelist <path>', 'path to white list definition')
             .option('--uri-blacklist <path>', 'path to black list definition')
             .option('--ontology <path>', 'path to ontology', collect, [])
-            .option('--output-format <format>', `output format ${Object.keys(reporters).join(', ')}`, 'markdown')
+            .option('--bib-patterns <path>', 'path to bibliography resource patterns')
             .option('--report-limit <number>', 'number of error instances per error (negative for no limit)', 10)
+            .option('--output-format <format>', `output format ${Object.keys(reporters).join(', ')}`, 'markdown')
             .parse(argv);
     }
 
@@ -55,6 +62,11 @@ export class Monban {
         }
         if (this.commander.reportLimit) {
             config.reportLimit = this.commander.reportLimit;
+        }
+        if (this.commander.bibPatterns) {
+            config.bibPatterns = await UriPatterns.loadTsv(this.commander.bibPatterns);
+        } else {
+            config.bibPatterns = defaultBibPatterns;
         }
 
         const reporter = reporters[this.commander.outputFormat];

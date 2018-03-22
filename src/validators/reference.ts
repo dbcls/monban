@@ -4,12 +4,6 @@ import { ErrorObjectOfDctermsReferences, ErrorPredicateForReferences } from "../
 
 const dcReferences = 'http://purl.org/dc/terms/references';
 
-const referenceStems = [
-  'http://identifiers.org/pubmed/',
-  'http://identifiers.org/pmc/',
-  'http://doi.org/',
-];
-
 export class Reference extends TriplewiseValidator {
   triple(triple: Triple) {
     if (triple.predicate === dcReferences && !this.isReference(triple.object)) {
@@ -21,6 +15,6 @@ export class Reference extends TriplewiseValidator {
   }
 
   isReference(o: string): boolean {
-    return referenceStems.some((stem) => o.startsWith(stem));
+    return !!this.config.bibPatterns.match(o);
   }
 }

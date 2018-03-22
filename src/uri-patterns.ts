@@ -17,8 +17,8 @@ export class UriPattern {
 
 export class UriPatterns {
     entries: UriPattern[];
-    constructor() {
-        this.entries = [];
+    constructor(entries: UriPattern[] = []) {
+        this.entries = entries;
     }
 
     match(str: string): UriPattern | undefined {
