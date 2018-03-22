@@ -16,7 +16,7 @@ function collect(val: string, memo: string[]): string[] {
     return memo;
 }
 
-const builders: { [key: string]: any } = {
+const reporters: { [key: string]: any } = {
     'json': JsonReporter,
     'markdown': MarkdownReporter,
 };
@@ -30,7 +30,8 @@ export class Monban {
             .option('--uri-whitelist <path>', 'path to white list definition')
             .option('--uri-blacklist <path>', 'path to black list definition')
             .option('--ontology <path>', 'path to ontology', collect, [])
-            .option('--output-format <format>', `output format ${Object.keys(builders).join(', ')}`, 'markdown')
+            .option('--output-format <format>', `output format ${Object.keys(reporters).join(', ')}`, 'markdown')
+            .option('--report-limit <number>', 'number of error instances per error (negative for no limit)', 20)
             .parse(argv);
     }
 
@@ -52,19 +53,23 @@ export class Monban {
         if (this.commander.ontology) {
             config.ontology = await Ontology.load(this.commander.ontology);
         }
+        if (this.commander.reportLimit) {
+            config.reportLimit = this.commander.reportLimit;
+        }
 
-        const builder = builders[this.commander.outputFormat];
-        if (!builder) {
+        const reporter = reporters[this.commander.outputFormat];
+        if (!reporter) {
             console.error(`builder ${this.commander.outputFormat} not supported`);
             return;
         }
+
 
         this.commander.args.forEach(async (fn) => {
             const reader = TripleReader.fromFile(fn);
             const validator = new Validator(reader, config);
             const r = await validator.validate();
 
-            console.log(builder.build(r));
+            console.log(reporter.build(r, config));
         });
     }
 
