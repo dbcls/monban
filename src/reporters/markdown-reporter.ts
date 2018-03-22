@@ -46,7 +46,8 @@ export class MarkdownReporter {
                 const triple = err.triple;
                 if (triple) {
                     const nt = N3Writer.tripleToString(triple.subject, triple.predicate, triple.object, triple.graph).trim();
-                    buf += `* ${err.message()} \`${nt}\`\n`;
+                    const nth = triple.nth ? ` nth=${triple.nth}` : "";
+                    buf += `* ${err.message()} (context: \`${nt}\`${nth})\n`;
                 } else {
                     buf += `* ${err.message()}\n`;
                 }
