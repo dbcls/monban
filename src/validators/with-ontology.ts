@@ -19,7 +19,7 @@ export class WithOntology extends TriplewiseValidator {
             }
         }
         if (ont.isObjectProperty(triple.predicate)) {
-            if (!N3Util.isIRI(triple.object)) {
+            if (!N3Util.isIRI(triple.object) && !N3Util.isBlank(triple.object)) {
                 this.error(new ErrorNonIRIObjectForObjectProperty(triple));
             }
         }
