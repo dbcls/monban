@@ -131,12 +131,12 @@ export class Statistics {
 
 class Consumer extends Writable {
     statictics = new Statistics();
-    uriWhitelistPattern: UriPatterns;
+    linkPatterns: UriPatterns;
     uuid: string = uuid.v4();
 
-    constructor(uriWhitelistPattern: UriPatterns) {
+    constructor(linkPatterns: UriPatterns) {
         super({ objectMode: true })
-        this.uriWhitelistPattern = uriWhitelistPattern;
+        this.linkPatterns = linkPatterns;
     }
 
     uniquifyBlankNode(node: string): string {
@@ -169,7 +169,7 @@ class Consumer extends Writable {
         }
 
         if (p === rdfsSeeAlso) {
-            const e = this.uriWhitelistPattern.match(o)
+            const e = this.linkPatterns.match(o)
             if (e) {
                 st.linkOccurrencies.add(e.name);
             }
