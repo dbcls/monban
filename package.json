@@ -9,8 +9,8 @@
     "commander": "^2.14.1",
     "csv": "^2.0.0",
     "n3": "^0.11.2",
-    "node-uuid": "^1.4.8",
-    "shell-escape": "^0.2.0"
+    "shell-escape": "^0.2.0",
+    "uuid": "^3.2.1"
   },
   "bin": [
     "bin/monban"
