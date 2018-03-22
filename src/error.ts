@@ -55,13 +55,13 @@ class ErrorOnObjectOfTriple extends ErrorOnTriple {
 
 export class ErrorObjectOfDctermsReferences extends ErrorOnObjectOfTriple {
     message() {
-        return `\`${this.triple.object}\` is not expected URI for dcterms:references`;
+        return `\`${this.triple.object}\` is not expected URI for \`dcterms:references\``;
     }
 }
 
 export class ErrorPredicateForReferences extends ErrorOnPredicateOfTriple {
     message() {
-        return `dcterms:references is not used for reference \`${this.triple.object}\``;
+        return `\`dcterms:references\` is not used for reference \`${this.triple.object}\``;
     }
 }
 
