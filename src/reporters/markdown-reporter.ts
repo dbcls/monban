@@ -10,6 +10,9 @@ export class MarkdownReporter {
         let buf = "";
 
         buf += "# monban results\n\n";
+        buf += `* source: ${results.path}\n`;
+        buf += `* elapsed: ${results.statistics.elapsed} ms\n`;
+        buf += "\n";
 
         if (results.errors.size === 0) {
             buf += "no errors found";
