@@ -21,7 +21,7 @@
 
 #### `--primal-classes <path.txt>`
 
-Path to primal classes definition
+Path to primal classes definition. List classes one per line.
 
 #### `--uri-whitelist <path.tsv>`
 
