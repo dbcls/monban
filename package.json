@@ -4,11 +4,13 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "@types/shell-escape": "^0.2.0",
     "@types/uuid": "^3.4.3",
     "commander": "^2.14.1",
     "csv": "^2.0.0",
     "n3": "^0.11.2",
-    "node-uuid": "^1.4.8"
+    "node-uuid": "^1.4.8",
+    "shell-escape": "^0.2.0"
   },
   "bin": [
     "bin/monban"

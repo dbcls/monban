@@ -1,4 +1,5 @@
 import * as N3 from "n3";
+import * as shellescape from "shell-escape";
 
 import { ValidationResults } from "../validation-results";
 import { Error } from "../error";
@@ -26,6 +27,8 @@ export class MarkdownReporter {
         let buf = "";
 
         buf += "# monban results\n\n";
+        buf += shellescape(process.argv) + "\n\n";
+
         buf += `* source: ${results.path}\n`;
         buf += `* elapsed: ${results.statistics.elapsed} ms\n`;
         buf += "\n";
