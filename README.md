@@ -13,7 +13,7 @@
 
 ## Monban
 
-`monban` lints the file.
+`monban` lints the file specified.
 
     $ ./bin/monban [target file (.nt, .ttl)]
 
@@ -23,21 +23,59 @@
 
 Path to primal classes definition. List classes one per line.
 
+Example:
+
+```
+http://example.com/primaryClass1
+http://example.com/primaryClass2
+```
+
 #### `--uri-whitelist <path.tsv>`
 
-Path to white list definition.
+Path to white list definition for `rdfs:seeAlso` test. The file should be a Tab Separated Values (TSV) file.
+
+* 1st column: label of the pattern
+* 2nd column: RegExp of the pattern
+
+Example:
+
+```
+Example1	^http://example\.com/1/
+Example2	^http://example\.com/2/
+```
 
 #### `--uri-blacklist <path.tsv>`
 
-Path to white list definition.
+Path to black list definition for `rdfs:seeAlso` test. The file should be a Tab Separated Values (TSV) file.
+
+* 1st column: label of the pattern
+* 2nd column: RegExp of the pattern
+
+```
+Example1	^http://example\.com/1/
+Example2	^http://example\.com/2/
+```
 
 #### `--ontology <path.ttl>`
 
 Path to ontology (in Turtle or N-Triples). This option can be specified multiple times.
 
+```
+Example1	^http://example\.com/1/
+Example2	^http://example\.com/2/
+```
+
 #### `--bib-patterns <path.tsv>`
 
 Path to bibliography resource patterns.
+
+Example (this is the default):
+
+```
+PMC	^http://identifiers\.org/pmc/
+PubMed	^http://identifiers\.org/pubmed/
+DOI	^http://doi\.org/
+```
 
 #### `--report-limit <number>`
 
@@ -63,7 +101,7 @@ Default: `markdown`
 
 Path to the link pattern definition. The file should be a Tab Separated Values (TSV) file.
 
-* 1st column: label of the link pattern
+* 1st column: label of the pattern
 * 2nd column: RegExp of the pattern
 
 Example:
