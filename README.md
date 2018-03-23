@@ -7,7 +7,7 @@
 
 ## Setup
 
-    $ git clone https://github.com/enishitech/monban
+    $ git clone https://github.com/dbcls/monban
     $ cd monban
     $ yarn install
 
