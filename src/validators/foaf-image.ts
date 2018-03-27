@@ -41,6 +41,6 @@ export class FoafImage extends TriplewiseValidator {
     }
 
     private isImageish(node: string): Boolean {
-        return !!node.match(/\.(?:jpg|png|svg)$/i);
+        return /\.(?:jpg|png|svg)$/i.test(node);
     }
 }

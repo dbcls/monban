@@ -11,7 +11,7 @@ export class UriPattern {
     }
 
     match(str: string): boolean {
-        return !!str.match(this.regexp);
+        return this.regexp.test(str);
     }
 }
 
